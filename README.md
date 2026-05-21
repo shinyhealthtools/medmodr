@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-brightgreen)](https://shinyhealthtools.github.io/medmodr/)
-[![Version](https://img.shields.io/badge/Version-2.0-blue)](https://github.com/shinyhealthtools/medmodr)
+[![Version](https://img.shields.io/badge/Version-1.0-blue)](https://github.com/shinyhealthtools/medmodr)
 
 **MedModr** is a free browser-based tool for mediation, moderation, and conditional process analysis. Supports simple, parallel, and serial mediation; simple moderation; first, second, and both stages moderated mediation; moderated moderation (three-way); and moderated serial mediation.
 
