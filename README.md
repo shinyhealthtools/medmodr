@@ -74,11 +74,22 @@ Found a bug? Have a feature request? Open an issue on GitHub.
 
 ## Author
 
-Mudasir Mohammed Ibrahim
-- Website: [mudasiribrahim.github.io/gh](https://mudasiribrahim.github.io/gh/)
-- LinkedIn: [linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0](https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0)
-- ResearchGate: [Mudasir Ibrahim](https://www.researchgate.net/profile/Mudasir-Ibrahim)
-- Email: [mudassiribrahim30@gmail.com](mailto:mudassiribrahim30@gmail.com)
+**Mudasir Mohammed Ibrahim**
+
+<p align="center">
+  <a href="https://mudasiribrahim.github.io/gh/" target="_blank">
+    <img src="https://img.shields.io/badge/Website-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website">
+  </a>
+  <a href="https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="https://www.researchgate.net/profile/Mudasir-Ibrahim" target="_blank">
+    <img src="https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" alt="ResearchGate">
+  </a>
+  <a href="mailto:mudassiribrahim30@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+</p>
 
 ## Citation
 
