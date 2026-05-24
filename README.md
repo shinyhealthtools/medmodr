@@ -1,5 +1,9 @@
 # MedModr
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/medmodr/android-chrome-192x192.png" alt="MedModr Logo" width="80" height="80">
+</p>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2020-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
@@ -7,7 +11,7 @@
 
 **MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally in the user's browser, ensuring complete privacy.
 
-📖 **For complete documentation, and user guides, visit:** [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/)
+📖 **For complete documentation and user guides, visit:** [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/)
 
 ## Features
 
