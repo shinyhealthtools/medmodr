@@ -50,6 +50,12 @@ After downloading `index.html`, all statistical computations run offline with **
 - **CSV files:** Complete offline support — upload and analyze without internet
 - **Excel files (.xlsx, .xls):** Internet connection is needed **only during file upload** (to parse the Excel format). After the data is loaded, disconnect from the internet and run the full analysis offline.
 
+## Feedback and Contributions
+
+Found a bug? Have a feature request? Need help? Open an issue on GitHub:
+
+🐞 **Report Bugs | 💡 Request Features | ❓ Ask Questions** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
+
 ## Links
 
 | Resource | URL |
@@ -58,6 +64,7 @@ After downloading `index.html`, all statistical computations run offline with **
 | Mirror | [medmodr.vercel.app](https://medmodr.vercel.app/) |
 | Full Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
+
 
 ## Author
 
