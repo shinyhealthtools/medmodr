@@ -11,7 +11,6 @@
 
 **MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally in the user's browser, ensuring complete privacy.
 
-📖 **For complete documentation and user guides, visit:** [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/)
 
 ## Features
 
@@ -50,7 +49,7 @@ After downloading `index.html`, all statistical computations run offline with **
 |:---|:---|
 | Live App | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
 | Mirror | [medmodr.vercel.app](https://medmodr.vercel.app/) |
-| Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
+| Full Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
 
 ## Author
