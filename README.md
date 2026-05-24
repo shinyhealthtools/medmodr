@@ -7,19 +7,26 @@
 
 **MedModr** is a free browser-based tool for mediation, moderation, and conditional process analysis. All computations run locally in your browser. **Your data never leaves your device** — a privacy-first alternative to commercial software.
 
-## 📊 Statistical Tests Performed
+## 📊 Statistical Tests Performed (with Bootstrap)
 
-The application performs **9 core statistical tests**:
+The application performs **9 core statistical tests**, all supporting **bootstrap confidence intervals** (Percentile or Bias-Corrected) for indirect effects:
 
-1.  **Simple Mediation** — Tests whether the effect of X on Y is transmitted through a single mediator M (X → M → Y).
-2.  **Parallel Mediation** — Tests multiple independent mediators simultaneously (X → {M₁...Mₖ} → Y).
-3.  **Serial Mediation** — Tests a causal chain of mediators (X → M₁ → M₂ → Y).
-4.  **Simple Moderation** — Tests if the relationship between X and Y depends on a moderator W (X×W interaction).
-5.  **First Stage Moderated Mediation** — Tests if the indirect effect (X→M→Y) depends on W moderating the X→M path.
-6.  **Second Stage Moderated Mediation** — Tests if the indirect effect depends on W moderating the M→Y path.
-7.  **Both Stages Moderated Mediation** — Tests if the indirect effect depends on W moderating both the X→M and M→Y paths.
-8.  **Moderated Moderation (Three-Way)** — Tests a three-way interaction where the effect of X on Y is jointly moderated by W and Z (X × W × Z → Y).
-9.  **Moderated Serial Mediation** — Tests if a serial indirect effect (X→M₁→M₂→Y) is moderated by W.
+| # | Test | Bootstrap Support |
+| :--- | :--- | :--- |
+| 1 | **Simple Mediation** — X → M → Y | ✅ Bootstrap CI for indirect effect |
+| 2 | **Parallel Mediation** — X → {M₁...Mₖ} → Y | ✅ Bootstrap CI for each indirect path |
+| 3 | **Serial Mediation** — X → M₁ → M₂ → Y | ✅ Bootstrap CI for serial and specific indirect effects |
+| 4 | **Simple Moderation** — X × W → Y | ✅ Bootstrap CI for interaction term (optional) |
+| 5 | **First Stage Moderated Mediation** — W moderates X → M | ✅ Bootstrap CI for conditional indirect effects & Index of Moderated Mediation (IMM) |
+| 6 | **Second Stage Moderated Mediation** — W moderates M → Y | ✅ Bootstrap CI for conditional indirect effects & IMM |
+| 7 | **Both Stages Moderated Mediation** — W moderates both X→M and M→Y | ✅ Bootstrap CI for conditional indirect effects & IMM |
+| 8 | **Moderated Moderation (Three-Way)** — X × W × Z → Y | ✅ Bootstrap CI for three-way interaction term |
+| 9 | **Moderated Serial Mediation** — W moderates X → M₁ → M₂ → Y | ✅ Bootstrap CI for conditional serial indirect effects & IMM |
+
+**Bootstrap Features:**
+- Adjustable number of bootstrap samples (1,000 / 5,000 / 10,000)
+- Two methods: **Percentile** (default) or **Bias-Corrected (BC)**
+- Reproducible results with user-configurable random seed
 
 ## 🔗 Launch & Documentation
 
