@@ -4,28 +4,21 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES2020-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
 [![Version](https://img.shields.io/badge/Version-1.0.0-teal.svg)](https://github.com/shinyhealthtools/medmodr)
-[![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)]()
-[![PRs](https://img.shields.io/badge/PRs-Welcome-orange.svg)]()
 
-**MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally on the user's device. No data transmission occurs — ensuring complete privacy.
+**MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally in the user's browser, ensuring complete privacy.
 
----
-
-## 🔧 Features
+## Features
 
 | Category | Capabilities |
 |:---|:---|
 | **Analysis** | 9 statistical tests with PROCESS macro equivalents (Models 1, 3, 4, 6, 7, 14, 58, 83) |
-| **Inference** | Bootstrap confidence intervals (Percentile / Bias-Corrected) with configurable samples (1K–10K) |
-| **Data Handling** | CSV (offline) and Excel (online) import, missing data imputation (7 methods), outlier detection |
-| **Output** | Path diagrams, simple slopes plots, Word/PNG export, APA-style summaries |
-| **Privacy** | Zero data transmission — all processing occurs client-side |
+| **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1K–10K samples |
+| **Data Import** | CSV (fully offline) or Excel (requires internet) |
+| **Output** | Path diagrams, simple slopes plots, Word/PNG export, APA summaries |
 
----
+## Statistical Tests
 
-## 📊 Statistical Tests
-
-| Test | PROCESS Model |
+| Analysis | PROCESS Model |
 |:---|:---:|
 | Simple Mediation | 4 |
 | Parallel Mediation | 4 |
@@ -37,61 +30,31 @@
 | Moderated Moderation (Three-Way) | 3 |
 | Moderated Serial Mediation | 83 |
 
----
+## Offline Use
 
-## 🚀 Quick Start
+Download `index.html` and open in any browser. **CSV data files work without internet.** Excel data files require an active connection for parsing.
 
-### Online Access
+## Links
 
 | Resource | URL |
 |:---|:---|
-| Primary Host | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
+| Live App | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
 | Mirror | [medmodr.vercel.app](https://medmodr.vercel.app/) |
 | Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 
-### Offline Usage
 
-| File Type | Offline Support |
-|:---|:---:|
-| CSV | ✅ Full support |
-| Excel (.xlsx, .xls) | ⚠️ Requires internet (SheetJS CDN) |
+## License
 
-**Offline setup:**
-1. Download `index.html`
-2. Convert Excel data to CSV if needed
-3. Open file in any modern browser
-4. Disconnect from network (optional)
+MIT License
 
----
+## Author
 
-## 📦 Dependencies
-
-| Library | Purpose | Load Method |
-|:---|:---|:---|
-| SheetJS (XLSX) | Excel file parsing | CDN (online only) |
-| Chart.js | Diagnostic plots | CDN |
-| Font Awesome | UI icons | CDN |
-
-> **Note:** All core statistical computations (regression, bootstrap, matrix operations) use native JavaScript — no external dependencies required for CSV workflows.
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` file for details.
-
----
-
-## 👤 Author
-
-**Mudasir Mohammed Ibrahim**
+Mudasir Mohammed Ibrahim
 - Website: [mudasiribrahim.github.io/gh](https://mudasiribrahim.github.io/gh/)
 - ResearchGate: [Mudasir Ibrahim](https://www.researchgate.net/profile/Mudasir-Ibrahim)
 - Email: [mudassiribrahim30@gmail.com](mailto:mudassiribrahim30@gmail.com)
 
----
-
-## 📌 Citation
+## Citation
 
 ```bibtex
 @software{Ibrahim_MedModr_2026,
