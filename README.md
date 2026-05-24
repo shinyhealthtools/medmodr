@@ -74,7 +74,8 @@ Found a bug? Have a feature request? Open an issue on GitHub.
 
 ## Author
 
-**Mudasir Mohammed Ibrahim**
+**Mudasir Mohammed Ibrahim**  
+*Department of Internal Medicine (M3), Tamale Teaching Hospital, Ghana*
 
 <p align="center">
   <a href="https://mudasiribrahim.github.io/gh/" target="_blank">
