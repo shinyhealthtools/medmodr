@@ -1,48 +1,103 @@
-# MedModr: Mediation & Moderation Analysis Tool
+# MedModr
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-brightgreen)](https://shinyhealthtools.github.io/medmodr/)
-[![Version](https://img.shields.io/badge/Version-1.0-blue)](https://github.com/shinyhealthtools/medmodr)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2020-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
+[![Version](https://img.shields.io/badge/Version-1.0.0-teal.svg)](https://github.com/shinyhealthtools/medmodr)
+[![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)]()
+[![PRs](https://img.shields.io/badge/PRs-Welcome-orange.svg)]()
 
-**MedModr** is a free browser-based tool for mediation, moderation, and conditional process analysis. All computations run locally. **Your data never leaves your device.**
-
-## 🔌 Offline Capability
-
-> After downloading `index.html`, MedModr runs **all statistical computations offline** (regression, bootstrap, diagrams, plots).
-
-**File requirements:**
-- ✅ **CSV files: 100% offline**
-- ⚠️ **Excel files (.xlsx, .xls): Require internet connection** (uses SheetJS CDN)
-
-> 💡 **Tip for offline use:** Save your data as CSV before disconnecting.
-
-## 📊 Statistical Tests & PROCESS Macro Equivalents
-
-MedModr performs the following 9 tests with bootstrap CIs (Percentile or Bias-Corrected):
-
-| MedModr Analysis | PROCESS Model | Description |
-| :--- | :--- | :--- |
-| Simple Mediation | **Model 4** | X → M → Y |
-| Parallel Mediation | **Model 4** | X → {M₁...Mₖ} → Y |
-| Serial Mediation | **Model 6** | X → M₁ → M₂ → Y |
-| Simple Moderation | **Model 1** | X × W → Y |
-| First Stage Moderated Mediation | **Model 7** | W moderates X → M path |
-| Second Stage Moderated Mediation | **Model 14** | W moderates M → Y path |
-| Both Stages Moderated Mediation | **Model 58** | W moderates X→M and M→Y paths |
-| Moderated Moderation | **Model 3** | Three-way interaction: X × W × Z → Y |
-| Moderated Serial Mediation | **Model 83** | W moderates X → M₁ → M₂ → Y |
-
-**Bootstrap options:** 1000/5000/1000 samples, Percentile or Bias-Corrected, reproducible with custom seed.
-
-## 🔗 Links
-
-| Resource | Link |
-| :--- | :--- |
-| **Live App** | [https://shinyhealthtools.github.io/medmodr/](https://shinyhealthtools.github.io/medmodr/) |
-| **Mirror** | [https://medmodr.vercel.app/](https://medmodr.vercel.app/) |
-| **Documentation** | [https://shinyopensource.github.io/medmodr-documentation/](https://shinyopensource.github.io/medmodr-documentation/) |
+**MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally on the user's device. No data transmission occurs — ensuring complete privacy.
 
 ---
 
-**MedModr** — Transparent, private, professional mediation and moderation analysis. 
+## 🔧 Features
+
+| Category | Capabilities |
+|:---|:---|
+| **Analysis** | 9 statistical tests with PROCESS macro equivalents (Models 1, 3, 4, 6, 7, 14, 58, 83) |
+| **Inference** | Bootstrap confidence intervals (Percentile / Bias-Corrected) with configurable samples (1K–10K) |
+| **Data Handling** | CSV (offline) and Excel (online) import, missing data imputation (7 methods), outlier detection |
+| **Output** | Path diagrams, simple slopes plots, Word/PNG export, APA-style summaries |
+| **Privacy** | Zero data transmission — all processing occurs client-side |
+
+---
+
+## 📊 Statistical Tests
+
+| Test | PROCESS Model |
+|:---|:---:|
+| Simple Mediation | 4 |
+| Parallel Mediation | 4 |
+| Serial Mediation | 6 |
+| Simple Moderation | 1 |
+| First Stage Moderated Mediation | 7 |
+| Second Stage Moderated Mediation | 14 |
+| Both Stages Moderated Mediation | 58 |
+| Moderated Moderation (Three-Way) | 3 |
+| Moderated Serial Mediation | 83 |
+
+---
+
+## 🚀 Quick Start
+
+### Online Access
+
+| Resource | URL |
+|:---|:---|
+| Primary Host | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
+| Mirror | [medmodr.vercel.app](https://medmodr.vercel.app/) |
+| Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
+
+### Offline Usage
+
+| File Type | Offline Support |
+|:---|:---:|
+| CSV | ✅ Full support |
+| Excel (.xlsx, .xls) | ⚠️ Requires internet (SheetJS CDN) |
+
+**Offline setup:**
+1. Download `index.html`
+2. Convert Excel data to CSV if needed
+3. Open file in any modern browser
+4. Disconnect from network (optional)
+
+---
+
+## 📦 Dependencies
+
+| Library | Purpose | Load Method |
+|:---|:---|:---|
+| SheetJS (XLSX) | Excel file parsing | CDN (online only) |
+| Chart.js | Diagnostic plots | CDN |
+| Font Awesome | UI icons | CDN |
+
+> **Note:** All core statistical computations (regression, bootstrap, matrix operations) use native JavaScript — no external dependencies required for CSV workflows.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` file for details.
+
+---
+
+## 👤 Author
+
+**Mudasir Mohammed Ibrahim**
+- Website: [mudasiribrahim.github.io/gh](https://mudasiribrahim.github.io/gh/)
+- ResearchGate: [Mudasir Ibrahim](https://www.researchgate.net/profile/Mudasir-Ibrahim)
+- Email: [mudassiribrahim30@gmail.com](mailto:mudassiribrahim30@gmail.com)
+
+---
+
+## 📌 Citation
+
+```bibtex
+@software{Ibrahim_MedModr_2026,
+  author = {Ibrahim, Mudasir Mohammed},
+  title = {MedModr: Mediation and Moderation Analysis Tool},
+  year = {2026},
+  version = {1.0.0},
+  url = {https://shinyhealthtools.github.io/medmodr/}
+}
