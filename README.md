@@ -11,6 +11,13 @@
 
 **MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally in the user's browser, ensuring complete privacy.
 
+## Interface
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/screenshots/analysis-panel.png" alt="MedModr Analysis Panel" width="800">
+  <br>
+  <em>The main analysis panel showing variable assignment, analysis options, and results display.</em>
+</p>
 
 ## Features
 
