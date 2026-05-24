@@ -14,7 +14,7 @@
 ## Interface
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/screenshots/analysis-panel.png" alt="MedModr Analysis Panel" width="800">
+  <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/medmodr/MedModrinterface.png" alt="MedModr Analysis Panel" width="800">
   <br>
   <em>The main analysis panel showing variable assignment, analysis options, and results display.</em>
 </p>
