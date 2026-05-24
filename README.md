@@ -11,24 +11,24 @@
 
 | Category | Capabilities |
 |:---|:---|
-| **Analysis** | 9 statistical tests with PROCESS macro equivalents (Models 1, 3, 4, 6, 7, 14, 58, 83) |
+| **Analysis** | 9 statistical tests with PROCESS macro equivalents |
 | **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1K–10K samples |
 | **Data Import** | CSV (fully offline) or Excel (requires internet) |
 | **Output** | Path diagrams, simple slopes plots, Word/PNG export, APA summaries |
 
-## Statistical Tests
+## Statistical Tests and PROCESS Macro Equivalents
 
-| Analysis | PROCESS Model |
+| MedModr Performs This Test | Equivalent PROCESS Model |
 |:---|:---:|
-| Simple Mediation | 4 |
-| Parallel Mediation | 4 |
-| Serial Mediation | 6 |
-| Simple Moderation | 1 |
-| First Stage Moderated Mediation | 7 |
-| Second Stage Moderated Mediation | 14 |
-| Both Stages Moderated Mediation | 58 |
-| Moderated Moderation (Three-Way) | 3 |
-| Moderated Serial Mediation | 83 |
+| Simple Mediation (X → M → Y) | Model 4 |
+| Parallel Mediation (X → M₁...Mₖ → Y) | Model 4 |
+| Serial Mediation (X → M₁ → M₂ → Y) | Model 6 |
+| Simple Moderation (X × W → Y) | Model 1 |
+| First Stage Moderated Mediation (W moderates X → M) | Model 7 |
+| Second Stage Moderated Mediation (W moderates M → Y) | Model 14 |
+| Both Stages Moderated Mediation (W moderates X→M and M→Y) | Model 58 |
+| Moderated Moderation / Three-Way Interaction (X × W × Z → Y) | Model 3 |
+| Moderated Serial Mediation (W moderates X → M₁ → M₂ → Y) | Model 83 |
 
 ## Offline Use
 
@@ -41,7 +41,6 @@ Download `index.html` and open in any browser. **CSV data files work without int
 | Live App | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
 | Mirror | [medmodr.vercel.app](https://medmodr.vercel.app/) |
 | Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
-
 
 ## License
 
