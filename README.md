@@ -5,52 +5,52 @@
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-brightgreen)](https://shinyhealthtools.github.io/medmodr/)
 [![Version](https://img.shields.io/badge/Version-1.0-blue)](https://github.com/shinyhealthtools/medmodr)
 
-**MedModr** is a free browser-based tool for mediation, moderation, and conditional process analysis. All computations run locally in your browser. **Your data never leaves your device** — a privacy-first alternative to commercial software.
+**MedModr** is a free browser-based tool for mediation, moderation, and conditional process analysis. All computations run locally. **Your data never leaves your device.**
 
-## 🔌 100% Offline — Zero Internet Required After Download
+## 🔌 Offline Capability — Important Distinction
 
-> ⚡ **CRITICAL:** After you download `index.html`, MedModr requires **NO INTERNET CONNECTION WHATSOEVER**. You can disconnect from the internet entirely — all analyses (regression, bootstrap, path diagrams, plots, CSV/Excel import) run completely offline in your browser.
+> After downloading `index.html`, MedModr runs **all statistical computations offline** (regression, bootstrap, diagrams, plots).
+
+**File upload requirements:**
+- ✅ **CSV files: 100% offline** — No internet connection required
+- ⚠️ **Excel files (.xlsx, .xls): Require internet connection** — Uses SheetJS CDN for parsing
+
+> 💡 **Recommendation for offline use:** Save your data as CSV before disconnecting from the internet.
 
 **To use completely offline:**
-1. Download `index.html` from this repository (just this single file)
-2. **Disconnect your internet** (optional but proves offline capability)
-3. Open `index.html` in any modern browser
-4. Analyze your data — **everything works offline, forever**
+1. Download `index.html` (single file)
+2. Convert Excel data to CSV format
+3. Disconnect internet
+4. Open `index.html` and upload CSV files
+5. Analyze — **no server. no tracking. no cloud.**
 
-> 🔒 **No data leaves your device. No internet required. No server. No tracking. No cloud.**
+## 📊 Statistical Tests (PROCESS Macro Models)
 
-## 📊 Statistical Tests Performed (with Bootstrap)
+All 9 tests support **bootstrap CIs** (Percentile or BC) for indirect effects:
 
-The application performs **9 core statistical tests**, all supporting **bootstrap confidence intervals** (Percentile or Bias-Corrected) for indirect effects:
+| PROCESS Model | Test |
+| :--- | :--- |
+| **Model 4** | Simple Mediation (X → M → Y) & Parallel Mediation (X → {M₁...Mₖ} → Y) |
+| **Model 6** | Serial Mediation (X → M₁ → M₂ → Y) |
+| **Model 1** | Simple Moderation (X × W → Y) |
+| **Model 7** | First Stage Moderated Mediation (W moderates X → M) |
+| **Model 14** | Second Stage Moderated Mediation (W moderates M → Y) |
+| **Model 58** | Both Stages Moderated Mediation (W moderates X→M and M→Y) |
+| **Model 3** | Moderated Moderation / Three-Way Interaction (X × W × Z → Y) |
+| **Model 83** | Moderated Serial Mediation (W moderates X → M₁ → M₂ → Y) |
 
-| # | Test | Bootstrap Support |
-| :--- | :--- | :--- |
-| 1 | **Simple Mediation** — X → M → Y | ✅ Bootstrap CI for indirect effect |
-| 2 | **Parallel Mediation** — X → {M₁...Mₖ} → Y | ✅ Bootstrap CI for each indirect path |
-| 3 | **Serial Mediation** — X → M₁ → M₂ → Y | ✅ Bootstrap CI for serial and specific indirect effects |
-| 4 | **Simple Moderation** — X × W → Y | ✅ Bootstrap CI for interaction term (optional) |
-| 5 | **First Stage Moderated Mediation** — W moderates X → M | ✅ Bootstrap CI for conditional indirect effects & Index of Moderated Mediation (IMM) |
-| 6 | **Second Stage Moderated Mediation** — W moderates M → Y | ✅ Bootstrap CI for conditional indirect effects & IMM |
-| 7 | **Both Stages Moderated Mediation** — W moderates both X→M and M→Y | ✅ Bootstrap CI for conditional indirect effects & IMM |
-| 8 | **Moderated Moderation (Three-Way)** — X × W × Z → Y | ✅ Bootstrap CI for three-way interaction term |
-| 9 | **Moderated Serial Mediation** — W moderates X → M₁ → M₂ → Y | ✅ Bootstrap CI for conditional serial indirect effects & IMM |
+**Bootstrap options:** 1K/5K/10K samples, Percentile or Bias-Corrected, reproducible with custom seed.
 
-**Bootstrap Features:**
-- Adjustable number of bootstrap samples (1,000 / 5,000 / 10,000)
-- Two methods: **Percentile** (default) or **Bias-Corrected (BC)**
-- Reproducible results with user-configurable random seed
-- **All bootstrap resampling runs locally in your browser** — no internet needed
-
-## 🔗 Launch & Documentation
+## 🔗 Links
 
 | Resource | Link |
 | :--- | :--- |
-| **Primary Website** | [https://shinyhealthtools.github.io/medmodr/](https://shinyhealthtools.github.io/medmodr/) |
+| **Live App** | [https://shinyhealthtools.github.io/medmodr/](https://shinyhealthtools.github.io/medmodr/) |
 | **Mirror** | [https://medmodr.vercel.app/](https://medmodr.vercel.app/) |
-| **Full Documentation** | [https://shinyopensource.github.io/medmodr-documentation/](https://shinyopensource.github.io/medmodr-documentation/) (guides) |
+| **Documentation** | [https://shinyopensource.github.io/medmodr-documentation/](https://shinyopensource.github.io/medmodr-documentation/) |
 
 ---
 
-**MedModr** — Transparent, private, professional mediation and moderation analysis tool.
+**MedModr** — Transparent, private, professional mediation and moderation analysis.
 
-**📁 One file. One download. Zero internet required. Runs forever offline.**
+**📁 One file. CSV works offline. Excel needs internet. All computations run locally.**
