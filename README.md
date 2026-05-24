@@ -7,39 +7,33 @@
 
 **MedModr** is a free browser-based tool for mediation, moderation, and conditional process analysis. All computations run locally. **Your data never leaves your device.**
 
-## 🔌 Offline Capability — Important Distinction
+## 🔌 Offline Capability
 
 > After downloading `index.html`, MedModr runs **all statistical computations offline** (regression, bootstrap, diagrams, plots).
 
-**File upload requirements:**
-- ✅ **CSV files: 100% offline** — No internet connection required
-- ⚠️ **Excel files (.xlsx, .xls): Require internet connection** — Uses SheetJS CDN for parsing
+**File requirements:**
+- ✅ **CSV files: 100% offline**
+- ⚠️ **Excel files (.xlsx, .xls): Require internet connection** (uses SheetJS CDN)
 
-> 💡 **Recommendation for offline use:** Save your data as CSV before disconnecting from the internet.
+> 💡 **Tip for offline use:** Save your data as CSV before disconnecting.
 
-**To use completely offline:**
-1. Download `index.html` (single file)
-2. Convert Excel data to CSV format
-3. Disconnect internet
-4. Open `index.html` and upload CSV files
-5. Analyze — **no server. no tracking. no cloud.**
+## 📊 Statistical Tests & PROCESS Macro Equivalents
 
-## 📊 Statistical Tests (PROCESS Macro Models)
+MedModr performs the following 9 tests with bootstrap CIs (Percentile or Bias-Corrected):
 
-All 9 tests support **bootstrap CIs** (Percentile or BC) for indirect effects:
+| MedModr Analysis | PROCESS Model | Description |
+| :--- | :--- | :--- |
+| Simple Mediation | **Model 4** | X → M → Y |
+| Parallel Mediation | **Model 4** | X → {M₁...Mₖ} → Y |
+| Serial Mediation | **Model 6** | X → M₁ → M₂ → Y |
+| Simple Moderation | **Model 1** | X × W → Y |
+| First Stage Moderated Mediation | **Model 7** | W moderates X → M path |
+| Second Stage Moderated Mediation | **Model 14** | W moderates M → Y path |
+| Both Stages Moderated Mediation | **Model 58** | W moderates X→M and M→Y paths |
+| Moderated Moderation | **Model 3** | Three-way interaction: X × W × Z → Y |
+| Moderated Serial Mediation | **Model 83** | W moderates X → M₁ → M₂ → Y |
 
-| PROCESS Model | Test |
-| :--- | :--- |
-| **Model 4** | Simple Mediation (X → M → Y) & Parallel Mediation (X → {M₁...Mₖ} → Y) |
-| **Model 6** | Serial Mediation (X → M₁ → M₂ → Y) |
-| **Model 1** | Simple Moderation (X × W → Y) |
-| **Model 7** | First Stage Moderated Mediation (W moderates X → M) |
-| **Model 14** | Second Stage Moderated Mediation (W moderates M → Y) |
-| **Model 58** | Both Stages Moderated Mediation (W moderates X→M and M→Y) |
-| **Model 3** | Moderated Moderation / Three-Way Interaction (X × W × Z → Y) |
-| **Model 83** | Moderated Serial Mediation (W moderates X → M₁ → M₂ → Y) |
-
-**Bootstrap options:** 1K/5K/10K samples, Percentile or Bias-Corrected, reproducible with custom seed.
+**Bootstrap options:** 1000/5000/1000 samples, Percentile or Bias-Corrected, reproducible with custom seed.
 
 ## 🔗 Links
 
@@ -51,6 +45,4 @@ All 9 tests support **bootstrap CIs** (Percentile or BC) for indirect effects:
 
 ---
 
-**MedModr** — Transparent, private, professional mediation and moderation analysis.
-
-**📁 One file. CSV works offline. Excel needs internet. All computations run locally.**
+**MedModr** — Transparent, private, professional mediation and moderation analysis. 
