@@ -11,13 +11,11 @@
 
 **MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally in the user's browser, ensuring complete privacy.
 
----
+## Download the Latest Version
 
-## ⬇️ DOWNLOAD THE LATEST VERSION
-
-> ### 🔥 **GET THE LATEST RELEASE HERE** → [**github.com/shinyhealthtools/medmodr/releases**](https://github.com/shinyhealthtools/medmodr/releases)
+> **Get the latest release here:** [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)
 >
-> **BOLD AND VERY VISIBLE:** Always download the newest version from the official releases page. Check back regularly for updates, bug fixes, and new features. Click the link above to grab the latest `index.html` or source code.
+> Always download the newest version from the official releases page. Check back regularly for updates, bug fixes, and new features.
 
 ---
 
@@ -78,7 +76,7 @@ Found a bug? Open an issue on GitHub.
 |:---|:---|
 | Live App | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
 | Mirror | [medmodr.vercel.app](https://medmodr.vercel.app/) |
-| **⬇️ DOWNLOADS (RELEASES)** | **[github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)** |
+| Downloads (Releases) | [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases) |
 | Full Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
 | GitHub Repository | [github.com/shinyhealthtools/medmodr](https://github.com/shinyhealthtools/medmodr) |
