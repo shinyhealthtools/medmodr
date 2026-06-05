@@ -13,7 +13,7 @@
 
 ## Offline Use
 
-After downloading `index.html`, all statistical computations run offline with **no internet required**.
+Download the `index.html` file, open it in any web browser, and start your analysis. All statistical computations run offline with **no internet required**.
 
 **Data file requirements:**
 - **CSV files:** Complete offline support — upload and analyze without internet
