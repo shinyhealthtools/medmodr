@@ -11,6 +11,14 @@
 
 **MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally in the user's browser, ensuring complete privacy.
 
+## Offline Use
+
+After downloading `index.html`, all statistical computations run offline with **no internet required**.
+
+**Data file requirements:**
+- **CSV files:** Complete offline support — upload and analyze without internet
+- **Excel files (.xlsx, .xls):** Internet connection is needed **only during file upload** (to parse the Excel format). After the data is loaded, disconnect from the internet and run the full analysis offline.
+
 ## Download the Latest Version
 
 > **Get the latest release here:** [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)
@@ -49,14 +57,6 @@
 | Both Stages Moderated Mediation (W moderates X→M and M→Y) | Model 58 |
 | Moderated Moderation / Three-Way Interaction (X × W × Z → Y) | Model 3 |
 | Moderated Serial Mediation (W moderates X → M₁ → M₂ → Y) | Model 83 |
-
-## Offline Use
-
-After downloading `index.html`, all statistical computations run offline with **no internet required**.
-
-**Data file requirements:**
-- **CSV files:** Complete offline support — upload and analyze without internet
-- **Excel files (.xlsx, .xls):** Internet connection is needed **only during file upload** (to parse the Excel format). After the data is loaded, disconnect from the internet and run the full analysis offline.
 
 ## Contribute
 
