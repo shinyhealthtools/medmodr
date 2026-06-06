@@ -9,7 +9,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
 [![Version](https://img.shields.io/badge/Version-1.0-teal.svg)](https://github.com/shinyhealthtools/medmodr/releases)
 
-**MedModr** is a browser-based application for mediation, moderation, and conditional process analysis. All computations execute locally in the user's browser, ensuring complete privacy.
+**MedModr** performs mediation, moderation, and conditional process analysis in the user's browser, ensuring complete privacy.
 
 ## Offline Use
 
@@ -40,7 +40,7 @@ Download the `index.html` file, open it in any web browser, and start your analy
 | Category | Capabilities |
 |:---|:---|
 | **Analysis** | 9 statistical tests with PROCESS macro equivalents |
-| **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1K–10K samples |
+| **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1000, 5000, and 10000 samples |
 | **Data Import** | CSV (fully offline) or Excel (requires internet only for upload) |
 | **Output** | Path diagrams, simple slopes plots, Word/PNG export, APA summaries |
 
