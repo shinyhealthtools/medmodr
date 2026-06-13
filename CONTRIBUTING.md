@@ -73,7 +73,7 @@ To report a bug (incorrect p-values, UI failures, calculation errors):
 **Browser:** Firefox 121 on macOS
 **Steps:**
 1. Upload dataset with variables X, M, Y.
-2. Run moderation analysis with mean centering enabled.
-3. Compare interaction term coefficient against manually centered results.
-**Expected:** Interaction coefficient should match manual mean centering (X - mean(X)) * (M - mean(M)) and align with PROCESS Macro output.
+2. Run simple moderation (Hayes Model 1) analysis with mean centering (e.g., All variables centered or Continuous-only centered) enabled.
+3. Compare interaction term coefficient against manually centered results and/or PROCESS Macro output.
+**Expected:** Interaction coefficient should match manual mean centering and/or PROCESS Macro output.
 **Actual:** Interaction coefficient differs, suggesting centering is applied incorrectly or post-centering multiplication is flawed.
