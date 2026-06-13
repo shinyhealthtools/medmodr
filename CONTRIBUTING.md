@@ -19,13 +19,23 @@ The open-source design allows statisticians, methodologists, and developers to:
 - Report bugs and inaccuracies
 - Contribute improvements to enhance the application over time
 
-First, thank you for considering contributing to MedModr.
+### Encouragement for Adopters
+
+If your institution, research center, or organization adopts MedModr for internal use, hosts a customized version, or develops new features for your specific needs, we strongly encourage you to submit a pull request with those improvements to this official repository.
+
+Even if a feature was developed for local requirements, it may benefit the broader research community. By contributing back, you help:
+- Reduce duplication of effort across institutions
+- Improve the tool for underserved researchers globally
+- Ensure the sustainability of open-source statistical software
+- Receive community feedback and maintenance support for your features
+
+No contribution is too small, and features developed for specific use cases often have wider applicability than anticipated.
 
 ---
 
 ## Code of Conduct
 
-This project is committed to providing a welcoming, harassment-free experience for everyone. Participants are expected to be respectful, inclusive, and constructive. Discriminatory or toxic behavior will not be tolerated.
+This project is committed to providing a welcoming, harassment-free experience for everyone. Participants are expected to be respectful, inclusive, and constructive. 
 
 ---
 
@@ -40,6 +50,7 @@ Contributions can be made in several ways:
 - **Translate** — Help localize MedModr for non-English users.
 - **Validate methods** — Review statistical implementations against established literature.
 - **Create tutorials** — Produce educational content (videos, blog posts, articles) demonstrating MedModr's functionality on platforms such as YouTube, Medium, LinkedIn, or personal academic websites. Tutorials help popularize the tool and make advanced statistical methods accessible to wider audiences.
+- **Contribute back** — If your institution or organization has adopted MedModr and developed custom features, submit a pull request so others can benefit.
 
 ---
 
