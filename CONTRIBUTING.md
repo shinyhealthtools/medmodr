@@ -23,21 +23,6 @@ First, thank you for considering contributing to MedModr.
 
 ---
 
-## Table of Contents
-
-- [Mission](#mission)
-- [License and Freedom to Use](#license-and-freedom-to-use)
-- [Code of Conduct](#code-of-conduct)
-- [How to Contribute](#how-to-contribute)
-- [Reporting Bugs](#reporting-bugs)
-- [Suggesting Features](#suggesting-features)
-- [Development Setup](#development-setup)
-- [Pull Request Process](#pull-request-process)
-- [Style Guide](#style-guide)
-- [Questions](#questions)
-
----
-
 ## Code of Conduct
 
 This project is committed to providing a welcoming, harassment-free experience for everyone. Participants are expected to be respectful, inclusive, and constructive. Discriminatory or toxic behavior will not be tolerated.
