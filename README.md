@@ -62,13 +62,13 @@ Download the `index.html` file, open it in any web browser, and start your analy
 
 Want to contribute? Fork the repository, make your changes, and submit a pull request.
 
-🔧 **Fork on GitHub** → [github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md](https://github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md)
+🔧 **Please read CONTRIBUTING.md** → [github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md](https://github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md)
 
 ## Feedback
 
 Found a bug? Open an issue on GitHub.
 
-🐞 **Report Bugs | 💡 Request Features** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
+**Report Bugs | Request Features** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
 
 ## Links
 
