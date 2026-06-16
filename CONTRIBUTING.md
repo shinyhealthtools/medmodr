@@ -23,7 +23,7 @@ The open-source design invites statisticians, methodologists, and developers to:
 
 ### Encouragement for Adopters
 
-If your institution, research center, or organization adopts MedModr for internal use, hosts a customized version, or develops new features for your specific needs, we strongly encourage you to submit a pull request with those improvements to this official repository.
+If your institution, research center, or organization adopts MedModr for internal use, hosts a customized version, or develops new features for your specific needs, I strongly encourage you to submit a pull request with those improvements to this official repository.
 
 Even features developed for local requirements often have broader applicability. By contributing back, you help to:
 - Reduce duplication of effort across institutions
@@ -31,7 +31,7 @@ Even features developed for local requirements often have broader applicability.
 - Ensure the long-term sustainability of open-source statistical software
 - Receive community feedback and ongoing maintenance support for your contributions
 
-No contribution is too small — improvements developed for a specific use case frequently prove valuable to the wider research community.
+No contribution is too small. Improvements developed for a specific use case frequently prove valuable to the wider research community.
 
 ---
 
@@ -66,7 +66,7 @@ To report a bug such as incorrect p-values, UI failures, or calculation errors, 
    - Browser and version (e.g., Chrome 120, Firefox 121)
    - Steps to reproduce the issue
    - Expected result versus actual result (reference PROCESS Macro output where applicable)
-   - A screenshot or console error message, if available
+   - A screenshot, if available
 
 **Example:**
 
@@ -76,7 +76,7 @@ To report a bug such as incorrect p-values, UI failures, or calculation errors, 
 **Steps:**
 1. Upload a dataset with variables X, M, and Y.
 2. Run a simple moderation (Hayes Model 1) analysis with mean centering enabled
-   (e.g., "All variables centered" or "Continuous-only centered").
+   ("Continuous-only centered").
 3. Compare the interaction term coefficient against manually centered results
    and/or PROCESS Macro output.
 **Expected:** The interaction coefficient should match manual mean centering
@@ -119,6 +119,7 @@ Implement Bayesian estimation methods for mediation and moderation models, inclu
 #### 4. Enhanced UI/UX and Application Robustness
 
 Developers are encouraged to contribute improvements that make the application more robust and intuitive, including:
+
 - Improved error handling and user feedback
 - Performance optimizations for large datasets
 - Accessibility enhancements
@@ -126,7 +127,9 @@ Developers are encouraged to contribute improvements that make the application m
 - Dark mode and theme customization
 - Keyboard shortcuts for power users
 - Localization support for additional languages
-
+- Path diagrams for analysis types that currently lack visual output, with coefficient and p-value labels displayed directly on path lines, and customization options consistent with existing diagrams
+- Improvements to existing path diagrams, including better layout, styling, and interactivity
+- Overall UI redesign and modernization to make the application more visually appealing, polished, and user-friendly across all sections and workflows
 ---
 
 ## Development Guidelines
