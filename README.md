@@ -29,7 +29,7 @@ Download the `index.html` file, open it in any web browser, and start your analy
 ## Interface
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/medmodr/MedModrinterface.png" alt="MedModr Analysis Panel" width="800">
+  <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/favicons/MedModrinterface.png" alt="MedModr Analysis Panel" width="800">
   <br>
   <em>The main analysis panel showing variable assignment, analysis options, and results display.</em>
 </p>
