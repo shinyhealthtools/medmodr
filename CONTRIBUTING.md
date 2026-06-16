@@ -58,7 +58,7 @@ There are many ways to contribute, regardless of your background or skill set:
 
 ## Reporting Bugs
 
-To report a bug — such as incorrect p-values, UI failures, or calculation errors — please follow these steps:
+To report a bug such as incorrect p-values, UI failures, or calculation errors, please follow these steps:
 
 1. Search existing issues to avoid duplicates.
 2. Open a new issue with the label `bug`.
