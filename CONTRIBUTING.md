@@ -178,4 +178,4 @@ Join the conversation to discuss development, ask questions, and share ideas:
 
 I am grateful to everyone who helps make MedModr a valuable resource for researchers worldwide. Your time, expertise, and contributions however large or small directly support researchers who lack access to commercial statistical tools.
 
-MedModr was created and is currently maintained by **Mudasir Mohammed Ibrahim**. Community contributions are essential to its growth and sustainability, and every improvement you make helps advance open and accessible science globally.
+MedModr was created and is currently maintained by **[Mudasir Mohammed Ibrahim](https://mudasiribrahim.github.io/gh/)**. Community contributions are essential to its growth and sustainability, and every improvement you make helps advance open and accessible science globally.
