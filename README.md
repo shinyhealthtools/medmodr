@@ -42,7 +42,7 @@ Download the `index.html` file, open it in any web browser, and start your analy
 | **Analysis** | 9 statistical tests with PROCESS macro equivalents |
 | **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1000, 5000, and 10000 samples |
 | **Data Import** | CSV (fully offline) or Excel (requires internet only for upload) |
-| **Output** | Path diagrams, simple slopes plots, Word/PNG export, APA summaries |
+| **Output** | Path diagrams, simple slopes plots, Word/PNG export, Summaries |
 
 ## Statistical Tests and PROCESS Macro Equivalents
 
@@ -60,7 +60,7 @@ Download the `index.html` file, open it in any web browser, and start your analy
 
 ## Contribute
 
-Want to contribute? Fork the repository, make your changes, and submit a pull request.
+Want to contribute?
 
 🔧 **Please read CONTRIBUTING.md** → [github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md](https://github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md)
 
@@ -68,7 +68,7 @@ Want to contribute? Fork the repository, make your changes, and submit a pull re
 
 Found a bug? Open an issue on GitHub.
 
-**Report Bugs | Request Features** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
+**Report Bugs** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
 
 ## Links
 
@@ -77,7 +77,7 @@ Found a bug? Open an issue on GitHub.
 | Live App | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
 | Mirror | [medmodr.vercel.app](https://medmodr.vercel.app/) |
 | Downloads (Releases) | [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases) |
-| Full Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
+| Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
 | GitHub Repository | [github.com/shinyhealthtools/medmodr](https://github.com/shinyhealthtools/medmodr) |
 
