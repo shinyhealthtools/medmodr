@@ -23,7 +23,7 @@ The open-source design invites statisticians, methodologists, and developers to:
 
 ### Encouragement for Adopters
 
-If your institution, research center, or organization adopts MedModr for internal use, hosts a customized version, or develops new features for your specific needs, I strongly encourage you to submit a pull request with those improvements to this official repository.
+If your institution, research center, or organization adopts MedModr for internal use, hosts a customized version, or develops new features for your specific needs, We strongly encourage you to submit a pull request with those improvements to this official repository.
 
 Even features developed for local requirements often have broader applicability. By contributing back, you help to:
 - Reduce duplication of effort across institutions
@@ -32,12 +32,6 @@ Even features developed for local requirements often have broader applicability.
 - Receive community feedback and ongoing maintenance support for your contributions
 
 No contribution is too small. Improvements developed for a specific use case frequently prove valuable to the wider research community.
-
----
-
-## Code of Conduct
-
-This project is committed to providing a welcoming and harassment-free experience for everyone. All participants are expected to engage respectfully, inclusively, and constructively.
 
 ---
 
@@ -89,7 +83,7 @@ incorrectly or post-centering multiplication is flawed.
 
 ## Feature Requests
 
-I welcome proposals for new features. Please open an issue with the label `enhancement` and describe:
+We welcome proposals for new features. Please open an issue with the label `enhancement` and describe:
 - The statistical method or functionality you would like to implement
 - Why it would benefit researchers, with reference to specific use cases or published research
 - Any relevant literature or methodological references
@@ -179,6 +173,6 @@ Join the conversation to discuss development, ask questions, and share ideas:
 
 ## Acknowledgments
 
-I am grateful to everyone who helps make MedModr a valuable resource for researchers worldwide. Your time, expertise, and contributions however large or small directly support researchers who lack access to commercial statistical tools.
+We are grateful to everyone who helps make MedModr a valuable resource for researchers worldwide. Your time, expertise, and contributions however large or small directly support researchers who lack access to commercial statistical tools.
 
-MedModr was created and is currently maintained by **[Mudasir Mohammed Ibrahim](https://mudasiribrahim.github.io/gh/)**. Community contributions are essential to its growth and sustainability, and every improvement you make helps advance open and accessible science globally.
+**Community contributions are essential to its growth and sustainability, and every improvement you make helps advance open and accessible science globally.**
