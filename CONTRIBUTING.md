@@ -6,7 +6,7 @@
 
 ## Mission
 
-MedModr is a free, user-friendly, open-source application for mediation, moderation, and conditional process analysis. Inspired by the **Hayes PROCESS framework**, it was built to lower the barriers created by SPSS/SAS licensing costs and the programming demands that often exclude researchers in low-resource settings. The tool is designed to serve underserved individuals, including researchers with limited institutional support, independent scholars, and students in regions where expensive statistical software remains out of reach.
+MedModr is a free, user-friendly, open-source application for mediation, moderation, and conditional process analysis. Inspired by the **Hayes PROCESS framework**, it was created to lower the barriers created by SPSS/SAS licensing costs and the programming demands that often exclude researchers in low-resource settings. The tool is designed to serve underserved individuals, including researchers with limited institutional support, independent scholars, and students in regions where expensive statistical software remains out of reach.
 
 The application is distributed as a **single self-contained HTML file**, making it easy to share, host, and run directly in any modern web browser with no installation or server requirements.
 
