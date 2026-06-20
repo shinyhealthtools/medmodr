@@ -19,7 +19,9 @@ The goal is to make the most commonly used PROCESS macro models accessible to th
 
 ## Offline Use
 
-Download the `index.html` file, open it in any web browser, and start your analysis. All statistical computations run offline with **no internet required**.
+MedModr is designed for maximum accessibility and privacy. No libraries, packages, or software installations are required—simply download the `index.html` file, open it in any modern web browser, and begin your analysis immediately.
+
+All statistical computations are performed locally in your browser with **no internet connection required** after the initial download.
 
 **Data file requirements:**
 - **CSV files:** Complete offline support — upload and analyze without internet
@@ -30,8 +32,6 @@ Download the `index.html` file, open it in any web browser, and start your analy
 > **Get the latest release here:** [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)
 >
 > Always download the newest version from the official releases page. Check back regularly for updates, bug fixes, and new features.
-
----
 
 ## Interface
 
@@ -45,10 +45,24 @@ Download the `index.html` file, open it in any web browser, and start your analy
 
 | Category | Capabilities |
 |:---|:---|
-| **Analysis** | Statistical tests with PROCESS macro equivalents |
+| **Analysis** | 9 statistical tests with PROCESS macro equivalents |
 | **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1000, 5000, and 10000 samples |
 | **Data Import** | CSV (fully offline) or Excel (requires internet only for upload) |
 | **Output** | Path diagrams, simple slopes plots, Word/PNG export, Summaries |
+
+## Statistical Tests and PROCESS Macro Equivalents
+
+| MedModr Performs This Test | Equivalent PROCESS Model |
+|:---|:---:|
+| Simple Mediation (X → M → Y) | Model 4 |
+| Parallel Mediation (X → M₁...Mₖ → Y) | Model 4 |
+| Serial Mediation (X → M₁ → M₂ → Y) | Model 6 |
+| Simple Moderation (X × W → Y) | Model 1 |
+| First Stage Moderated Mediation (W moderates X → M) | Model 7 |
+| Second Stage Moderated Mediation (W moderates M → Y) | Model 14 |
+| Both Stages Moderated Mediation (W moderates X→M and M→Y) | Model 58 |
+| Moderated Moderation / Three-Way Interaction (X × W × Z → Y) | Model 3 |
+| Moderated Serial Mediation (W moderates X → M₁ → M₂ → Y) | Model 83 |
 
 ## Version History
 
@@ -86,7 +100,7 @@ The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely us
 
 MedModr is an independent, open-source implementation inspired by the analytical approaches described in Dr. Hayes's work. This project was developed from scratch using publicly available statistical methods and does not use, copy, or derive from the original PROCESS source code.
 
-While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer, not Dr. Hayes.
+While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developers, not Dr. Hayes or the original PROCESS macro team.
 
 ## Contribute
 
