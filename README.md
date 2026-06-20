@@ -15,6 +15,8 @@ MedModr was created to make advanced statistical methods easier to use for resea
 
 **MedModr** performs mediation, moderation, and conditional process analysis in the user's browser, ensuring complete privacy.
 
+The goal is to make the most commonly used PROCESS macro models accessible to the research community. Continuous development efforts will include other widely used models that are not yet in the app, ensuring that MedModr evolves to meet the growing needs of researchers and practitioners.
+
 ## Offline Use
 
 Download the `index.html` file, open it in any web browser, and start your analysis. All statistical computations run offline with **no internet required**.
@@ -93,7 +95,9 @@ Download the `index.html` file, open it in any web browser, and start your analy
 
 ## Contribute
 
-Want to contribute?
+No software is perfect. Continuous testing is encouraged to help identify and resolve issues. Found a bug? Report it as soon as possible so it can be addressed promptly.
+
+Want to contribute to MedModr? Feel free to get involved!
 
 🔧 **Please read CONTRIBUTING.md** → [github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md](https://github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md)
 
