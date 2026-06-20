@@ -8,6 +8,11 @@
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
 [![Version](https://img.shields.io/badge/Version-1.0-teal.svg)](https://github.com/shinyhealthtools/medmodr/releases)
 
+## About
+MedModr was developed by Mudasir Mohammed Ibrahim while balancing his work as a registered nurse at Tamale Teaching Hospital and his involvement in health research. Through conducting studies, supervising research projects, and performing statistical analyses, he recognized the need for a user-friendly, accessible, and open-source tool for mediation, moderation, and conditional process analysis.
+
+MedModr was created to make advanced statistical methods easier to use for researchers, students, clinicians, and academics, particularly in resource-constrained settings.
+
 **MedModr** performs mediation, moderation, and conditional process analysis in the user's browser, ensuring complete privacy.
 
 ## Offline Use
