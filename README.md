@@ -45,24 +45,10 @@ Download the `index.html` file, open it in any web browser, and start your analy
 
 | Category | Capabilities |
 |:---|:---|
-| **Analysis** | 9 statistical tests with PROCESS macro equivalents |
+| **Analysis** | Statistical tests with PROCESS macro equivalents |
 | **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1000, 5000, and 10000 samples |
 | **Data Import** | CSV (fully offline) or Excel (requires internet only for upload) |
 | **Output** | Path diagrams, simple slopes plots, Word/PNG export, Summaries |
-
-## Statistical Tests and PROCESS Macro Equivalents
-
-| MedModr Performs This Test | Equivalent PROCESS Model |
-|:---|:---:|
-| Simple Mediation (X → M → Y) | Model 4 |
-| Parallel Mediation (X → M₁...Mₖ → Y) | Model 4 |
-| Serial Mediation (X → M₁ → M₂ → Y) | Model 6 |
-| Simple Moderation (X × W → Y) | Model 1 |
-| First Stage Moderated Mediation (W moderates X → M) | Model 7 |
-| Second Stage Moderated Mediation (W moderates M → Y) | Model 14 |
-| Both Stages Moderated Mediation (W moderates X→M and M→Y) | Model 58 |
-| Moderated Moderation / Three-Way Interaction (X × W × Z → Y) | Model 3 |
-| Moderated Serial Mediation (W moderates X → M₁ → M₂ → Y) | Model 83 |
 
 ## Version History
 
