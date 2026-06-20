@@ -113,7 +113,7 @@ Found a bug? Open an issue on GitHub.
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
 | GitHub Repository | [github.com/shinyhealthtools/medmodr](https://github.com/shinyhealthtools/medmodr) |
 
-## Author
+## Original Author
 
 **Mudasir Mohammed Ibrahim**  
 *Department of Internal Medicine (M3), Tamale Teaching Hospital, Ghana*
