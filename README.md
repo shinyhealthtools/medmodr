@@ -69,7 +69,7 @@ Download the `index.html` file, open it in any web browser, and start your analy
 ### Version 2.0
 
 - Added 6 new PROCESS models: Double Moderation (Model 2), Mediation with Moderated Direct Effect (Model 5), X→M & X→Y Moderated Mediation (Model 8), Two Moderators Separate Stages (Model 9), M→Y & X→Y Moderated Mediation (Model 15), and X→M, M→Y & X→Y Moderated Mediation (Model 59)
-- Automatic logistic regression detection for binary dependent variables
+- **Automatic logistic regression detection** for binary dependent variables (Version 1 used Ordinary Least Squares / OLS regression; Version 2 introduces logistic regression for binary outcomes)
 - Enhanced path diagrams with adjustable line thickness (1px to 4px), adjustable node size (35px to 80px), and variable renaming
 - PNG export with high-resolution (up to 4800px width) and auto-cropping
 - SVG export format for path diagrams
@@ -92,6 +92,15 @@ Download the `index.html` file, open it in any web browser, and start your analy
 - Bootstrap confidence intervals (Percentile or Bias-Corrected)
 - CSV and Excel data import
 - Path diagrams, simple slopes plots, and Word/PNG export
+- **Ordinary Least Squares (OLS) regression** for all analyses
+
+## Copyright Notice
+
+The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely used tool for mediation and moderation analysis. The original PROCESS software and its documentation are proprietary to Dr. Hayes and are distributed through http://www.processmacro.org.
+
+MedModr is an independent, open-source implementation inspired by the analytical approaches described in Dr. Hayes's work. This project was developed from scratch using publicly available statistical methods and does not use, copy, or derive from the original PROCESS source code.
+
+While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developers, not Dr. Hayes or the original PROCESS macro team.
 
 ## Contribute
 
