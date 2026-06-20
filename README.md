@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
-[![Version](https://img.shields.io/badge/Version-1.0-teal.svg)](https://github.com/shinyhealthtools/medmodr/releases)
+[![Version](https://img.shields.io/badge/Version-2.0-teal.svg)](https://github.com/shinyhealthtools/medmodr/releases)
 
 ## About
 MedModr was developed by Mudasir Mohammed Ibrahim while balancing his work as a registered nurse at Tamale Teaching Hospital and his involvement in health research. Through conducting studies, supervising research projects, and performing statistical analyses, he recognized the need for a user-friendly, accessible, and open-source tool for mediation, moderation, and conditional process analysis.
@@ -62,6 +62,35 @@ Download the `index.html` file, open it in any web browser, and start your analy
 | Moderated Moderation / Three-Way Interaction (X × W × Z → Y) | Model 3 |
 | Moderated Serial Mediation (W moderates X → M₁ → M₂ → Y) | Model 83 |
 
+## Version History
+
+### Version 2.0
+
+- Added 6 new PROCESS models: Double Moderation (Model 2), Mediation with Moderated Direct Effect (Model 5), X→M & X→Y Moderated Mediation (Model 8), Two Moderators Separate Stages (Model 9), M→Y & X→Y Moderated Mediation (Model 15), and X→M, M→Y & X→Y Moderated Mediation (Model 59)
+- Automatic logistic regression detection for binary dependent variables
+- Enhanced path diagrams with adjustable line thickness (1px to 4px), adjustable node size (35px to 80px), and variable renaming
+- PNG export with high-resolution (up to 4800px width) and auto-cropping
+- SVG export format for path diagrams
+- Improved auto-sizing and text wrapping for variable names
+- Professional export dropdown menu with Word, PDF, HTML, and CSV options
+- Simple slopes plots now support binary moderators
+- Conditional direct and indirect effects now support binary moderators
+
+### Version 1.0
+
+- Simple Mediation (X → M → Y) — PROCESS Model 4
+- Parallel Mediation (X → M₁...Mₖ → Y) — PROCESS Model 4
+- Serial Mediation (X → M₁ → M₂ → Y) — PROCESS Model 6
+- Simple Moderation (X × W → Y) — PROCESS Model 1
+- First Stage Moderated Mediation (W moderates X → M) — PROCESS Model 7
+- Second Stage Moderated Mediation (W moderates M → Y) — PROCESS Model 14
+- Both Stages Moderated Mediation (W moderates X→M and M→Y) — PROCESS Model 58
+- Moderated Moderation / Three-Way Interaction (X × W × Z → Y) — PROCESS Model 3
+- Moderated Serial Mediation (W moderates X → M₁ → M₂ → Y) — PROCESS Model 83
+- Bootstrap confidence intervals (Percentile or Bias-Corrected)
+- CSV and Excel data import
+- Path diagrams, simple slopes plots, and Word/PNG export
+
 ## Contribute
 
 Want to contribute?
@@ -112,6 +141,6 @@ Found a bug? Open an issue on GitHub.
   author = {Ibrahim, Mudasir Mohammed},
   title = {MedModr: Mediation and Moderation Analysis Tool},
   year = {2026},
-  version = {1.0.0},
+  version = {2.0.0},
   url = {https://shinyhealthtools.github.io/medmodr/}
 }
