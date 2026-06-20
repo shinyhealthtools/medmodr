@@ -19,7 +19,7 @@ The goal is to make the most commonly used PROCESS macro models accessible to th
 
 ## Offline Use
 
-MedModr is designed for maximum accessibility and privacy. No libraries, packages, or software installations are required—simply download the `index.html` file, open it in any modern web browser, and begin your analysis immediately.
+MedModr is designed for maximum accessibility and privacy. No libraries, packages, or software installations are required. Simply download the `index.html` file, open it in any modern web browser, and begin your analysis immediately.
 
 All statistical computations are performed locally in your browser with **no internet connection required** after the initial download.
 
