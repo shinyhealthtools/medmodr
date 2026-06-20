@@ -82,11 +82,11 @@ All statistical computations are performed locally in your browser with **no int
 
 ## Copyright Notice
 
-The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely used tool for mediation and moderation analysis. The original PROCESS software and its documentation are proprietary to Dr. Hayes and are distributed through http://www.processmacro.org.
+The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely used tool for mediation and moderation analysis. The original PROCESS software and its documentation are proprietary to Dr. (Professor) Hayes and are distributed through http://www.processmacro.org.
 
-MedModr is an independent, open-source implementation inspired by the analytical approaches described in Dr. Hayes's work. This project was developed from scratch using publicly available statistical methods and does not use, copy, or derive from the original PROCESS source code.
+MedModr is an independent, open-source implementation inspired by the analytical approaches described in Dr. (Professor) Hayes's work. This project was developed using native JavaScript matrix algebra from scratch using publicly available statistical methods and does not use, copy, or derive from the original PROCESS source code.
 
-While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer, not Dr. Hayes.
+While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer, not Dr. (Professor) Hayes.
 
 ## Contribute
 
