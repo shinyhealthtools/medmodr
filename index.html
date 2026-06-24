@@ -8180,51 +8180,65 @@ function renderDataPreviewUI() {
 }
 
 function updateStep4Buttons() {
-  let hasMissing = false;
-  for (let i = 0; i < currentWorkingData.length; i++) {
-    for (let j = 0; j < currentWorkingData[i].length; j++) {
-      const cell = currentWorkingData[i][j];
-      if (cell === null || cell === '' || (typeof cell === 'string' && cell.trim() === '')) {
-        hasMissing = true;
-        break;
-      }
+    var hasMissing = false;
+    for (var i = 0; i < currentWorkingData.length; i++) {
+        for (var j = 0; j < currentWorkingData[i].length; j++) {
+            var cell = currentWorkingData[i][j];
+            var isStandardMissing = (cell === null || cell === '' || (typeof cell === 'string' && cell.trim() === ''));
+            var isUserDefinedMissing = userDefinedMissingActive && userDefinedMissingValues.length > 0 && userDefinedMissingValues.indexOf(String(cell)) !== -1;
+            if (isStandardMissing || isUserDefinedMissing) {
+                hasMissing = true;
+                break;
+            }
+        }
+        if (hasMissing) break;
     }
-    if (hasMissing) break;
-  }
-  
-  const proceedBtn = document.getElementById('proceedWithMissingBtn');
-  const imputeBtn = document.getElementById('applyImputationBtn');
-  const listwiseBtn = document.getElementById('listwiseDeleteBtn');
-  
-  if (proceedBtn) {
-    if (hasMissing) {
-      proceedBtn.innerHTML = '<i class="fas fa-forward"></i> Proceed (with missing data)';
-      proceedBtn.style.opacity = '1';
-    } else {
-      proceedBtn.innerHTML = '<i class="fas fa-forward"></i> Proceed to Screening';
-      proceedBtn.style.opacity = '1';
+    
+    var proceedBtn = document.getElementById('proceedWithMissingBtn');
+    var imputeBtn = document.getElementById('applyImputationBtn');
+    var listwiseBtn = document.getElementById('listwiseDeleteBtn');
+    
+    if (proceedBtn) {
+        if (hasMissing) {
+            proceedBtn.innerHTML = '<i class="fas fa-forward"></i> Proceed (with missing data)';
+            proceedBtn.style.opacity = '1';
+            proceedBtn.style.pointerEvents = 'auto';
+            proceedBtn.disabled = false;
+        } else {
+            proceedBtn.innerHTML = '<i class="fas fa-forward"></i> Proceed to Screening';
+            proceedBtn.style.opacity = '1';
+            proceedBtn.style.pointerEvents = 'auto';
+            proceedBtn.disabled = false;
+        }
     }
-  }
-  
-  if (imputeBtn && !hasMissing) {
-    imputeBtn.style.opacity = '0.5';
-    imputeBtn.disabled = true;
-    imputeBtn.title = 'No missing data to impute';
-  } else if (imputeBtn) {
-    imputeBtn.style.opacity = '1';
-    imputeBtn.disabled = false;
-    imputeBtn.title = '';
-  }
-  
-  if (listwiseBtn && !hasMissing) {
-    listwiseBtn.style.opacity = '0.5';
-    listwiseBtn.disabled = true;
-    listwiseBtn.title = 'No missing data to delete';
-  } else if (listwiseBtn) {
-    listwiseBtn.style.opacity = '1';
-    listwiseBtn.disabled = false;
-    listwiseBtn.title = '';
-  }
+    
+    if (imputeBtn) {
+        if (hasMissing) {
+            imputeBtn.style.opacity = '1';
+            imputeBtn.style.pointerEvents = 'auto';
+            imputeBtn.disabled = false;
+            imputeBtn.title = '';
+        } else {
+            imputeBtn.style.opacity = '0.5';
+            imputeBtn.style.pointerEvents = 'none';
+            imputeBtn.disabled = true;
+            imputeBtn.title = 'No missing data to impute';
+        }
+    }
+    
+    if (listwiseBtn) {
+        if (hasMissing) {
+            listwiseBtn.style.opacity = '1';
+            listwiseBtn.style.pointerEvents = 'auto';
+            listwiseBtn.disabled = false;
+            listwiseBtn.title = '';
+        } else {
+            listwiseBtn.style.opacity = '0.5';
+            listwiseBtn.style.pointerEvents = 'none';
+            listwiseBtn.disabled = true;
+            listwiseBtn.title = 'No missing data to delete';
+        }
+    }
 }
 
 let userDefinedMissingValues = [];
@@ -8337,26 +8351,108 @@ function toggleUserDefinedMissing() {
 }
 
 function applyUserDefinedMissing() {
-    const input = document.getElementById('userDefinedMissingInput');
+    var input = document.getElementById('userDefinedMissingInput');
     if (!input) return;
-    const rawValues = input.value.split(',').map(v => v.trim()).filter(v => v !== '');
+    var rawValues = input.value.split(',').map(function(v) { return v.trim(); }).filter(function(v) { return v !== ''; });
+    
+    if (rawValues.length === 0) {
+        showDataNotification('Please enter at least one value to mark as missing.', 'warning');
+        return;
+    }
+    
     userDefinedMissingValues = rawValues;
     userDefinedMissingActive = true;
-    const toggle = document.getElementById('userDefinedMissingToggle');
+    var toggle = document.getElementById('userDefinedMissingToggle');
     if (toggle) toggle.checked = true;
+    
+    var changed = 0;
+    if (currentWorkingData && currentWorkingData.length > 0) {
+        var result = applyCustomMissingToData(currentWorkingData, currentWorkingColumns, rawValues);
+        currentWorkingData = result.data;
+        changed = result.count;
+    }
+    
+    if (importedRawData && importedRawData.length > 0) {
+        var result2 = applyCustomMissingToData(importedRawData, importedRawColumns, rawValues);
+        importedRawData = result2.data;
+    }
+    
+    if (window.analysisData && window.analysisData.length > 0) {
+        var result3 = applyCustomMissingToData(window.analysisData, window.analysisColumns, rawValues);
+        window.analysisData = result3.data;
+    }
+    
+    if (originalDataBackup && originalDataBackup.length > 0) {
+        var result4 = applyCustomMissingToData(originalDataBackup, currentWorkingColumns, rawValues);
+        originalDataBackup = result4.data;
+    }
+    
+    if (typeof detectVariableTypes === 'function') {
+        detectVariableTypes();
+    }
+    
     renderMissingDataReport();
-    showDataNotification(`Applied ${userDefinedMissingValues.length} custom missing value(s): ${userDefinedMissingValues.join(', ')}`, 'success');
+    updateStep4Buttons();
+    
+    if (changed > 0) {
+        showDataNotification('Applied ' + changed + ' custom missing value(s). ' + rawValues.length + ' value(s) defined as missing.', 'success');
+    } else {
+        showDataNotification('No matching values found to mark as missing.', 'info');
+    }
 }
 
 function clearUserDefinedMissing() {
     userDefinedMissingValues = [];
     userDefinedMissingActive = false;
-    const toggle = document.getElementById('userDefinedMissingToggle');
+    var toggle = document.getElementById('userDefinedMissingToggle');
     if (toggle) toggle.checked = false;
-    const input = document.getElementById('userDefinedMissingInput');
+    var input = document.getElementById('userDefinedMissingInput');
     if (input) input.value = '';
+    
+    var changedCount = 0;
+    if (originalDataBackup && originalDataBackup.length > 0 && currentWorkingData && currentWorkingData.length > 0) {
+        for (var i = 0; i < currentWorkingData.length && i < originalDataBackup.length; i++) {
+            for (var j = 0; j < currentWorkingData[i].length && j < originalDataBackup[i].length; j++) {
+                if (currentWorkingData[i][j] === null && originalDataBackup[i][j] !== null && originalDataBackup[i][j] !== undefined) {
+                    currentWorkingData[i][j] = originalDataBackup[i][j];
+                    changedCount++;
+                }
+            }
+        }
+    }
+    
+    if (importedRawData && importedRawData.length > 0 && originalDataBackup && originalDataBackup.length > 0) {
+        for (var i2 = 0; i2 < importedRawData.length && i2 < originalDataBackup.length; i2++) {
+            for (var j2 = 0; j2 < importedRawData[i2].length && j2 < originalDataBackup[i2].length; j2++) {
+                if (importedRawData[i2][j2] === null && originalDataBackup[i2][j2] !== null && originalDataBackup[i2][j2] !== undefined) {
+                    importedRawData[i2][j2] = originalDataBackup[i2][j2];
+                }
+            }
+        }
+    }
+    
+    if (window.analysisData && window.analysisData.length > 0 && originalDataBackup && originalDataBackup.length > 0) {
+        for (var i3 = 0; i3 < window.analysisData.length && i3 < originalDataBackup.length; i3++) {
+            for (var j3 = 0; j3 < window.analysisData[i3].length && j3 < originalDataBackup[i3].length; j3++) {
+                if (window.analysisData[i3][j3] === null && originalDataBackup[i3][j3] !== null && originalDataBackup[i3][j3] !== undefined) {
+                    window.analysisData[i3][j3] = originalDataBackup[i3][j3];
+                }
+            }
+        }
+    }
+    
+    if (typeof detectVariableTypes === 'function') {
+        detectVariableTypes();
+    }
+    
     renderMissingDataReport();
-    showDataNotification('Cleared all custom missing values', 'info');
+    updateStep4Buttons();
+    
+    if (changedCount > 0) {
+        showDataNotification('Cleared custom missing values: ' + changedCount + ' cell(s) restored.', 'info');
+    } else {
+        showDataNotification('Cleared all custom missing values.', 'info');
+    }
 }
 
 function getUserDefinedMissingList() {
