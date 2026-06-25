@@ -6,15 +6,13 @@
 
 ## About
 
-MedModr is an open source web application for mediation, moderation, and conditional process analysis. Developed by Mudasir Mohammed Ibrahim, a registered nurse and health researcher at Tamale Teaching Hospital in Ghana, the tool addresses the growing need for accessible statistical software in resource constrained environments.
+MedModr is a free, browser-based, open-source application for mediation, moderation, and conditional process analysis, developed by Mudasir Mohammed Ibrahim, a registered nurse and health researcher at Tamale Teaching Hospital, Ghana. The software was created to address the limited access to affordable statistical tools for advanced modeling, particularly in resource-constrained settings.
 
-Through years of conducting research, supervising student projects, and performing statistical analyses, the developer identified a critical gap. Researchers, students, and clinicians often lack access to affordable tools for advanced statistical modeling. The PROCESS macro, while widely used for mediation and moderation analysis, requires SPSS or SAS commercial licenses that many institutions and individuals cannot afford. Additionally, implementing these analyses in R demands programming expertise and significant time investment, creating further barriers for researchers without coding backgrounds.
+While the PROCESS macro remains a widely used approach for mediation and moderation analysis, its use often depends on commercial SPSS or SAS licenses, and R-based alternatives require programming expertise. These barriers can limit access for researchers, students, clinicians, and independent scholars.
 
-These obstacles exclude countless researchers, particularly those in low resource settings, independent scholars, and students with limited institutional support. Commercial software licenses are prohibitively expensive, and the learning curve for programming based solutions prevents many from conducting advanced statistical analyses.
+MedModr provides an accessible alternative by offering a no-cost, browser-based platform that requires no installation, licensing, or coding skills. All analyses are performed locally within the user's browser, ensuring data privacy and security.
 
-MedModr eliminates these barriers by providing a free, browser based solution that requires no installation, licensing, or coding knowledge. The application runs entirely in the user's browser, ensuring complete data privacy with no data transmitted to external servers.
-
-MedModr currently implements fifteen (15) most widely used PROCESS macro models and continues to evolve. Future development will expand support to include additional models, ensuring the tool remains responsive to the needs of the research community.
+The application currently supports 15 widely used PROCESS models, with ongoing development aimed at expanding model coverage and enhancing functionality to meet the evolving needs of the research community.
 
 ## Offline Use
 
