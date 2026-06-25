@@ -8,14 +8,19 @@
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
 [![Version](https://img.shields.io/badge/Version-2.0-teal.svg)](https://github.com/shinyhealthtools/medmodr/releases)
 
+---
+
 ## About
-MedModr was developed by Mudasir Mohammed Ibrahim while balancing his work as a registered nurse at Tamale Teaching Hospital and his involvement in health research. Through conducting studies, supervising research projects, and performing statistical analyses, he recognized the need for a user-friendly, accessible, and open-source tool for mediation, moderation, and conditional process analysis.
+
+MedModr was developed by **Mudasir Mohammed Ibrahim** while balancing his work as a registered nurse at Tamale Teaching Hospital and his involvement in health research. Through conducting studies, supervising research projects, and performing statistical analyses, he recognized the need for a user-friendly, accessible, and open-source tool for mediation, moderation, and conditional process analysis.
 
 MedModr was created to make advanced statistical methods easier to use for researchers, students, clinicians, and academics, particularly in resource-constrained settings.
 
 **MedModr** performs mediation, moderation, and conditional process analysis in the user's browser, ensuring complete privacy.
 
 The goal is to make the most commonly used PROCESS macro models accessible to the research community. Continuous development efforts will include other widely used models that are not yet in the app, ensuring that MedModr evolves to meet the growing needs of researchers and practitioners.
+
+---
 
 ## Offline Use
 
@@ -27,11 +32,15 @@ All statistical computations are performed locally in your browser with **no int
 - **CSV files:** Complete offline support — upload and analyze without internet
 - **Excel files (.xlsx, .xls):** Internet connection is needed **only during file upload** (to parse the Excel format). After the data is loaded, disconnect from the internet and run the full analysis offline.
 
+---
+
 ## Download the Latest Version
 
 > **Get the latest release here:** [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)
 >
 > Always download the newest version from the official releases page. Check back regularly for updates, bug fixes, and new features.
+
+---
 
 ## Interface
 
@@ -41,6 +50,8 @@ All statistical computations are performed locally in your browser with **no int
   <em>The main analysis panel showing variable assignment, analysis options, and results display.</em>
 </p>
 
+---
+
 ## Features
 
 | Category | Capabilities |
@@ -49,6 +60,8 @@ All statistical computations are performed locally in your browser with **no int
 | **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1000, 5000, and 10000 samples |
 | **Data Import** | CSV (fully offline) or Excel (requires internet only for upload) |
 | **Output** | Path diagrams, simple slopes plots, Word/PNG export, Summaries |
+
+---
 
 ## Version History
 
@@ -80,6 +93,8 @@ All statistical computations are performed locally in your browser with **no int
 - Path diagrams, simple slopes plots, and Word/PNG export
 - **Ordinary Least Squares (OLS) regression** for all analyses
 
+---
+
 ## Copyright Notice
 
 The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely used tool for mediation and moderation analysis. The original PROCESS software and its documentation are proprietary to Dr. (Professor) Hayes and are distributed through http://www.processmacro.org.
@@ -87,6 +102,8 @@ The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely us
 MedModr is an independent, open-source implementation inspired by the analytical approaches described in Dr. (Professor) Hayes's work. This project was developed using native JavaScript matrix algebra from scratch using publicly available statistical methods and does not use, copy, or derive from the original PROCESS source code.
 
 While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer, not Dr. (Professor) Hayes.
+
+---
 
 ## Contribute
 
@@ -96,11 +113,15 @@ Want to contribute to MedModr? Feel free to get involved!
 
 🔧 **Please read CONTRIBUTING.md** → [github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md](https://github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md)
 
+---
+
 ## Feedback
 
 Found a bug? Open an issue on GitHub.
 
 **Report Bugs** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
+
+---
 
 ## Links
 
@@ -112,6 +133,8 @@ Found a bug? Open an issue on GitHub.
 | Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
 | GitHub Repository | [github.com/shinyhealthtools/medmodr](https://github.com/shinyhealthtools/medmodr) |
+
+---
 
 ## Original Author
 
@@ -132,6 +155,8 @@ Found a bug? Open an issue on GitHub.
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
   </a>
 </p>
+
+---
 
 ## Citation
 
