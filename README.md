@@ -14,7 +14,7 @@ These obstacles exclude countless researchers, particularly those in low resourc
 
 MedModr eliminates these barriers by providing a free, browser based solution that requires no installation, licensing, or coding knowledge. The application runs entirely in the user's browser, ensuring complete data privacy with no data transmitted to external servers.
 
-MedModr currently implements the most widely used PROCESS macro models and continues to evolve. Future development will expand support to include additional models, ensuring the tool remains responsive to the needs of the research community.
+MedModr currently implements fifteen (15) most widely used PROCESS macro models and continues to evolve. Future development will expand support to include additional models, ensuring the tool remains responsive to the needs of the research community.
 
 ## Offline Use
 
