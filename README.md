@@ -11,32 +11,31 @@
 
 ## About
 
-MedModr was developed by **Mudasir Mohammed Ibrahim** while balancing his work as a registered nurse at Tamale Teaching Hospital and his involvement in health research. Through conducting studies, supervising research projects, and performing statistical analyses, he recognized the need for a user-friendly, accessible, and open-source tool for mediation, moderation, and conditional process analysis.
+MedModr is an open source web application for mediation, moderation, and conditional process analysis. Developed by Mudasir Mohammed Ibrahim, a registered nurse and health researcher at Tamale Teaching Hospital in Ghana, the tool addresses the growing need for accessible statistical software in resource constrained environments.
 
-MedModr was created to make advanced statistical methods easier to use for researchers, students, clinicians, and academics, particularly in resource-constrained settings.
+Through years of conducting research, supervising student projects, and performing statistical analyses, the developer identified a critical gap. Researchers, students, and clinicians often lack access to affordable tools for advanced statistical modeling. The PROCESS macro, while widely used for mediation and moderation analysis, requires SPSS or SAS commercial licenses that many institutions and individuals cannot afford. Additionally, implementing these analyses in R demands programming expertise and significant time investment, creating further barriers for researchers without coding backgrounds.
 
-**MedModr** performs mediation, moderation, and conditional process analysis in the user's browser, ensuring complete privacy.
+These obstacles exclude countless researchers, particularly those in low resource settings, independent scholars, and students with limited institutional support. Commercial software licenses are prohibitively expensive, and the learning curve for programming based solutions prevents many from conducting advanced statistical analyses.
 
-The goal is to make the most commonly used PROCESS macro models accessible to the research community. Continuous development efforts will include other widely used models that are not yet in the app, ensuring that MedModr evolves to meet the growing needs of researchers, students, clinicians, and academics.
+MedModr eliminates these barriers by providing a free, browser based solution that requires no installation, licensing, or coding knowledge. The application runs entirely in the user's browser, ensuring complete data privacy with no data transmitted to external servers.
 
+MedModr currently implements the most widely used PROCESS macro models and continues to evolve. Future development will expand support to include additional models, ensuring the tool remains responsive to the needs of the research community.
 
 ## Offline Use
 
-MedModr is designed for maximum accessibility and privacy. No libraries, packages, or software installations are required. Simply download the `index.html` file, open it in any modern web browser, and begin your analysis immediately.
+MedModr prioritizes accessibility and data privacy. No libraries, packages, or software installations are required. Users simply download the `index.html` file, open it in any modern web browser, and begin analysis immediately.
 
-All statistical computations are performed locally in your browser with **no internet connection required** after the initial download.
+All statistical computations are performed locally in the browser. No internet connection is required after the initial download.
 
 **Data file requirements:**
-- **CSV files:** Complete offline support — upload and analyze without internet
-- **Excel files (.xlsx, .xls):** Internet connection is needed **only during file upload** (to parse the Excel format). After the data is loaded, disconnect from the internet and run the full analysis offline.
-
+- **CSV files:** Full offline support. Users can upload and analyze without internet connectivity.
+- **Excel files (.xlsx, .xls):** Internet connection is required only during file upload to parse the Excel format. After the data is loaded, users can disconnect from the internet and run the complete analysis offline.
 
 ## Download the Latest Version
 
-> **Get the latest release here:** [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)
->
-> Always download the newest version from the official releases page. Check back regularly for updates, bug fixes, and new features.
+**Get the latest release:** [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)
 
+Users should always download the newest version from the official releases page and check back regularly for updates, bug fixes, and new features.
 
 ## Interface
 
@@ -46,27 +45,25 @@ All statistical computations are performed locally in your browser with **no int
   <em>The main analysis panel showing variable assignment, analysis options, and results display.</em>
 </p>
 
-
 ## Features
 
 | Category | Capabilities |
 |:---|:---|
 | **Analysis** | Statistical tests with PROCESS macro equivalents |
 | **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1000, 5000, and 10000 samples |
-| **Data Import** | CSV (fully offline) or Excel (requires internet only for upload) |
-| **Output** | Path diagrams, simple slopes plots, Word/PNG export, Summaries |
-
+| **Data Import** | CSV (fully offline) or Excel (internet required only for upload) |
+| **Output** | Path diagrams, simple slopes plots, Word/PNG export, summaries |
 
 ## Version History
 
 ### Version 2.0
 
-- Added 6 new PROCESS models: Double Moderation (Model 2), Mediation with Moderated Direct Effect (Model 5), X→M & X→Y Moderated Mediation (Model 8), Two Moderators Separate Stages (Model 9), M→Y & X→Y Moderated Mediation (Model 15), and X→M, M→Y & X→Y Moderated Mediation (Model 59)
-- **Automatic logistic regression detection** for binary dependent variables (Version 1 used Ordinary Least Squares / OLS regression; Version 2 introduces logistic regression for binary outcomes)
+- Added 6 new PROCESS models: Double Moderation (Model 2), Mediation with Moderated Direct Effect (Model 5), X→M and X→Y Moderated Mediation (Model 8), Two Moderators Separate Stages (Model 9), M→Y and X→Y Moderated Mediation (Model 15), and X→M, M→Y and X→Y Moderated Mediation (Model 59)
+- Automatic logistic regression detection for binary dependent variables. Version 1 used Ordinary Least Squares (OLS) regression. Version 2 introduces logistic regression for binary outcomes.
 - Enhanced path diagrams with adjustable line thickness (1px to 4px), adjustable node size (35px to 80px), and variable renaming
-- PNG export with high-resolution (up to 4800px width) and auto-cropping
+- PNG export with high resolution (up to 4800px width) and auto cropping
 - SVG export format for path diagrams
-- Improved auto-sizing and text wrapping for variable names
+- Improved auto sizing and text wrapping for variable names
 - Professional export dropdown menu with Word, PDF, HTML, and CSV options
 - Simple slopes plots now support binary moderators
 - Conditional direct and indirect effects now support binary moderators
@@ -85,32 +82,29 @@ All statistical computations are performed locally in your browser with **no int
 - Bootstrap confidence intervals (Percentile or Bias-Corrected)
 - CSV and Excel data import
 - Path diagrams, simple slopes plots, and Word/PNG export
-- **Ordinary Least Squares (OLS) regression** for all analyses
+- Ordinary Least Squares (OLS) regression for all analyses
 
 ## Copyright Notice
 
-The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely used tool for mediation and moderation analysis. The original PROCESS software and its documentation are proprietary to Dr. (Professor) Hayes and are distributed through http://www.processmacro.org.
+The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely used tool for mediation and moderation analysis. The original PROCESS software and its documentation are proprietary to Dr. Hayes and are distributed through http://www.processmacro.org.
 
-MedModr is an independent, open-source implementation inspired by the analytical approaches described in Dr. (Professor) Hayes's work. This project was developed using native JavaScript matrix algebra from scratch using publicly available statistical methods and does not use, copy, or derive from the original PROCESS source code.
+MedModr is an independent, open source implementation inspired by the analytical approaches described in Dr. Hayes's work. This project was developed using native JavaScript matrix algebra from scratch using publicly available statistical methods. MedModr does not use, copy, or derive from the original PROCESS source code.
 
-While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer, not Dr. (Professor) Hayes.
-
+While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer.
 
 ## Contribute
 
-No software is perfect. Continuous testing is encouraged to help identify and resolve issues. Found a bug? Report it as soon as possible so it can be addressed promptly.
+No software is perfect. Continuous testing is encouraged to help identify and resolve issues. Users who find bugs should report them promptly to ensure timely fixes.
 
-Want to contribute to MedModr? Feel free to get involved!
+To contribute to MedModr, please read the contributing guidelines.
 
-🔧 **Please read CONTRIBUTING.md** → [github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md](https://github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md)
-
+**Read CONTRIBUTING.md** → [github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md](https://github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md)
 
 ## Feedback
 
 Found a bug? Open an issue on GitHub.
 
 **Report Bugs** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
-
 
 ## Links
 
@@ -122,11 +116,10 @@ Found a bug? Open an issue on GitHub.
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
 | GitHub Repository | [github.com/shinyhealthtools/medmodr](https://github.com/shinyhealthtools/medmodr) |
 
-
 ## Original Author
 
 **Mudasir Mohammed Ibrahim**  
-*Department of Internal Medicine (M3), Tamale Teaching Hospital, Ghana*
+Department of Internal Medicine (M3), Tamale Teaching Hospital, Ghana
 
 <p align="center">
   <a href="https://mudasiribrahim.github.io/gh/" target="_blank">
