@@ -37,7 +37,6 @@ All statistical computations are performed locally in your browser with **no int
 >
 > Always download the newest version from the official releases page. Check back regularly for updates, bug fixes, and new features.
 
----
 
 ## Interface
 
@@ -47,7 +46,6 @@ All statistical computations are performed locally in your browser with **no int
   <em>The main analysis panel showing variable assignment, analysis options, and results display.</em>
 </p>
 
----
 
 ## Features
 
@@ -58,7 +56,6 @@ All statistical computations are performed locally in your browser with **no int
 | **Data Import** | CSV (fully offline) or Excel (requires internet only for upload) |
 | **Output** | Path diagrams, simple slopes plots, Word/PNG export, Summaries |
 
----
 
 ## Version History
 
@@ -90,8 +87,6 @@ All statistical computations are performed locally in your browser with **no int
 - Path diagrams, simple slopes plots, and Word/PNG export
 - **Ordinary Least Squares (OLS) regression** for all analyses
 
----
-
 ## Copyright Notice
 
 The PROCESS macro for SPSS and SAS, developed by Andrew F. Hayes, is a widely used tool for mediation and moderation analysis. The original PROCESS software and its documentation are proprietary to Dr. (Professor) Hayes and are distributed through http://www.processmacro.org.
@@ -100,7 +95,6 @@ MedModr is an independent, open-source implementation inspired by the analytical
 
 While MedModr aims to produce results consistent with the PROCESS macro, it is not affiliated with, endorsed by, or connected to Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer, not Dr. (Professor) Hayes.
 
----
 
 ## Contribute
 
@@ -110,7 +104,6 @@ Want to contribute to MedModr? Feel free to get involved!
 
 🔧 **Please read CONTRIBUTING.md** → [github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md](https://github.com/shinyhealthtools/medmodr/blob/main/CONTRIBUTING.md)
 
----
 
 ## Feedback
 
@@ -118,20 +111,17 @@ Found a bug? Open an issue on GitHub.
 
 **Report Bugs** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
 
----
 
 ## Links
 
 | Resource | URL |
 |:---|:---|
 | Live App | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
-| Mirror | [medmodr.vercel.app](https://medmodr.vercel.app/) |
 | Downloads (Releases) | [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases) |
 | Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
 | GitHub Repository | [github.com/shinyhealthtools/medmodr](https://github.com/shinyhealthtools/medmodr) |
 
----
 
 ## Original Author
 
@@ -152,8 +142,6 @@ Found a bug? Open an issue on GitHub.
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
   </a>
 </p>
-
----
 
 ## Citation
 
