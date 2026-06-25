@@ -8,7 +8,6 @@
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
 [![Version](https://img.shields.io/badge/Version-2.0-teal.svg)](https://github.com/shinyhealthtools/medmodr/releases)
 
----
 
 ## About
 
