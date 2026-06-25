@@ -18,7 +18,7 @@ MedModr was created to make advanced statistical methods easier to use for resea
 
 **MedModr** performs mediation, moderation, and conditional process analysis in the user's browser, ensuring complete privacy.
 
-The goal is to make the most commonly used PROCESS macro models accessible to the research community. Continuous development efforts will include other widely used models that are not yet in the app, ensuring that MedModr evolves to meet the growing needs of researchers and practitioners.
+The goal is to make the most commonly used PROCESS macro models accessible to the research community. Continuous development efforts will include other widely used models that are not yet in the app, ensuring that MedModr evolves to meet the growing needs of researchers, students, clinicians, and academics.
 
 ---
 
