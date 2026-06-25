@@ -6,7 +6,7 @@
 
 ## Mission
 
-MedModr is a free, user-friendly, open-source application for mediation, moderation, and conditional process analysis. Inspired by the **Hayes PROCESS framework**, it was created to lower the barriers created by SPSS/SAS licensing costs and the programming demands that often exclude researchers in low-resource settings. The tool is designed to serve underserved individuals, including researchers with limited institutional support, independent scholars, and students in regions where expensive statistical software remains out of reach.
+MedModr is a free, user-friendly, open-source application for mediation, moderation, and conditional process analysis. Inspired by the **Hayes PROCESS framework**, it was created to lower the barriers created by SPSS/SAS licensing costs and the programming demands that often exclude researchers in low-resource settings. The application is designed to serve underserved individuals, including researchers with limited institutional support, independent scholars, and students in regions where expensive statistical software remains out of reach.
 
 The application is distributed as a **single self-contained HTML file**, making it easy to share, host, and run directly in any modern web browser with no installation or server requirements.
 
@@ -20,18 +20,6 @@ The open-source design invites statisticians, methodologists, and developers to:
 - Validate implemented statistical methods
 - Report bugs and inaccuracies
 - Contribute improvements that enhance the application over time
-
-### Encouragement for Adopters
-
-If your institution, research center, or organization adopts MedModr for internal use, hosts a customized version, or develops new features for your specific needs, We strongly encourage you to submit a pull request with those improvements to this official repository.
-
-Even features developed for local requirements often have broader applicability. By contributing back, you help to:
-- Reduce duplication of effort across institutions
-- Improve the tool for underserved researchers globally
-- Ensure the long-term sustainability of open-source statistical software
-- Receive community feedback and ongoing maintenance support for your contributions
-
-No contribution is too small. Improvements developed for a specific use case frequently prove valuable to the wider research community.
 
 ---
 
@@ -83,7 +71,7 @@ incorrectly or post-centering multiplication is flawed.
 
 ## Feature Requests
 
-We welcome proposals for new features. Please open an issue with the label `enhancement` and describe:
+Proposals for new features are welcome. Please open an issue with the label `enhancement` and describe:
 - The statistical method or functionality you would like to implement
 - Why it would benefit researchers, with reference to specific use cases or published research
 - Any relevant literature or methodological references
@@ -170,9 +158,4 @@ Join the conversation to discuss development, ask questions, and share ideas:
 - **Discussions:** Share ideas and get help from other contributors
 
 ---
-
-## Acknowledgments
-
-We are grateful to everyone who helps make MedModr a valuable resource for researchers worldwide. Your time, expertise, and contributions however large or small directly support researchers who lack access to commercial statistical tools.
-
 **Community contributions are essential to its growth and sustainability, and every improvement you make helps advance open and accessible science globally.**
