@@ -19,7 +19,6 @@ MedModr was created to make advanced statistical methods easier to use for resea
 
 The goal is to make the most commonly used PROCESS macro models accessible to the research community. Continuous development efforts will include other widely used models that are not yet in the app, ensuring that MedModr evolves to meet the growing needs of researchers, students, clinicians, and academics.
 
----
 
 ## Offline Use
 
@@ -31,7 +30,6 @@ All statistical computations are performed locally in your browser with **no int
 - **CSV files:** Complete offline support — upload and analyze without internet
 - **Excel files (.xlsx, .xls):** Internet connection is needed **only during file upload** (to parse the Excel format). After the data is loaded, disconnect from the internet and run the full analysis offline.
 
----
 
 ## Download the Latest Version
 
