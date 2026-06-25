@@ -4,11 +4,6 @@
   <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/favicons/MedModr-Logo.png" alt="MedModr Hero">
 </p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Offline-lightgrey.svg)](https://shinyhealthtools.github.io/medmodr/)
-[![Version](https://img.shields.io/badge/Version-2.0-teal.svg)](https://github.com/shinyhealthtools/medmodr/releases)
-
-
 ## About
 
 MedModr is an open source web application for mediation, moderation, and conditional process analysis. Developed by Mudasir Mohammed Ibrahim, a registered nurse and health researcher at Tamale Teaching Hospital in Ghana, the tool addresses the growing need for accessible statistical software in resource constrained environments.
