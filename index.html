@@ -15960,7 +15960,7 @@ b-path (${mn} → ${yn}): b = ${fmtv(b)}, SE = ${fmtv(seb)}, p ${fmtp(rY.p[2])} 
 c-path (Total effect, ${xn} → ${yn}): b = ${fmtv(ctot)}, SE = ${fmtv(rTot.se[1])}, p ${fmtp(rTot.p[1])} — <strong>${totalEffectSig ? 'significant' : 'non-significant'}</strong><br>
 c'-path (Direct effect, ${xn} → ${yn}): b = ${fmtv(cp)}, SE = ${fmtv(rY.se[1])}, p ${fmtp(rY.p[1])} — <strong>${directEffectSig ? 'significant' : 'non-significant'}</strong></p>
 
-<p><strong>Indirect effect = ${fmtv(ind)}</strong>, SE = ${fmtv(se_sob)}, z = ${fmtv(z_sob, 3)}, p ${fmtp(p_sob)} — <strong>${indirectSig ? 'significant' : 'non-significant'}</strong></p>
+<p><strong>Indirect effect = ${fmtv(ind)}</strong>, SE = ${fmtv(se_sob)}, t/z = ${fmtv(z_sob, 3)}, p ${fmtp(p_sob)} — <strong>${indirectSig ? 'significant' : 'non-significant'}</strong></p>
 
 <p><strong>Overall interpretation:</strong> ${mediationType}. The indirect effect of ${xn} on ${yn} through ${mn} ${indirectSig ? 'is' : 'is not'} statistically significant based on the Sobel test. The direct effect ${directEffectSig ? 'remains significant' : 'is not significant'} after accounting for the mediator.</p>`;
   }
@@ -18293,7 +18293,7 @@ function runDoubleModeration(vars, covArrays, covNames, cl, nBoot, centerOption)
         </div>
         <div class="res-table-wrap"><table class="res-table">
           <thead>
-            <tr><th style="text-align: right;">${wn}</th><th style="text-align: right;">${zn}</th><th style="text-align: right;">Effect</th><th style="text-align: right;">SE</th><th style="text-align: right;">t</th><th style="text-align: right;">p</th><th style="text-align: right;">LLCI</th><th style="text-align: right;">ULCI</th></tr>
+            <tr><th style="text-align: right;">${wn}</th><th style="text-align: right;">${zn}</th><th style="text-align: right;">Effect</th><th style="text-align: right;">SE</th><th style="text-align: right;">t/z</th><th style="text-align: right;">p</th><th style="text-align: right;">LLCI</th><th style="text-align: right;">ULCI</th></tr>
           </thead>
           <tbody>${conditionalEffectRows.join('')}</tbody>
         </table></div>
@@ -22320,7 +22320,7 @@ function runModeratedModeration(vars, covArrays, covNames, cl, nBoot, centerOpti
                 <th style="text-align: right; padding: 10px 12px; border: 1px solid var(--border-med); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">${zn}</th>
                 <th style="text-align: right; padding: 10px 12px; border: 1px solid var(--border-med); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">Effect</th>
                 <th style="text-align: right; padding: 10px 12px; border: 1px solid var(--border-med); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">SE</th>
-                <th style="text-align: right; padding: 10px 12px; border: 1px solid var(--border-med); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">t</th>
+                <th style="text-align: right; padding: 10px 12px; border: 1px solid var(--border-med); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">t/z</th>
                 <th style="text-align: right; padding: 10px 12px; border: 1px solid var(--border-med); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">p</th>
                 <th style="text-align: right; padding: 10px 12px; border: 1px solid var(--border-med); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">LLCI</th>
                 <th style="text-align: right; padding: 10px 12px; border: 1px solid var(--border-med); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">ULCI</th>
