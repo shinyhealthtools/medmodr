@@ -12319,7 +12319,7 @@ function runModeratedSerialMediation_FirstStage(vars, covArrays, covNames, cl, n
     conditionalHtml += `<div class="res-sub-label"><i class="fas fa-chart-line"></i> Conditional Indirect Effect: ${xn} → ${m1n} → ${yn}</div>
     <div class="res-table-wrap"><table class="res-table">
         <thead><tr><th rowspan="2">${wn} Level</th><th colspan="7" class="th-group">Conditional Indirect Effect</th></tr>
-        <tr><th>Effect</th><th>SE</th><th>z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig?</th></tr></thead>
+        <tr><th>Effect</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig?</th></tr></thead>
         <tbody>${generateCondRows(conditional_xm1y, nBoot > 0)}</tbody>
     </table></div>`;
     
@@ -12327,7 +12327,7 @@ function runModeratedSerialMediation_FirstStage(vars, covArrays, covNames, cl, n
         conditionalHtml += `<div class="res-sub-label"><i class="fas fa-chart-line"></i> Conditional Indirect Effect: ${xn} → ${m1n} → ${m2n} → ${yn}</div>
         <div class="res-table-wrap"><table class="res-table">
             <thead><tr><th rowspan="2">${wn} Level</th><th colspan="7" class="th-group">Conditional Indirect Effect</th></tr>
-            <tr><th>Effect</th><th>SE</th><th>z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig?</th></tr></thead>
+            <tr><th>Effect</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig?</th></tr></thead>
             <tbody>${generateCondRows(conditional_serial, nBoot > 0)}</tbody>
         </table></div>`;
     }
@@ -12348,10 +12348,10 @@ function runModeratedSerialMediation_FirstStage(vars, covArrays, covNames, cl, n
         }
     }
         
-        simpleIndirectHtml += `<div class="res-sub-label" style="margin-top:16px"><i class="fas fa-chart-simple"></i> Simple Indirect Effect: ${xn} → ${m2n} → ${yn}</div>
+simpleIndirectHtml += `<div class="res-sub-label" style="margin-top:16px"><i class="fas fa-chart-simple"></i> Simple Indirect Effect: ${xn} → ${m2n} → ${yn}</div>
         <div class="res-table-wrap"><table class="res-table">
             <thead>
-                <tr><th>Effect</th><th>BootSE</th><th>BootLLCI (${confPct})</th><th>BootULCI (${confPct})</th><th>Sig?</th></tr>
+                <tr><th style="text-align:right">Effect</th><th style="text-align:right">BootSE</th><th style="text-align:right">BootLLCI (${confPct})</th><th style="text-align:right">BootULCI (${confPct})</th><th style="text-align:center">Sig?</th></tr>
             </thead>
             <tbody>
                 <tr>
@@ -12393,7 +12393,7 @@ function runModeratedSerialMediation_FirstStage(vars, covArrays, covNames, cl, n
     const indexHtml = `<div class="res-sub-label"><i class="fas fa-chart-simple"></i> Index of Moderated Mediation (IMM)</div>
     <div class="res-table-wrap"><table class="res-table">
         <thead><tr><th rowspan="2">Path</th><th colspan="7" class="th-group">Index of Moderated Mediation</th></tr>
-        <tr><th>b</th><th>BootSE</th><th>z</th><th>p</th><th>BootLLCI (${confPct})</th><th>BootULCI (${confPct})</th><th>Sig?</th></tr></thead>
+        <tr><th>b</th><th>BootSE</th><th>t/z</th><th>p</th><th>BootLLCI (${confPct})</th><th>BootULCI (${confPct})</th><th>Sig?</th></tr></thead>
         <tbody>${immRows}</tbody>
     </table></div>`;
     
@@ -12410,7 +12410,7 @@ let effectsRows = `
        const effectsSummaryHtml = `<div style="padding:18px;background:var(--surface-2);border-radius:var(--r-lg);border:1px solid var(--border);margin:18px 0">
         <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:14px"><i class="fas fa-share-alt"></i> Effects Summary</div>
         <div class="res-table-wrap"><table class="res-table">
-            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
+            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
             <tbody>${effectsRows}</tbody>
         </table></div>
     </div>`;
@@ -12578,7 +12578,7 @@ const wDesc = [
                 <thead>
                     <tr>
                         <th>${wn} Level</th>
-                        <th>b</th><th>SE</th><th>t</th><th>p</th>
+                        <th>b</th><th>SE</th><th>t/z</th><th>p</th>
                         <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
                     </tr>
                 </thead>
@@ -12989,7 +12989,7 @@ function renderIndirectTable(paths, confLabel){
                     <th colspan="1" class="th-group col-divider" style="color:var(--violet);background:rgba(109,40,217,.07);border-color:var(--violet)">Standardized</th>
                 </tr>
                 <tr>
-                    <th>b</th><th>SE</th><th>t</th><th>p</th>
+                    <th>b</th><th>SE</th><th>t/z</th><th>p</th>
                     <th>LLCI (${pct}%)</th><th>ULCI (${pct}%)</th><th></th>
                     <th class="col-divider" style="color:var(--violet)">β</th>
                 </tr>
@@ -15992,7 +15992,7 @@ const diagData={
         <th colspan="1" class="th-group col-divider" style="color:var(--violet);background:rgba(109,40,217,.07);border-color:var(--violet)">Standardized</th>
       </tr>
       <tr>
-        <th>b</th><th>SE</th><th>z/t</th><th>p</th>
+        <th>b</th><th>SE</th><th>t/z</th><th>p</th>
         <th>LLCI</th><th>ULCI</th><th>Sig.</th>
         <th class="col-divider" style="color:var(--violet)">β</th>
       </tr>
@@ -17325,7 +17325,7 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
             <i class="fas fa-share-alt"></i> Effects Summary
         </div>
         <div class="res-table-wrap"><table class="res-table">
-            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th class="col-divider">β</th><th>Sig.</th></tr></thead>
+            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th class="col-divider">β</th><th>Sig.</th></tr></thead>
             <tbody>${directEffectRow}</tbody>
         </table></div>
     </div>`;
@@ -17380,15 +17380,15 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
             <p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates all three paths: (1) ${xn} → ${mn} (first stage), (2) ${mn} → ${yn} (second stage), and (3) the direct ${xn} → ${yn} path.</p>
             
             <p><strong>Path coefficients:</strong><br>
-            a₁-path (${xn} → ${mn}): b = ${fmtv(a1, 3)}, SE = ${fmtv(a1_se, 3)}, t = ${fmtv(rM.t[1], 3)}, p ${fmtp(a1_p)} — <strong>${a1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-            a₃-path (${xn}×${wn} → ${mn}): b = ${fmtv(a3, 3)}, SE = ${fmtv(a3_se, 3)}, t = ${fmtv(rM.t[3], 3)}, p ${fmtp(a3_p)} — <strong>${a3Sig ? 'significant' : 'non-significant'}</strong><br>
-            b₁-path (${mn} → ${yn}): b = ${fmtv(b1, 3)}, SE = ${fmtv(b1_se, 3)}, t = ${fmtv(rY.t[2], 3)}, p ${fmtp(b1_p)} — <strong>${b1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-            b₂-path (${mn}×${wn} → ${yn}): b = ${fmtv(b2, 3)}, SE = ${fmtv(b2_se, 3)}, t = ${fmtv(rY.t[5], 3)}, p ${fmtp(b2_p)} — <strong>${b2Sig ? 'significant' : 'non-significant'}</strong><br>
-            c'-path (${xn} → ${yn}|M,W): b = ${fmtv(c1, 3)}, SE = ${fmtv(c1_se, 3)}, t = ${fmtv(rY.t[1], 3)}, p ${fmtp(c1_p)} — <strong>${c1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-            c'₃-path (${xn}×${wn} → ${yn}): b = ${fmtv(c3, 3)}, SE = ${fmtv(c3_se, 3)}, t = ${fmtv(rY.t[4], 3)}, p ${fmtp(c3_p)} — <strong>${c3Sig ? 'significant' : 'non-significant'}</strong><br>
+            a₁-path (${xn} → ${mn}): b = ${fmtv(a1, 3)}, SE = ${fmtv(a1_se, 3)}, t/z = ${fmtv(rM.t[1], 3)}, p ${fmtp(a1_p)} — <strong>${a1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+            a₃-path (${xn}×${wn} → ${mn}): b = ${fmtv(a3, 3)}, SE = ${fmtv(a3_se, 3)}, t/z = ${fmtv(rM.t[3], 3)}, p ${fmtp(a3_p)} — <strong>${a3Sig ? 'significant' : 'non-significant'}</strong><br>
+            b₁-path (${mn} → ${yn}): b = ${fmtv(b1, 3)}, SE = ${fmtv(b1_se, 3)}, t/z = ${fmtv(rY.t[2], 3)}, p ${fmtp(b1_p)} — <strong>${b1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+            b₂-path (${mn}×${wn} → ${yn}): b = ${fmtv(b2, 3)}, SE = ${fmtv(b2_se, 3)}, t/z = ${fmtv(rY.t[5], 3)}, p ${fmtp(b2_p)} — <strong>${b2Sig ? 'significant' : 'non-significant'}</strong><br>
+            c'-path (${xn} → ${yn}|M,W): b = ${fmtv(c1, 3)}, SE = ${fmtv(c1_se, 3)}, t/z = ${fmtv(rY.t[1], 3)}, p ${fmtp(c1_p)} — <strong>${c1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+            c'₃-path (${xn}×${wn} → ${yn}): b = ${fmtv(c3, 3)}, SE = ${fmtv(c3_se, 3)}, t/z = ${fmtv(rY.t[4], 3)}, p ${fmtp(c3_p)} — <strong>${c3Sig ? 'significant' : 'non-significant'}</strong><br>
             
             <p><strong>Conditional direct effects of ${xn} on ${yn} at levels of ${wn}:</strong><br>
-            ${condDirectEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, SE = ${fmtv(e.se, 3)}, t = ${fmtv(e.t, 3)}, p ${fmtp(e.p)} — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
+            ${condDirectEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, SE = ${fmtv(e.se, 3)}, t/z = ${fmtv(e.t, 3)}, p ${fmtp(e.p)} — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
             
             <p><strong>Conditional indirect effects (${xn} → ${mn} → ${yn}) at levels of ${wn}:</strong><br>
             ${condIndEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, BootSE = ${fmtv(e.se, 3)}, ${confPct} BootCI [${fmtv(e.lo, 3)}, ${fmtv(e.hi, 3)}] — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
@@ -17410,7 +17410,7 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
             <div class="res-sub-label"><i class="fas fa-chart-line"></i> Simple Slopes: Effect of ${xn} on ${mn} at Levels of ${wn}</div>
             <div class="res-table-wrap"><table class="res-table">
                 <thead>
-                    <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
+                    <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
                 </thead>
                 <tbody>${slopeRows_a}</tbody>
             </table></div>
@@ -17425,7 +17425,7 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
             <div class="res-sub-label"><i class="fas fa-chart-line"></i> Simple Slopes: Effect of ${mn} on ${yn} at Levels of ${wn}</div>
             <div class="res-table-wrap"><table class="res-table">
                 <thead>
-                    <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
+                    <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
                 </thead>
                 <tbody>${slopeRows_b}</tbody>
             </table></div>
@@ -17444,7 +17444,7 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
                     <thead>
                         <tr>
                             <th>${wn} Level</th>
-                            <th>b</th><th>SE</th><th>t</th><th>p</th>
+                            <th>b</th><th>SE</th><th>t/z</th><th>p</th>
                             <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
                         </tr>
                     </thead>
@@ -17876,7 +17876,7 @@ const wDesc = [
             <i class="fas fa-share-alt"></i> Effects Summary
         </div>
         <div class="res-table-wrap"><table class="res-table">
-            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
+            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
             <tbody>${effectsRows}</tbody>
         </table></div>
     </div>`;
@@ -17893,10 +17893,10 @@ const wDesc = [
             <p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${mn}</strong>, specifically moderating both the ${mn}→${yn} path (b-path) and the direct ${xn}→${yn} path (c'-path).</p>
             
             <p><strong>Path coefficients:</strong><br>
-            a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
-            b₁-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t = ${rY_full.t[2].toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-            <strong>b₃-path (${mn}×${wn} → ${yn}):</strong> b = ${b_mw.toFixed(3)}, SE = ${b_mw_se.toFixed(3)}, t = ${rY_full.t[4].toFixed(3)}, p ${fmtp(b_mw_p)} — <strong>${b_mw_sig ? 'significant' : 'non-significant'}</strong><br>
-            <strong>X×W interaction (${xn}×${wn} → ${yn}):</strong> b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t = ${rY_full.t[5].toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${b_xw_sig ? 'significant' : 'non-significant'}</strong><br>
+            a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t/z = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
+            b₁-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t/z = ${rY_full.t[2].toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+            <strong>b₃-path (${mn}×${wn} → ${yn}):</strong> b = ${b_mw.toFixed(3)}, SE = ${b_mw_se.toFixed(3)}, t/z = ${rY_full.t[4].toFixed(3)}, p ${fmtp(b_mw_p)} — <strong>${b_mw_sig ? 'significant' : 'non-significant'}</strong><br>
+            <strong>X×W interaction (${xn}×${wn} → ${yn}):</strong> b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t/z = ${rY_full.t[5].toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${b_xw_sig ? 'significant' : 'non-significant'}</strong><br>
             Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${b_x.toFixed(3)}, SE = ${b_x_se.toFixed(3)}, p ${fmtp(b_x_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
             
             <p><strong>Index of Moderated Mediation :</strong> b = ${indexMM.toFixed(3)}${bootIMM ? `, BootSE = ${bootIMM.se.toFixed(3)}, 95% BootCI [${bootIMM.lo.toFixed(3)}, ${bootIMM.hi.toFixed(3)}]` : `, SE = ${indexMM_se.toFixed(3)}, z = ${indexMM_z.toFixed(3)}, p ${fmtp(indexMM_p)}`} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
@@ -17983,7 +17983,7 @@ const wDesc = [
                 </div>
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
-                        <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
+                        <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
                     </thead>
                     <tbody>${slopeRows_b}</tbody>
                 </table></div>
@@ -17996,7 +17996,7 @@ const wDesc = [
                 </div>
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
-                        <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
+                        <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
                     </thead>
                     <tbody>${slopeRows_direct}</tbody>
                 </table></div>
@@ -18009,7 +18009,7 @@ const wDesc = [
                 </div>
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
-                        <tr><th>${wn} Level</th><th>Effect</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
+                        <tr><th>${wn} Level</th><th>Effect</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
                     </thead>
                     <tbody>${condIndRows}</tbody>
                 </table></div>
@@ -18327,11 +18327,11 @@ function runDoubleModeration(vars, covArrays, covNames, cl, nBoot, centerOption)
       <p>A double moderation analysis examined whether <strong>${wn}</strong> and <strong>${zn}</strong> moderate the relationship between <strong>${xn}</strong> and <strong>${yn}</strong>.</p>
       
       <p><strong>Path coefficients (from full moderation model):</strong><br>
-      Effect of ${xn} on ${yn}: b = ${b_x.toFixed(3)}, SE = ${b_x_se.toFixed(3)}, t = ${b_x_t.toFixed(3)}, p ${fmtP(b_x_p)}${getSigStars(b_x_p)} — <strong>${x_sig ? 'significant' : 'non-significant'}</strong><br>
-      Effect of ${wn} on ${yn}: b = ${b_w.toFixed(3)}, SE = ${b_w_se.toFixed(3)}, t = ${b_w_t.toFixed(3)}, p ${fmtP(b_w_p)}${getSigStars(b_w_p)} — <strong>${w_sig ? 'significant' : 'non-significant'}</strong><br>
-      Effect of ${zn} on ${yn}: b = ${b_z.toFixed(3)}, SE = ${b_z_se.toFixed(3)}, t = ${b_z_t.toFixed(3)}, p ${fmtP(b_z_p)}${getSigStars(b_z_p)} — <strong>${z_sig ? 'significant' : 'non-significant'}</strong><br>
-      <strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t = ${b_xw_t.toFixed(3)}, p ${fmtP(b_xw_p)}${xw_stars} — <strong>${xw_sig_text ? 'significant' : 'non-significant'}</strong><br>
-      <strong>Interaction effect (${xn}×${zn} → ${yn}):</strong> b = ${b_xz.toFixed(3)}, SE = ${b_xz_se.toFixed(3)}, t = ${b_xz_t.toFixed(3)}, p ${fmtP(b_xz_p)}${xz_stars} — <strong>${xz_sig_text ? 'significant' : 'non-significant'}</strong></p>
+      Effect of ${xn} on ${yn}: b = ${b_x.toFixed(3)}, SE = ${b_x_se.toFixed(3)}, t/z = ${b_x_t.toFixed(3)}, p ${fmtP(b_x_p)}${getSigStars(b_x_p)} — <strong>${x_sig ? 'significant' : 'non-significant'}</strong><br>
+      Effect of ${wn} on ${yn}: b = ${b_w.toFixed(3)}, SE = ${b_w_se.toFixed(3)}, t/z = ${b_w_t.toFixed(3)}, p ${fmtP(b_w_p)}${getSigStars(b_w_p)} — <strong>${w_sig ? 'significant' : 'non-significant'}</strong><br>
+      Effect of ${zn} on ${yn}: b = ${b_z.toFixed(3)}, SE = ${b_z_se.toFixed(3)}, t/z = ${b_z_t.toFixed(3)}, p ${fmtP(b_z_p)}${getSigStars(b_z_p)} — <strong>${z_sig ? 'significant' : 'non-significant'}</strong><br>
+      <strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t/z = ${b_xw_t.toFixed(3)}, p ${fmtP(b_xw_p)}${xw_stars} — <strong>${xw_sig_text ? 'significant' : 'non-significant'}</strong><br>
+      <strong>Interaction effect (${xn}×${zn} → ${yn}):</strong> b = ${b_xz.toFixed(3)}, SE = ${b_xz_se.toFixed(3)}, t/z = ${b_xz_t.toFixed(3)}, p ${fmtP(b_xz_p)}${xz_stars} — <strong>${xz_sig_text ? 'significant' : 'non-significant'}</strong></p>
       
       <p><strong>Overall interpretation:</strong> ${interpretationText}</p>
     </div>
@@ -18692,9 +18692,9 @@ const effectsRows = `
     <div class="interp-text">
       <p>A mediation analysis with moderated direct effect examined whether <strong>${mn}</strong> mediates the relationship between <strong>${xn}</strong> and <strong>${yn}</strong>, with <strong>${wn}</strong> moderating the direct ${xn}→${yn} path.</p>
       <p><strong>Path coefficients:</strong><br>
-      a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
-      b-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t = ${rY_full.t[2].toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_sig ? 'significant' : 'non-significant'}</strong><br>
-      Interaction (${xn}×${wn} → ${yn}): b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t = ${rY_full.t[4].toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${interaction_sig ? 'significant' : 'non-significant'}</strong><br>
+      a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t/z = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
+      b-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t/z = ${rY_full.t[2].toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_sig ? 'significant' : 'non-significant'}</strong><br>
+      Interaction (${xn}×${wn} → ${yn}): b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t/z = ${rY_full.t[4].toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${interaction_sig ? 'significant' : 'non-significant'}</strong><br>
       Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${direct_x.toFixed(3)}, SE = ${direct_x_se.toFixed(3)}, p ${fmtp(direct_x_p)} — <strong>${direct_sig ? 'significant' : 'non-significant'}</strong></p>
       <p><strong>Indirect effect (${xn} → ${mn} → ${yn}):</strong> b = ${indirect.toFixed(3)}${bootIndirect ? `, BootSE = ${bootIndirect.se.toFixed(3)}, 95% CI [${bootIndirect.lo.toFixed(3)}, ${bootIndirect.hi.toFixed(3)}]` : ''} — <strong>${indirectSig ? 'significant' : 'non-significant'}</strong></p>
       <p><strong>Conditional direct effects of ${xn} on ${yn} at levels of ${wn}:</strong><br>`;
@@ -18753,7 +18753,7 @@ const effectsRows = `
               <th colspan="7" class="th-group">Unstandardized</th>
             </tr>
             <tr>
-              <th>b</th><th>SE</th><th>t</th><th>p</th>
+              <th>b</th><th>SE</th><th>t/z</th><th>p</th>
               <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
               <th>Sig.</th>
             </tr>
@@ -18770,7 +18770,7 @@ const effectsRows = `
         <div class="res-table-wrap"><table class="res-table">
           <thead>
             <tr>
-              <th>Effect</th><th>b</th><th>SE</th><th>t</th><th>p</th>
+              <th>Effect</th><th>b</th><th>SE</th><th>t/z</th><th>p</th>
               <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
             </tr>
           </thead>
@@ -19054,7 +19054,7 @@ function runModMed_TwoModerators(vars, covArrays, covNames, cl, nBoot, centerOpt
         <th>Moderator</th>
         <th style="text-align:right">Index</th>
         <th style="text-align:right">SE</th>
-        <th style="text-align:right">z</th>
+        <th style="text-align:right">t/z</th>
         <th style="text-align:right">p</th>
         <th style="text-align:right">LLCI (${confPct})</th>
         <th style="text-align:right">ULCI (${confPct})</th>
@@ -19349,7 +19349,7 @@ const indHi = ind + tc * se_ind;
           <th colspan="6" class="th-group">Unstandardized</th>
         </tr>
         <tr>
-          <th>b</th><th>SE</th><th>t</th><th>p</th>
+          <th>b</th><th>SE</th><th>t/z</th><th>p</th>
           <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
         </tr>
       </thead>
@@ -19363,11 +19363,11 @@ const indHi = ind + tc * se_ind;
       <p>A moderated mediation analysis examined whether <strong>${wn}</strong> and <strong>${zn}</strong> moderate the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${mn}</strong>.</p>
       
       <p><strong>Path coefficients:</strong><br>
-      a₁-path (${xn} → ${mn}): b = ${a1.toFixed(4)}, SE = ${a1_se.toFixed(4)}, t = ${(a1 / a1_se).toFixed(4)}, p ${fmtp(a1_p)} — <strong>${a1_sig ? 'significant' : 'non-significant'}</strong><br>
-      a₄-path (${xn}×${wn} → ${mn}): b = ${a4.toFixed(4)}, SE = ${a4_se.toFixed(4)}, t = ${(a4 / a4_se).toFixed(4)}, p ${fmtp(a4_p)} — <strong>${a4_sig ? 'significant' : 'non-significant'}</strong><br>
-      a₅-path (${xn}×${zn} → ${mn}): b = ${a5.toFixed(4)}, SE = ${a5_se.toFixed(4)}, t = ${(a5 / a5_se).toFixed(4)}, p ${fmtp(a5_p)} — <strong>${a5_sig ? 'significant' : 'non-significant'}</strong><br>
-      b-path (${mn} → ${yn}): b = ${b2.toFixed(4)}, SE = ${b2_se.toFixed(4)}, t = ${(b2 / b2_se).toFixed(4)}, p ${fmtp(b2_p)} — <strong>${b2_sig ? 'significant' : 'non-significant'}</strong><br>
-      Direct effect (c', ${xn} → ${yn}|${mn}): b = ${b1.toFixed(4)}, SE = ${b1_se.toFixed(4)}, t = ${(b1 / b1_se).toFixed(4)}, p ${fmtp(b1_p)} — <strong>${direct_sig ? 'significant' : 'non-significant'}</strong></p>
+      a₁-path (${xn} → ${mn}): b = ${a1.toFixed(4)}, SE = ${a1_se.toFixed(4)}, t/z = ${(a1 / a1_se).toFixed(4)}, p ${fmtp(a1_p)} — <strong>${a1_sig ? 'significant' : 'non-significant'}</strong><br>
+      a₄-path (${xn}×${wn} → ${mn}): b = ${a4.toFixed(4)}, SE = ${a4_se.toFixed(4)}, t/z = ${(a4 / a4_se).toFixed(4)}, p ${fmtp(a4_p)} — <strong>${a4_sig ? 'significant' : 'non-significant'}</strong><br>
+      a₅-path (${xn}×${zn} → ${mn}): b = ${a5.toFixed(4)}, SE = ${a5_se.toFixed(4)}, t/z = ${(a5 / a5_se).toFixed(4)}, p ${fmtp(a5_p)} — <strong>${a5_sig ? 'significant' : 'non-significant'}</strong><br>
+      b-path (${mn} → ${yn}): b = ${b2.toFixed(4)}, SE = ${b2_se.toFixed(4)}, t/z = ${(b2 / b2_se).toFixed(4)}, p ${fmtp(b2_p)} — <strong>${b2_sig ? 'significant' : 'non-significant'}</strong><br>
+      Direct effect (c', ${xn} → ${yn}|${mn}): b = ${b1.toFixed(4)}, SE = ${b1_se.toFixed(4)}, t/z = ${(b1 / b1_se).toFixed(4)}, p ${fmtp(b1_p)} — <strong>${direct_sig ? 'significant' : 'non-significant'}</strong></p>
       
       <p><strong>Simple Slopes: Effect of ${xn} on ${mn} at levels of ${wn} and ${zn}</strong></p>
       <ul style="margin:6px 0 10px 0;padding-left:20px;line-height:1.8">
@@ -19401,13 +19401,13 @@ const indHi = ind + tc * se_ind;
       
       <div class="res-sub-label"><i class="fas fa-chart-line"></i> Simple Slopes: Effect of ${xn} on ${mn} at levels of ${wn} and ${zn}</div>
       <div class="res-table-wrap"><table class="res-table">
-        <thead><tr><th style="text-align:right">${wn}</th><th style="text-align:right">${zn}</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
+        <thead><tr><th style="text-align:right">${wn}</th><th style="text-align:right">${zn}</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
         <tbody>${slopeRows}</tbody>
       </table></div>
       
       <div class="res-sub-label"><i class="fas fa-chart-line"></i> Conditional Indirect Effects of ${xn} on ${yn} through ${mn}</div>
       <div class="res-table-wrap"><table class="res-table">
-        <thead><tr><th style="text-align:right">${wn}</th><th style="text-align:right">${zn}</th><th>Effect</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
+        <thead><tr><th style="text-align:right">${wn}</th><th style="text-align:right">${zn}</th><th>Effect</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
         <tbody>${condIndRows}</tbody>
       </table></div>
       ${indexHtml}
@@ -19777,7 +19777,7 @@ function runParallelMed(vars, covArrays, covNames, cl, nBoot) {
           <th colspan="1" class="th-group col-divider" style="color:var(--violet);background:rgba(109,40,217,.07);border-color:var(--violet)">Standardized</th>
         </tr>
         <tr>
-          <th>b</th><th>SE</th><th>t</th><th>p</th>
+          <th>b</th><th>SE</th><th>t/z</th><th>p</th>
           <th>LLCI</th><th>ULCI</th><th>Sig.</th>
           <th class="col-divider" style="color:var(--violet)">β</th>
         </tr>
@@ -20114,9 +20114,9 @@ const plotData = {
   let apaSummary = '';
   if (isWBinary) {
     apaSummary = `<p><strong>Path coefficients (from full moderation model):</strong><br>
-Effect of ${xn} on ${yn}: b = ${bx.toFixed(3)}, SE = ${rF.se[1].toFixed(3)}, t = ${rF.t[1].toFixed(3)}, p ${fmtp(rF.p[1])} — <strong>${getSigTextMod(rF.p[1], mainEffectSig)}</strong><br>
-Effect of ${wn} on ${yn}: b = ${bw_coef.toFixed(3)}, SE = ${rF.se[2].toFixed(3)}, t = ${rF.t[2].toFixed(3)}, p ${fmtp(rF.p[2])} — <strong>${getSigTextMod(rF.p[2], moderatorEffectSig)}</strong><br>
-<strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${bxw.toFixed(3)}, SE = ${rF.se[3].toFixed(3)}, t = ${rF.t[3].toFixed(3)}, p ${fmtp(rF.p[3])} — <strong>${getSigTextMod(rF.p[3], interactionSig)}</strong></p>
+Effect of ${xn} on ${yn}: b = ${bx.toFixed(3)}, SE = ${rF.se[1].toFixed(3)}, t/z = ${rF.t[1].toFixed(3)}, p ${fmtp(rF.p[1])} — <strong>${getSigTextMod(rF.p[1], mainEffectSig)}</strong><br>
+Effect of ${wn} on ${yn}: b = ${bw_coef.toFixed(3)}, SE = ${rF.se[2].toFixed(3)}, t/z = ${rF.t[2].toFixed(3)}, p ${fmtp(rF.p[2])} — <strong>${getSigTextMod(rF.p[2], moderatorEffectSig)}</strong><br>
+<strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${bxw.toFixed(3)}, SE = ${rF.se[3].toFixed(3)}, t/z = ${rF.t[3].toFixed(3)}, p ${fmtp(rF.p[3])} — <strong>${getSigTextMod(rF.p[3], interactionSig)}</strong></p>
 
 <p><strong>Conditional effects of ${xn} on ${yn}:</strong><br>
 When ${wn} = 0: b = ${slopes[0].toFixed(3)}, SE = ${slopeSEs[0].toFixed(3)}, p ${fmtp(slopePvals[0])} — <strong>${low_sig ? 'significant' : 'non-significant'}</strong><br>
@@ -20125,9 +20125,9 @@ When ${wn} = 1: b = ${slopes[1].toFixed(3)}, SE = ${slopeSEs[1].toFixed(3)}, p $
 <p><strong>Overall interpretation:</strong> ${interactionSig ? 'Moderation is supported.' : '<strong>Moderation is not supported.</strong>'} The effect of ${xn} on ${yn} ${interactionSig ? 'varies significantly' : 'does not vary significantly'} as a function of ${wn}.</p>`;
   } else {
     apaSummary = `<p><strong>Path coefficients (from full moderation model):</strong><br>
-Effect of ${xn} on ${yn}: b = ${bx.toFixed(3)}, SE = ${rF.se[1].toFixed(3)}, t = ${rF.t[1].toFixed(3)}, p ${fmtp(rF.p[1])} — <strong>${getSigTextMod(rF.p[1], mainEffectSig)}</strong><br>
-Effect of ${wn} on ${yn}: b = ${bw_coef.toFixed(3)}, SE = ${rF.se[2].toFixed(3)}, t = ${rF.t[2].toFixed(3)}, p ${fmtp(rF.p[2])} — <strong>${getSigTextMod(rF.p[2], moderatorEffectSig)}</strong><br>
-<strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${bxw.toFixed(3)}, SE = ${rF.se[3].toFixed(3)}, t = ${rF.t[3].toFixed(3)}, p ${fmtp(rF.p[3])} — <strong>${getSigTextMod(rF.p[3], interactionSig)}</strong></p>
+Effect of ${xn} on ${yn}: b = ${bx.toFixed(3)}, SE = ${rF.se[1].toFixed(3)}, t/z = ${rF.t[1].toFixed(3)}, p ${fmtp(rF.p[1])} — <strong>${getSigTextMod(rF.p[1], mainEffectSig)}</strong><br>
+Effect of ${wn} on ${yn}: b = ${bw_coef.toFixed(3)}, SE = ${rF.se[2].toFixed(3)}, t/z = ${rF.t[2].toFixed(3)}, p ${fmtp(rF.p[2])} — <strong>${getSigTextMod(rF.p[2], moderatorEffectSig)}</strong><br>
+<strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${bxw.toFixed(3)}, SE = ${rF.se[3].toFixed(3)}, t/z = ${rF.t[3].toFixed(3)}, p ${fmtp(rF.p[3])} — <strong>${getSigTextMod(rF.p[3], interactionSig)}</strong></p>
 
 <p><strong>Conditional effects of ${xn} on ${yn} at levels of ${wn}:</strong><br>
 At low ${wn} (${(mW - sW).toFixed(3)}): b = ${slopes[0].toFixed(3)}, SE = ${slopeSEs[0].toFixed(3)}, p ${fmtp(slopePvals[0])} — <strong>${getSigTextMod(slopePvals[0], low_sig)}</strong><br>
@@ -20154,7 +20154,7 @@ At high ${wn} (${(mW + sW).toFixed(3)}): b = ${slopes[2].toFixed(3)}, SE = ${slo
         <div class="res-table-wrap"><table class="res-table">
           <thead>
             <tr><th rowspan="2">${wn} Level</th><th colspan="7" class="th-group">Unstandardized</th></tr>
-            <tr><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
+            <tr><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
           </thead>
           <tbody>${slopeRows}</tbody>
         </table></div>
@@ -20439,7 +20439,7 @@ const effectsHtml = `
             <i class="fas fa-share-alt"></i> Effects Summary
         </div>
         <div class="res-table-wrap"><table class="res-table">
-            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
+            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
             <tbody>${effectsRows}</tbody>
         </table></div>
     </div>`;
@@ -20468,10 +20468,10 @@ const effectsHtml = `
     <p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${mn}</strong> (first stage moderation).</p>
     
     <p><strong>Path coefficients:</strong><br>
-    a₁-path (${xn} → ${mn}): b = ${a1.toFixed(3)}, SE = ${a1_se.toFixed(3)}, t = ${rM_full.t[1].toFixed(3)}, p ${fmtp(a1_p)} — <strong>${a1Sig ? 'significant' : 'non-significant'}</strong><br>
-    a₃-path (${xn}×${wn} → ${mn}): b = ${a3.toFixed(3)}, SE = ${a3_se.toFixed(3)}, t = ${rM_full.t[3].toFixed(3)}, p ${fmtp(a3_p)} — <strong>${a3Sig ? 'significant' : 'non-significant'}</strong><br>
-    b-path (${mn} → ${yn}): b = ${b.toFixed(3)}, SE = ${b_se.toFixed(3)}, t = ${rY.t[2].toFixed(3)}, p ${fmtp(b_p)} — <strong>${bSig ? 'significant' : 'non-significant'}</strong><br>
-    Direct effect (c', ${xn} → ${yn}|${mn}): b = ${cp.toFixed(3)}, SE = ${rY.se[1].toFixed(3)}, t = ${rY.t[1].toFixed(3)}, p ${fmtp(cp_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
+    a₁-path (${xn} → ${mn}): b = ${a1.toFixed(3)}, SE = ${a1_se.toFixed(3)}, t/z = ${rM_full.t[1].toFixed(3)}, p ${fmtp(a1_p)} — <strong>${a1Sig ? 'significant' : 'non-significant'}</strong><br>
+    a₃-path (${xn}×${wn} → ${mn}): b = ${a3.toFixed(3)}, SE = ${a3_se.toFixed(3)}, t/z = ${rM_full.t[3].toFixed(3)}, p ${fmtp(a3_p)} — <strong>${a3Sig ? 'significant' : 'non-significant'}</strong><br>
+    b-path (${mn} → ${yn}): b = ${b.toFixed(3)}, SE = ${b_se.toFixed(3)}, t/z = ${rY.t[2].toFixed(3)}, p ${fmtp(b_p)} — <strong>${bSig ? 'significant' : 'non-significant'}</strong><br>
+    Direct effect (c', ${xn} → ${yn}|${mn}): b = ${cp.toFixed(3)}, SE = ${rY.se[1].toFixed(3)}, t/z = ${rY.t[1].toFixed(3)}, p ${fmtp(cp_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
     
     <p><strong>Index of Moderated Mediation :</strong> b = ${indexMM.toFixed(3)}${bootRes && bootRes.index ? `, BootSE = ${bootRes.index.se.toFixed(3)}, 95% BootCI [${bootRes.index.lo.toFixed(3)}, ${bootRes.index.hi.toFixed(3)}]` : (nBoot === 0 ? `, SE = ${imm_se.toFixed(3)}, z = ${imm_z.toFixed(3)}, p ${fmtp(imm_p)}` : '')} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
     
@@ -20538,7 +20538,7 @@ const immTableRows = `
                 </div>
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
-                        <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
+                        <tr><th>${wn} Level</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
                     </thead>
                     <tbody>${slopeRows}</tbody>
                 </table></div>
@@ -20552,7 +20552,7 @@ const immTableRows = `
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
                         <tr><th rowspan="2">${wn} Level</th><th colspan="6" class="th-group">Conditional Indirect Effect</th></tr>
-                        <tr><th>Effect</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
+                        <tr><th>Effect</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr>
                     </thead>
                     <tbody>${condIndRows}</tbody>
                 </table></div>
@@ -20814,7 +20814,7 @@ const wDesc = [
             <i class="fas fa-share-alt"></i> Effects Summary
         </div>
         <div class="res-table-wrap"><table class="res-table">
-            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
+            <thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
             <tbody>${effectsRows}</tbody>
         </table></div>
     </div>`;
@@ -20828,10 +20828,10 @@ const wDesc = [
     let apaSummary = `<p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${mn}</strong> (second stage moderation).</p>
     
     <p><strong>Path coefficients:</strong><br>
-    a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
-    b₁-path (${mn} → ${yn}): b = ${b1.toFixed(3)}, SE = ${b1_se.toFixed(3)}, t = ${rY.t[2].toFixed(3)}, p ${fmtp(b1_p)} — <strong>${b1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-    <strong>b₃-path (${mn}×${wn} → ${yn}): b = ${b3.toFixed(3)}, SE = ${b3_se.toFixed(3)}, t = ${rY.t[4].toFixed(3)}, p ${fmtp(b3_p)} — <strong>${b3Sig ? 'significant' : 'non-significant'}</strong></strong><br>
-    Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${cp.toFixed(3)}, SE = ${rY.se[1].toFixed(3)}, t = ${rY.t[1].toFixed(3)}, p ${fmtp(cp_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
+    a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t/z = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
+    b₁-path (${mn} → ${yn}): b = ${b1.toFixed(3)}, SE = ${b1_se.toFixed(3)}, t/z = ${rY.t[2].toFixed(3)}, p ${fmtp(b1_p)} — <strong>${b1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+    <strong>b₃-path (${mn}×${wn} → ${yn}): b = ${b3.toFixed(3)}, SE = ${b3_se.toFixed(3)}, t/z = ${rY.t[4].toFixed(3)}, p ${fmtp(b3_p)} — <strong>${b3Sig ? 'significant' : 'non-significant'}</strong></strong><br>
+    Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${cp.toFixed(3)}, SE = ${rY.se[1].toFixed(3)}, t/z = ${rY.t[1].toFixed(3)}, p ${fmtp(cp_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
     
     <p><strong>Index of Moderated Mediation:</strong> b = ${indexMM.toFixed(3)}${bootRes && bootRes.index_second ? `, BootSE = ${bootRes.index_second.se.toFixed(3)}, 95% BootCI [${bootRes.index_second.lo.toFixed(3)}, ${bootRes.index_second.hi.toFixed(3)}]` : ''} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
     
@@ -20901,7 +20901,7 @@ const immTableRows = `
                             <th colspan="7" class="th-group">Unstandardized</th>
                         </tr>
                         <tr>
-                            <th>b</th><th>SE</th><th>t</th><th>p</th>
+                            <th>b</th><th>SE</th><th>t/z</th><th>p</th>
                             <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
                         </tr>
                     </thead>
@@ -20921,7 +20921,7 @@ const immTableRows = `
                             <th colspan="6" class="th-group">Conditional Indirect Effect</th>
                         </tr>
                         <tr>
-                            <th>Effect</th><th>SE</th><th>t</th><th>p</th>
+                            <th>Effect</th><th>SE</th><th>t/z</th><th>p</th>
                             <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
                         </tr>
                     </thead>
@@ -21308,7 +21308,7 @@ const immHtml = `<div class="res-table-wrap" style="margin-top:16px">
     
     const effectsHtml = `<div style="padding:18px;background:var(--surface-2);border-radius:var(--r-lg);border:1px solid var(--border);margin:18px 0">
         <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:14px"><i class="fas fa-share-alt"></i> Effects Summary</div>
-        <div class="res-table-wrap"><table class="res-table"><thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
+        <div class="res-table-wrap"><table class="res-table"><thead><tr><th>Effect</th><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
         <tbody>${effectsRows}</tbody></table></div></div>`;
 
     const descHtml = `<div class="panel" style="margin-bottom:18px"><div class="panel-header"><div class="panel-title"><i class="fas fa-table"></i> Descriptive Statistics</div></div>
@@ -21355,15 +21355,15 @@ const immHtml = `<div class="res-table-wrap" style="margin-top:16px">
             ${renderReg(rY_full, rY_full_z, yn, confPct, buildMat([xForModel, mForModel, wForModel, mwForModel, ...covArrays]), [xn, mn, wn, `${mn}×${wn}`, ...covNames])}
             <div class="res-sub-label"><i class="fas fa-chart-line"></i> Simple Slopes: Effect of ${xn} on ${mn} at Levels of ${wn}</div>
             <div class="res-table-wrap"><table class="res-table"><thead><tr><th rowspan="2">${wn} Level</th><th colspan="7" class="th-group">Unstandardized</th></tr>
-            <tr><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig.</th></tr></thead>
+            <tr><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig.</th></tr></thead>
             <tbody>${slopeRows_a}</tbody></table></div>${slopesHTML_a}
             <div class="res-sub-label"><i class="fas fa-chart-line"></i> Simple Slopes: Effect of ${mn} on ${yn} at Levels of ${wn}</div>
             <div class="res-table-wrap"><table class="res-table"><thead><tr><th rowspan="2">${wn} Level</th><th colspan="7" class="th-group">Unstandardized</th></tr>
-            <tr><th>b</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig.</th></tr></thead>
+            <tr><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig.</th></tr></thead>
             <tbody>${slopeRows_b}</tbody></table></div>${slopesHTML_b}
             <div class="res-sub-label"><i class="fas fa-project-diagram"></i> Conditional Indirect Effects (${xn} → ${mn} → ${yn}) at Levels of ${wn}</div>
             <div class="res-table-wrap"><table class="res-table"><thead><tr><th rowspan="2">${wn} Level</th><th colspan="6" class="th-group">Conditional Indirect Effect</th></tr>
-            <tr><th>Effect</th><th>SE</th><th>t</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
+            <tr><th>Effect</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
             <tbody>${condIndRows}</tbody></table></div>
             ${immHtml}${bootHtml}${effectsHtml}${apaSummary}
         </div>
@@ -21860,10 +21860,10 @@ function runModMed_XMandXY(vars, covArrays, covNames, cl, nBoot, centerOption) {
     <div class="interp-text">
       <p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates both the ${xn}→${mn} path (a-path) and the direct ${xn}→${yn} path (c'-path).</p>
       <p><strong>Path coefficients:</strong><br>
-      a₁-path (${xn} → ${mn}): b = ${a1.toFixed(3)}, SE = ${a1_se.toFixed(3)}, t = ${rM_full.t[1].toFixed(3)}, p ${fmtp(a1_p)} — <strong>${a1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-      a₃-path (${xn}×${wn} → ${mn}): b = ${a3.toFixed(3)}, SE = ${a3_se.toFixed(3)}, t = ${rM_full.t[3].toFixed(3)}, p ${fmtp(a3_p)} — <strong>${a3_sig ? 'significant' : 'non-significant'}</strong><br>
-      b-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t = ${b_m_t.toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-      Interaction (${xn}×${wn} → ${yn} direct): b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t = ${b_xw_t.toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${b_xw_sig ? 'significant' : 'non-significant'}</strong><br>
+      a₁-path (${xn} → ${mn}): b = ${a1.toFixed(3)}, SE = ${a1_se.toFixed(3)}, t/z = ${rM_full.t[1].toFixed(3)}, p ${fmtp(a1_p)} — <strong>${a1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+      a₃-path (${xn}×${wn} → ${mn}): b = ${a3.toFixed(3)}, SE = ${a3_se.toFixed(3)}, t/z = ${rM_full.t[3].toFixed(3)}, p ${fmtp(a3_p)} — <strong>${a3_sig ? 'significant' : 'non-significant'}</strong><br>
+      b-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t/z = ${b_m_t.toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+      Interaction (${xn}×${wn} → ${yn} direct): b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t/z = ${b_xw_t.toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${b_xw_sig ? 'significant' : 'non-significant'}</strong><br>
       Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${b_x.toFixed(3)}, SE = ${b_x_se.toFixed(3)}, p ${fmtp(b_x_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
       <p><strong>Index of Moderated Mediation:</strong> b = ${indexMM.toFixed(3)}${bootIMM ? `, BootSE = ${bootIMM.se.toFixed(3)}, 95% BootCI [${bootIMM.lo.toFixed(3)}, ${bootIMM.hi.toFixed(3)}]` : `, SE = ${indexMM_se.toFixed(3)}, p ${immPDisplay}`} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
       <p><strong>Conditional a-path (${xn} → ${mn}) at levels of ${wn}:</strong><br>`;
@@ -21927,7 +21927,7 @@ function runModMed_XMandXY(vars, covArrays, covNames, cl, nBoot, centerOption) {
         <thead>
           <tr>
             <th>${wn} Level</th>
-            <th>b</th><th>SE</th><th>t</th><th>p</th>
+            <th>b</th><th>SE</th><th>t/z</th><th>p</th>
             <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
           </tr>
         </thead>
@@ -21946,7 +21946,7 @@ function runModMed_XMandXY(vars, covArrays, covNames, cl, nBoot, centerOption) {
         <thead>
           <tr>
             <th>${wn} Level</th>
-            <th>b</th><th>SE</th><th>t</th><th>p</th>
+            <th>b</th><th>SE</th><th>t/z</th><th>p</th>
             <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
           </tr>
         </thead>
@@ -21965,7 +21965,7 @@ function runModMed_XMandXY(vars, covArrays, covNames, cl, nBoot, centerOption) {
               <th colspan="6" class="th-group">Conditional Indirect Effect</th>
             </tr>
             <tr>
-              <th>Effect</th><th>SE</th><th>t</th><th>p</th>
+              <th>Effect</th><th>SE</th><th>t/z</th><th>p</th>
               <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
             </tr>
           </thead>
@@ -22357,13 +22357,13 @@ function runModeratedModeration(vars, covArrays, covNames, cl, nBoot, centerOpti
       <p>A moderated moderation (three-way interaction) analysis examined whether the effect of <strong>${xn}</strong> on <strong>${yn}</strong> is jointly moderated by <strong>${wn}</strong> and <strong>${zn}</strong>.</p>
 
       <p><strong>Path coefficients:</strong><br>
-      <strong>Three-way interaction (${xn}×${wn}×${zn} → ${yn}):</strong> b = ${fmt3(b_xwz)}, SE = ${fmt3(se_b_xwz)}, t = ${fmt3(t_b_xwz)}, p ${fmtP(p_xwz)} — <strong>${getSigText(p_xwz, threeWaySig)}</strong><br>
-      ${xn}×${wn} (two-way): b = ${fmt3(b_xw)}, SE = ${fmt3(se_b_xw)}, t = ${fmt3(t_b_xw)}, p ${fmtP(p_xw)} — <strong>${getSigText(p_xw, xw_sig)}</strong><br>
-      ${xn}×${zn} (two-way): b = ${fmt3(b_xz)}, SE = ${fmt3(se_b_xz)}, t = ${fmt3(t_b_xz)}, p ${fmtP(p_xz)} — <strong>${getSigText(p_xz, xz_sig)}</strong><br>
-      ${wn}×${zn} (two-way): b = ${fmt3(b_wz)}, SE = ${fmt3(se_b_wz)}, t = ${fmt3(t_b_wz)}, p ${fmtP(p_wz)} — <strong>${getSigText(p_wz, wz_sig)}</strong><br>
-      ${xn} → ${yn} (main effect): b = ${fmt3(b_x)}, SE = ${fmt3(se_b_x)}, t = ${fmt3(t_b_x)}, p ${fmtP(p_x)} — <strong>${getSigText(p_x, x_sig)}</strong><br>
-      ${wn} → ${yn} (main effect): b = ${fmt3(b_w)}, SE = ${fmt3(se_b_w)}, t = ${fmt3(t_b_w)}, p ${fmtP(p_w)} — <strong>${getSigText(p_w, w_sig)}</strong><br>
-      ${zn} → ${yn} (main effect): b = ${fmt3(b_z)}, SE = ${fmt3(se_b_z)}, t = ${fmt3(t_b_z)}, p ${fmtP(p_z)} — <strong>${getSigText(p_z, z_sig)}</strong></p>
+      <strong>Three-way interaction (${xn}×${wn}×${zn} → ${yn}):</strong> b = ${fmt3(b_xwz)}, SE = ${fmt3(se_b_xwz)}, t/z = ${fmt3(t_b_xwz)}, p ${fmtP(p_xwz)} — <strong>${getSigText(p_xwz, threeWaySig)}</strong><br>
+      ${xn}×${wn} (two-way): b = ${fmt3(b_xw)}, SE = ${fmt3(se_b_xw)}, t/z = ${fmt3(t_b_xw)}, p ${fmtP(p_xw)} — <strong>${getSigText(p_xw, xw_sig)}</strong><br>
+      ${xn}×${zn} (two-way): b = ${fmt3(b_xz)}, SE = ${fmt3(se_b_xz)}, t/z = ${fmt3(t_b_xz)}, p ${fmtP(p_xz)} — <strong>${getSigText(p_xz, xz_sig)}</strong><br>
+      ${wn}×${zn} (two-way): b = ${fmt3(b_wz)}, SE = ${fmt3(se_b_wz)}, t/z = ${fmt3(t_b_wz)}, p ${fmtP(p_wz)} — <strong>${getSigText(p_wz, wz_sig)}</strong><br>
+      ${xn} → ${yn} (main effect): b = ${fmt3(b_x)}, SE = ${fmt3(se_b_x)}, t/z = ${fmt3(t_b_x)}, p ${fmtP(p_x)} — <strong>${getSigText(p_x, x_sig)}</strong><br>
+      ${wn} → ${yn} (main effect): b = ${fmt3(b_w)}, SE = ${fmt3(se_b_w)}, t/z = ${fmt3(t_b_w)}, p ${fmtP(p_w)} — <strong>${getSigText(p_w, w_sig)}</strong><br>
+      ${zn} → ${yn} (main effect): b = ${fmt3(b_z)}, SE = ${fmt3(se_b_z)}, t/z = ${fmt3(t_b_z)}, p ${fmtP(p_z)} — <strong>${getSigText(p_z, z_sig)}</strong></p>
 
       <p><strong>Overall interpretation:</strong> ${threeWaySig ? 'There is significant moderated moderation, indicating that the two-way interaction between ' + xn + ' and ' + wn + ' varies across levels of ' + zn + '.' : 'The three-way interaction is not significant, suggesting that the moderating effect of ' + wn + ' on ' + xn + '→' + yn + ' does not depend on ' + zn + '.'}</p>
     </div>
