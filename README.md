@@ -33,7 +33,7 @@ Users should always download the newest version from the official releases page 
 ## Interface
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/favicons/MedModrinterface.png" alt="MedModr Analysis Panel" width="800">
+  <img src="https://raw.githubusercontent.com/shinyhealthtools/medmodr/main/favicons/MedModrinterface3.png" alt="MedModr Analysis Panel" width="800">
   <br>
   <em>The main analysis panel showing variable assignment, analysis options, and results display.</em>
 </p>
