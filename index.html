@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <title>MedModr - Mediation & Moderation Analysis Tool</title>
+    <title>MedModr - Mediation, Moderation & Conditional Process Tool</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="title" content="MedModr - Mediation & Moderation Analysis Tool">
+    <meta name="title" content="MedModr - Mediation, Moderation & Conditional Process Tool">
 <meta name="description" content="Free browser-based application for mediation, moderation, and conditional process analysis. Supports simple, parallel, and serial mediation; simple moderation; first, second, and both stages moderated mediation; moderated moderation (three-way); and moderated serial mediation. Features bootstrap CIs, simple slopes plots, path diagrams, data screening, multiple imputation (PMM), categorical encoding, CSV/Excel import, and Word/PNG export. Works online or offline on any device.">
     <meta name="keywords" content="mediation analysis, moderation analysis, conditional process analysis, simple mediation, parallel mediation, serial mediation, simple moderation, moderated mediation, first stage moderation, second stage moderation, both stages moderation, moderated moderation, three-way interaction, moderated serial mediation, simple slopes, indirect effect, conditional indirect effect, index of moderated mediation, PROCESS macro, bootstrap confidence intervals, bootstrap CI, bias-corrected bootstrap, percentile bootstrap, OLS regression, path diagram, statistical software, free statistical calculator, research tools, data screening, missing data imputation, multiple imputation, PMM, hot deck imputation, EM algorithm, categorical variable encoding, dummy coding, online statistics, offline statistics, browser-based analysis, open source statistics, Ghana software">
     <meta name="theme-color" content="#3d5af1">
@@ -31,7 +31,7 @@
     <meta http-equiv="Expires" content="0">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="MedModr – Free Mediation & Moderation Analysis Software">
+    <meta property="og:title" content="MedModr – Free Mediation, Moderation & Conditional Process Tool">
     <meta property="og:description" content="Browser-based application for mediation, moderation, and conditional process analysis. Path diagrams, simple slopes, bootstrap CIs, results export.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://shinyhealthtools.github.io/medmodr/">
@@ -2945,7 +2945,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
         </defs>
       </svg>
     </div>
-    <div class="loading-subtitle">Mediation & Moderation Analysis Tool</div>
+    <div class="loading-subtitle">Mediation, Moderation & Conditional Process Tool</div>
     <div class="loading-progress-bar">
       <div class="loading-progress-fill"></div>
     </div>
@@ -3149,7 +3149,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
     </div>
     <div class="logo-text">
       <div class="logo-name" style="font-size: 0.85rem; font-weight: 800; color: #eef2ff;">MedModr</div>
-      <div class="logo-sub" style="font-size: 0.55rem; color: #8090b0;">Mediation & Moderation Tool</div>
+      <div class="logo-sub" style="font-size: 0.55rem; color: #8090b0;">Mediation, Moderation & Conditional Process Tool</div>
     </div>
   </div>
 </div>
@@ -3198,7 +3198,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
 <div class="page-section active" id="section-home">
     <div class="hero">
         <div class="hero-badge"><span class="dot"></span>Statistical Software</div>
-        <h1 class="hero-headline">Mediation, Moderation, &<br>Conditional Process Analysis<br><em>done right.</em></h1>
+        <h1 class="hero-headline">Mediation, Moderation &<br>Conditional Process Analysis<br><em>done right.</em></h1>
         <p class="hero-sub">A free, user-friendly, open-source application for mediation, moderation, and conditional process analysis. Runs entirely in your web browser with no installation required and no internet connection needed. Use it offline on any device, anywhere.</p>
         <div class="cta-row">
             <button class="btn-primary" onclick="showSection('data-import')"><i class="fas fa-upload"></i> Get started</button>
@@ -11346,7 +11346,7 @@ window.exportToWordDocument = function(htmlContent, filename) {
 <div class="main-content">
 <h1>MedModr — Analysis Results</h1>
 <div class="app-meta">
-  <strong>MedModr: Mediation & Moderation Tool</strong> (Version 2.0)<br>
+  <strong>MedModr: Mediation, Moderation & Conditional Process Tool</strong> (Version 2.0)<br>
 <div class="analysis-config"><strong>Configuration:</strong> ${analysisConfigText}</div>
 <div style="font-size: 9pt; margin-top: 5px;"><strong>Variable Assignments:</strong> ${getVariableAssignmentsText()}</div>
   <span style="font-size: 9pt;">📢 <strong>Check for newer version:</strong> <a href="https://github.com/shinyhealthtools/medmodr/releases" style="color: #000000; text-decoration: underline;">https://github.com/shinyhealthtools/medmodr/releases</a></span><br>
@@ -15960,7 +15960,7 @@ b-path (${mn} → ${yn}): b = ${fmtv(b)}, SE = ${fmtv(seb)}, p ${fmtp(rY.p[2])} 
 c-path (Total effect, ${xn} → ${yn}): b = ${fmtv(ctot)}, SE = ${fmtv(rTot.se[1])}, p ${fmtp(rTot.p[1])} — <strong>${totalEffectSig ? 'significant' : 'non-significant'}</strong><br>
 c'-path (Direct effect, ${xn} → ${yn}): b = ${fmtv(cp)}, SE = ${fmtv(rY.se[1])}, p ${fmtp(rY.p[1])} — <strong>${directEffectSig ? 'significant' : 'non-significant'}</strong></p>
 
-<p><strong>Indirect effect = ${fmtv(ind)}</strong>, SE = ${fmtv(se_sob)}, t/z = ${fmtv(z_sob, 3)}, p ${fmtp(p_sob)} — <strong>${indirectSig ? 'significant' : 'non-significant'}</strong></p>
+<p><strong>Indirect effect = ${fmtv(ind)}</strong>, SE = ${fmtv(se_sob)}, p ${fmtp(p_sob)} — <strong>${indirectSig ? 'significant' : 'non-significant'}</strong></p>
 
 <p><strong>Overall interpretation:</strong> ${mediationType}. The indirect effect of ${xn} on ${yn} through ${mn} ${indirectSig ? 'is' : 'is not'} statistically significant based on the Sobel test. The direct effect ${directEffectSig ? 'remains significant' : 'is not significant'} after accounting for the mediator.</p>`;
   }
@@ -17380,15 +17380,15 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
             <p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates all three paths: (1) ${xn} → ${mn} (first stage), (2) ${mn} → ${yn} (second stage), and (3) the direct ${xn} → ${yn} path.</p>
             
             <p><strong>Path coefficients:</strong><br>
-            a₁-path (${xn} → ${mn}): b = ${fmtv(a1, 3)}, SE = ${fmtv(a1_se, 3)}, t/z = ${fmtv(rM.t[1], 3)}, p ${fmtp(a1_p)} — <strong>${a1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-            a₃-path (${xn}×${wn} → ${mn}): b = ${fmtv(a3, 3)}, SE = ${fmtv(a3_se, 3)}, t/z = ${fmtv(rM.t[3], 3)}, p ${fmtp(a3_p)} — <strong>${a3Sig ? 'significant' : 'non-significant'}</strong><br>
-            b₁-path (${mn} → ${yn}): b = ${fmtv(b1, 3)}, SE = ${fmtv(b1_se, 3)}, t/z = ${fmtv(rY.t[2], 3)}, p ${fmtp(b1_p)} — <strong>${b1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-            b₂-path (${mn}×${wn} → ${yn}): b = ${fmtv(b2, 3)}, SE = ${fmtv(b2_se, 3)}, t/z = ${fmtv(rY.t[5], 3)}, p ${fmtp(b2_p)} — <strong>${b2Sig ? 'significant' : 'non-significant'}</strong><br>
-            c'-path (${xn} → ${yn}|M,W): b = ${fmtv(c1, 3)}, SE = ${fmtv(c1_se, 3)}, t/z = ${fmtv(rY.t[1], 3)}, p ${fmtp(c1_p)} — <strong>${c1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-            c'₃-path (${xn}×${wn} → ${yn}): b = ${fmtv(c3, 3)}, SE = ${fmtv(c3_se, 3)}, t/z = ${fmtv(rY.t[4], 3)}, p ${fmtp(c3_p)} — <strong>${c3Sig ? 'significant' : 'non-significant'}</strong><br>
+            a₁-path (${xn} → ${mn}): b = ${fmtv(a1, 3)}, SE = ${fmtv(a1_se, 3)}, p ${fmtp(a1_p)} — <strong>${a1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+            a₃-path (${xn}×${wn} → ${mn}): b = ${fmtv(a3, 3)}, SE = ${fmtv(a3_se, 3)}, p ${fmtp(a3_p)} — <strong>${a3Sig ? 'significant' : 'non-significant'}</strong><br>
+            b₁-path (${mn} → ${yn}): b = ${fmtv(b1, 3)}, SE = ${fmtv(b1_se, 3)}, p ${fmtp(b1_p)} — <strong>${b1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+            b₂-path (${mn}×${wn} → ${yn}): b = ${fmtv(b2, 3)}, SE = ${fmtv(b2_se, 3)}, p ${fmtp(b2_p)} — <strong>${b2Sig ? 'significant' : 'non-significant'}</strong><br>
+            c'-path (${xn} → ${yn}|M,W): b = ${fmtv(c1, 3)}, SE = ${fmtv(c1_se, 3)}, p ${fmtp(c1_p)} — <strong>${c1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+            c'₃-path (${xn}×${wn} → ${yn}): b = ${fmtv(c3, 3)}, SE = ${fmtv(c3_se, 3)}, p ${fmtp(c3_p)} — <strong>${c3Sig ? 'significant' : 'non-significant'}</strong><br>
             
             <p><strong>Conditional direct effects of ${xn} on ${yn} at levels of ${wn}:</strong><br>
-            ${condDirectEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, SE = ${fmtv(e.se, 3)}, t/z = ${fmtv(e.t, 3)}, p ${fmtp(e.p)} — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
+            ${condDirectEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, SE = ${fmtv(e.se, 3)}, p ${fmtp(e.p)} — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
             
             <p><strong>Conditional indirect effects (${xn} → ${mn} → ${yn}) at levels of ${wn}:</strong><br>
             ${condIndEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, BootSE = ${fmtv(e.se, 3)}, ${confPct} BootCI [${fmtv(e.lo, 3)}, ${fmtv(e.hi, 3)}] — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
@@ -17893,13 +17893,13 @@ const wDesc = [
             <p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${mn}</strong>, specifically moderating both the ${mn}→${yn} path (b-path) and the direct ${xn}→${yn} path (c'-path).</p>
             
             <p><strong>Path coefficients:</strong><br>
-            a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t/z = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
-            b₁-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t/z = ${rY_full.t[2].toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-            <strong>b₃-path (${mn}×${wn} → ${yn}):</strong> b = ${b_mw.toFixed(3)}, SE = ${b_mw_se.toFixed(3)}, t/z = ${rY_full.t[4].toFixed(3)}, p ${fmtp(b_mw_p)} — <strong>${b_mw_sig ? 'significant' : 'non-significant'}</strong><br>
-            <strong>X×W interaction (${xn}×${wn} → ${yn}):</strong> b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t/z = ${rY_full.t[5].toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${b_xw_sig ? 'significant' : 'non-significant'}</strong><br>
+            a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
+            b₁-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+            <strong>b₃-path (${mn}×${wn} → ${yn}):</strong> b = ${b_mw.toFixed(3)}, SE = ${b_mw_se.toFixed(3)}, p ${fmtp(b_mw_p)} — <strong>${b_mw_sig ? 'significant' : 'non-significant'}</strong><br>
+            <strong>X×W interaction (${xn}×${wn} → ${yn}):</strong> b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${b_xw_sig ? 'significant' : 'non-significant'}</strong><br>
             Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${b_x.toFixed(3)}, SE = ${b_x_se.toFixed(3)}, p ${fmtp(b_x_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
             
-            <p><strong>Index of Moderated Mediation :</strong> b = ${indexMM.toFixed(3)}${bootIMM ? `, BootSE = ${bootIMM.se.toFixed(3)}, 95% BootCI [${bootIMM.lo.toFixed(3)}, ${bootIMM.hi.toFixed(3)}]` : `, SE = ${indexMM_se.toFixed(3)}, z = ${indexMM_z.toFixed(3)}, p ${fmtp(indexMM_p)}`} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
+            <p><strong>Index of Moderated Mediation :</strong> b = ${indexMM.toFixed(3)}${bootIMM ? `, BootSE = ${bootIMM.se.toFixed(3)}, 95% BootCI [${bootIMM.lo.toFixed(3)}, ${bootIMM.hi.toFixed(3)}]` : `, SE = ${indexMM_se.toFixed(3)}, p ${fmtp(indexMM_p)}`} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
             
             <p><strong>Conditional b-path (${mn} → ${yn}) at levels of ${wn}:</strong><br>`;
     
@@ -18327,11 +18327,11 @@ function runDoubleModeration(vars, covArrays, covNames, cl, nBoot, centerOption)
       <p>A double moderation analysis examined whether <strong>${wn}</strong> and <strong>${zn}</strong> moderate the relationship between <strong>${xn}</strong> and <strong>${yn}</strong>.</p>
       
       <p><strong>Path coefficients (from full moderation model):</strong><br>
-      Effect of ${xn} on ${yn}: b = ${b_x.toFixed(3)}, SE = ${b_x_se.toFixed(3)}, t/z = ${b_x_t.toFixed(3)}, p ${fmtP(b_x_p)}${getSigStars(b_x_p)} — <strong>${x_sig ? 'significant' : 'non-significant'}</strong><br>
-      Effect of ${wn} on ${yn}: b = ${b_w.toFixed(3)}, SE = ${b_w_se.toFixed(3)}, t/z = ${b_w_t.toFixed(3)}, p ${fmtP(b_w_p)}${getSigStars(b_w_p)} — <strong>${w_sig ? 'significant' : 'non-significant'}</strong><br>
-      Effect of ${zn} on ${yn}: b = ${b_z.toFixed(3)}, SE = ${b_z_se.toFixed(3)}, t/z = ${b_z_t.toFixed(3)}, p ${fmtP(b_z_p)}${getSigStars(b_z_p)} — <strong>${z_sig ? 'significant' : 'non-significant'}</strong><br>
-      <strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t/z = ${b_xw_t.toFixed(3)}, p ${fmtP(b_xw_p)}${xw_stars} — <strong>${xw_sig_text ? 'significant' : 'non-significant'}</strong><br>
-      <strong>Interaction effect (${xn}×${zn} → ${yn}):</strong> b = ${b_xz.toFixed(3)}, SE = ${b_xz_se.toFixed(3)}, t/z = ${b_xz_t.toFixed(3)}, p ${fmtP(b_xz_p)}${xz_stars} — <strong>${xz_sig_text ? 'significant' : 'non-significant'}</strong></p>
+      Effect of ${xn} on ${yn}: b = ${b_x.toFixed(3)}, SE = ${b_x_se.toFixed(3)}, p ${fmtP(b_x_p)}${getSigStars(b_x_p)} — <strong>${x_sig ? 'significant' : 'non-significant'}</strong><br>
+      Effect of ${wn} on ${yn}: b = ${b_w.toFixed(3)}, SE = ${b_w_se.toFixed(3)}, p ${fmtP(b_w_p)}${getSigStars(b_w_p)} — <strong>${w_sig ? 'significant' : 'non-significant'}</strong><br>
+      Effect of ${zn} on ${yn}: b = ${b_z.toFixed(3)}, SE = ${b_z_se.toFixed(3)}, p ${fmtP(b_z_p)}${getSigStars(b_z_p)} — <strong>${z_sig ? 'significant' : 'non-significant'}</strong><br>
+      <strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, p ${fmtP(b_xw_p)}${xw_stars} — <strong>${xw_sig_text ? 'significant' : 'non-significant'}</strong><br>
+      <strong>Interaction effect (${xn}×${zn} → ${yn}):</strong> b = ${b_xz.toFixed(3)}, SE = ${b_xz_se.toFixed(3)}, p ${fmtP(b_xz_p)}${xz_stars} — <strong>${xz_sig_text ? 'significant' : 'non-significant'}</strong></p>
       
       <p><strong>Overall interpretation:</strong> ${interpretationText}</p>
     </div>
@@ -18692,9 +18692,9 @@ const effectsRows = `
     <div class="interp-text">
       <p>A mediation analysis with moderated direct effect examined whether <strong>${mn}</strong> mediates the relationship between <strong>${xn}</strong> and <strong>${yn}</strong>, with <strong>${wn}</strong> moderating the direct ${xn}→${yn} path.</p>
       <p><strong>Path coefficients:</strong><br>
-      a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t/z = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
-      b-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t/z = ${rY_full.t[2].toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_sig ? 'significant' : 'non-significant'}</strong><br>
-      Interaction (${xn}×${wn} → ${yn}): b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t/z = ${rY_full.t[4].toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${interaction_sig ? 'significant' : 'non-significant'}</strong><br>
+      a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
+      b-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_sig ? 'significant' : 'non-significant'}</strong><br>
+      Interaction (${xn}×${wn} → ${yn}): b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${interaction_sig ? 'significant' : 'non-significant'}</strong><br>
       Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${direct_x.toFixed(3)}, SE = ${direct_x_se.toFixed(3)}, p ${fmtp(direct_x_p)} — <strong>${direct_sig ? 'significant' : 'non-significant'}</strong></p>
       <p><strong>Indirect effect (${xn} → ${mn} → ${yn}):</strong> b = ${indirect.toFixed(3)}${bootIndirect ? `, BootSE = ${bootIndirect.se.toFixed(3)}, 95% CI [${bootIndirect.lo.toFixed(3)}, ${bootIndirect.hi.toFixed(3)}]` : ''} — <strong>${indirectSig ? 'significant' : 'non-significant'}</strong></p>
       <p><strong>Conditional direct effects of ${xn} on ${yn} at levels of ${wn}:</strong><br>`;
@@ -19127,8 +19127,8 @@ const hi = slope + tc * se;
       let pDisplay = pVal < 0.001 ? '<.001' : pVal.toFixed(3);
       
       slopeRows += `<tr>
-        <td style="text-align:right; font-weight: normal;">${wn}=${wDisplay}</span></td>
-        <td style="text-align:right; font-weight: normal;">${zn}=${zDisplay}</span></td>
+        <td style="text-align:right; font-weight: normal;">${wDisplay}</span></td>
+        <td style="text-align:right; font-weight: normal;">${zDisplay}</span></td>
         <td style="text-align:right">${slope.toFixed(3)}</span></td>
         <td style="text-align:right">${se.toFixed(3)}</span></td>
         <td style="text-align:right">${tVal.toFixed(3)}</span></td>
@@ -19175,8 +19175,8 @@ const indHi = ind + tc * se_ind;
       let pDisplay = indP < 0.001 ? '<.001' : indP.toFixed(3);
       
       condIndRows += `<tr>
-        <td style="text-align:right; font-weight: normal;">${wn}=${wDisplay}</span></td>
-        <td style="text-align:right; font-weight: normal;">${zn}=${zDisplay}</span></td>
+        <td style="text-align:right; font-weight: normal;">${wDisplay}</span></td>
+        <td style="text-align:right; font-weight: normal;">${zDisplay}</span></td>
         <td style="text-align:right">${ind.toFixed(3)}</span></td>
         <td style="text-align:right">${se_ind.toFixed(3)}</span></td>
         <td style="text-align:right">${indT.toFixed(3)}</span></td>
@@ -19363,11 +19363,11 @@ const indHi = ind + tc * se_ind;
       <p>A moderated mediation analysis examined whether <strong>${wn}</strong> and <strong>${zn}</strong> moderate the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${mn}</strong>.</p>
       
       <p><strong>Path coefficients:</strong><br>
-      a₁-path (${xn} → ${mn}): b = ${a1.toFixed(4)}, SE = ${a1_se.toFixed(4)}, t/z = ${(a1 / a1_se).toFixed(4)}, p ${fmtp(a1_p)} — <strong>${a1_sig ? 'significant' : 'non-significant'}</strong><br>
-      a₄-path (${xn}×${wn} → ${mn}): b = ${a4.toFixed(4)}, SE = ${a4_se.toFixed(4)}, t/z = ${(a4 / a4_se).toFixed(4)}, p ${fmtp(a4_p)} — <strong>${a4_sig ? 'significant' : 'non-significant'}</strong><br>
-      a₅-path (${xn}×${zn} → ${mn}): b = ${a5.toFixed(4)}, SE = ${a5_se.toFixed(4)}, t/z = ${(a5 / a5_se).toFixed(4)}, p ${fmtp(a5_p)} — <strong>${a5_sig ? 'significant' : 'non-significant'}</strong><br>
-      b-path (${mn} → ${yn}): b = ${b2.toFixed(4)}, SE = ${b2_se.toFixed(4)}, t/z = ${(b2 / b2_se).toFixed(4)}, p ${fmtp(b2_p)} — <strong>${b2_sig ? 'significant' : 'non-significant'}</strong><br>
-      Direct effect (c', ${xn} → ${yn}|${mn}): b = ${b1.toFixed(4)}, SE = ${b1_se.toFixed(4)}, t/z = ${(b1 / b1_se).toFixed(4)}, p ${fmtp(b1_p)} — <strong>${direct_sig ? 'significant' : 'non-significant'}</strong></p>
+      a₁-path (${xn} → ${mn}): b = ${a1.toFixed(4)}, SE = ${a1_se.toFixed(4)}, p ${fmtp(a1_p)} — <strong>${a1_sig ? 'significant' : 'non-significant'}</strong><br>
+      a₄-path (${xn}×${wn} → ${mn}): b = ${a4.toFixed(4)}, SE = ${a4_se.toFixed(4)}, p ${fmtp(a4_p)} — <strong>${a4_sig ? 'significant' : 'non-significant'}</strong><br>
+      a₅-path (${xn}×${zn} → ${mn}): b = ${a5.toFixed(4)}, SE = ${a5_se.toFixed(4)}, p ${fmtp(a5_p)} — <strong>${a5_sig ? 'significant' : 'non-significant'}</strong><br>
+      b-path (${mn} → ${yn}): b = ${b2.toFixed(4)}, SE = ${b2_se.toFixed(4)}, p ${fmtp(b2_p)} — <strong>${b2_sig ? 'significant' : 'non-significant'}</strong><br>
+      Direct effect (c', ${xn} → ${yn}|${mn}): b = ${b1.toFixed(4)}, SE = ${b1_se.toFixed(4)}, p ${fmtp(b1_p)} — <strong>${direct_sig ? 'significant' : 'non-significant'}</strong></p>
       
       <p><strong>Simple Slopes: Effect of ${xn} on ${mn} at levels of ${wn} and ${zn}</strong></p>
       <ul style="margin:6px 0 10px 0;padding-left:20px;line-height:1.8">
@@ -20117,9 +20117,9 @@ const plotData = {
   let apaSummary = '';
   if (isWBinary) {
     apaSummary = `<p><strong>Path coefficients (from full moderation model):</strong><br>
-Effect of ${xn} on ${yn}: b = ${bx.toFixed(3)}, SE = ${rF.se[1].toFixed(3)}, t/z = ${rF.t[1].toFixed(3)}, p ${fmtp(rF.p[1])} — <strong>${getSigTextMod(rF.p[1], mainEffectSig)}</strong><br>
-Effect of ${wn} on ${yn}: b = ${bw_coef.toFixed(3)}, SE = ${rF.se[2].toFixed(3)}, t/z = ${rF.t[2].toFixed(3)}, p ${fmtp(rF.p[2])} — <strong>${getSigTextMod(rF.p[2], moderatorEffectSig)}</strong><br>
-<strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${bxw.toFixed(3)}, SE = ${rF.se[3].toFixed(3)}, t/z = ${rF.t[3].toFixed(3)}, p ${fmtp(rF.p[3])} — <strong>${getSigTextMod(rF.p[3], interactionSig)}</strong></p>
+Effect of ${xn} on ${yn}: b = ${bx.toFixed(3)}, SE = ${rF.se[1].toFixed(3)}, p ${fmtp(rF.p[1])} — <strong>${getSigTextMod(rF.p[1], mainEffectSig)}</strong><br>
+Effect of ${wn} on ${yn}: b = ${bw_coef.toFixed(3)}, SE = ${rF.se[2].toFixed(3)}, p ${fmtp(rF.p[2])} — <strong>${getSigTextMod(rF.p[2], moderatorEffectSig)}</strong><br>
+<strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${bxw.toFixed(3)}, SE = ${rF.se[3].toFixed(3)}, p ${fmtp(rF.p[3])} — <strong>${getSigTextMod(rF.p[3], interactionSig)}</strong></p>
 
 <p><strong>Conditional effects of ${xn} on ${yn}:</strong><br>
 When ${wn} = 0: b = ${slopes[0].toFixed(3)}, SE = ${slopeSEs[0].toFixed(3)}, p ${fmtp(slopePvals[0])} — <strong>${low_sig ? 'significant' : 'non-significant'}</strong><br>
@@ -20128,9 +20128,9 @@ When ${wn} = 1: b = ${slopes[1].toFixed(3)}, SE = ${slopeSEs[1].toFixed(3)}, p $
 <p><strong>Overall interpretation:</strong> ${interactionSig ? 'Moderation is supported.' : '<strong>Moderation is not supported.</strong>'} The effect of ${xn} on ${yn} ${interactionSig ? 'varies significantly' : 'does not vary significantly'} as a function of ${wn}.</p>`;
   } else {
     apaSummary = `<p><strong>Path coefficients (from full moderation model):</strong><br>
-Effect of ${xn} on ${yn}: b = ${bx.toFixed(3)}, SE = ${rF.se[1].toFixed(3)}, t/z = ${rF.t[1].toFixed(3)}, p ${fmtp(rF.p[1])} — <strong>${getSigTextMod(rF.p[1], mainEffectSig)}</strong><br>
-Effect of ${wn} on ${yn}: b = ${bw_coef.toFixed(3)}, SE = ${rF.se[2].toFixed(3)}, t/z = ${rF.t[2].toFixed(3)}, p ${fmtp(rF.p[2])} — <strong>${getSigTextMod(rF.p[2], moderatorEffectSig)}</strong><br>
-<strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${bxw.toFixed(3)}, SE = ${rF.se[3].toFixed(3)}, t/z = ${rF.t[3].toFixed(3)}, p ${fmtp(rF.p[3])} — <strong>${getSigTextMod(rF.p[3], interactionSig)}</strong></p>
+Effect of ${xn} on ${yn}: b = ${bx.toFixed(3)}, SE = ${rF.se[1].toFixed(3)}, p ${fmtp(rF.p[1])} — <strong>${getSigTextMod(rF.p[1], mainEffectSig)}</strong><br>
+Effect of ${wn} on ${yn}: b = ${bw_coef.toFixed(3)}, SE = ${rF.se[2].toFixed(3)}, p ${fmtp(rF.p[2])} — <strong>${getSigTextMod(rF.p[2], moderatorEffectSig)}</strong><br>
+<strong>Interaction effect (${xn}×${wn} → ${yn}):</strong> b = ${bxw.toFixed(3)}, SE = ${rF.se[3].toFixed(3)}, p ${fmtp(rF.p[3])} — <strong>${getSigTextMod(rF.p[3], interactionSig)}</strong></p>
 
 <p><strong>Conditional effects of ${xn} on ${yn} at levels of ${wn}:</strong><br>
 At low ${wn} (${(mW - sW).toFixed(3)}): b = ${slopes[0].toFixed(3)}, SE = ${slopeSEs[0].toFixed(3)}, p ${fmtp(slopePvals[0])} — <strong>${getSigTextMod(slopePvals[0], low_sig)}</strong><br>
@@ -20471,10 +20471,10 @@ const effectsHtml = `
     <p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${mn}</strong> (first stage moderation).</p>
     
     <p><strong>Path coefficients:</strong><br>
-    a₁-path (${xn} → ${mn}): b = ${a1.toFixed(3)}, SE = ${a1_se.toFixed(3)}, t/z = ${rM_full.t[1].toFixed(3)}, p ${fmtp(a1_p)} — <strong>${a1Sig ? 'significant' : 'non-significant'}</strong><br>
-    a₃-path (${xn}×${wn} → ${mn}): b = ${a3.toFixed(3)}, SE = ${a3_se.toFixed(3)}, t/z = ${rM_full.t[3].toFixed(3)}, p ${fmtp(a3_p)} — <strong>${a3Sig ? 'significant' : 'non-significant'}</strong><br>
-    b-path (${mn} → ${yn}): b = ${b.toFixed(3)}, SE = ${b_se.toFixed(3)}, t/z = ${rY.t[2].toFixed(3)}, p ${fmtp(b_p)} — <strong>${bSig ? 'significant' : 'non-significant'}</strong><br>
-    Direct effect (c', ${xn} → ${yn}|${mn}): b = ${cp.toFixed(3)}, SE = ${rY.se[1].toFixed(3)}, t/z = ${rY.t[1].toFixed(3)}, p ${fmtp(cp_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
+    a₁-path (${xn} → ${mn}): b = ${a1.toFixed(3)}, SE = ${a1_se.toFixed(3)}, p ${fmtp(a1_p)} — <strong>${a1Sig ? 'significant' : 'non-significant'}</strong><br>
+    a₃-path (${xn}×${wn} → ${mn}): b = ${a3.toFixed(3)}, SE = ${a3_se.toFixed(3)}, p ${fmtp(a3_p)} — <strong>${a3Sig ? 'significant' : 'non-significant'}</strong><br>
+    b-path (${mn} → ${yn}): b = ${b.toFixed(3)}, SE = ${b_se.toFixed(3)}, p ${fmtp(b_p)} — <strong>${bSig ? 'significant' : 'non-significant'}</strong><br>
+    Direct effect (c', ${xn} → ${yn}|${mn}): b = ${cp.toFixed(3)}, SE = ${rY.se[1].toFixed(3)}, p ${fmtp(cp_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
     
     <p><strong>Index of Moderated Mediation :</strong> b = ${indexMM.toFixed(3)}${bootRes && bootRes.index ? `, BootSE = ${bootRes.index.se.toFixed(3)}, 95% BootCI [${bootRes.index.lo.toFixed(3)}, ${bootRes.index.hi.toFixed(3)}]` : (nBoot === 0 ? `, SE = ${imm_se.toFixed(3)}, z = ${imm_z.toFixed(3)}, p ${fmtp(imm_p)}` : '')} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
     
@@ -20831,10 +20831,10 @@ const wDesc = [
     let apaSummary = `<p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${mn}</strong> (second stage moderation).</p>
     
     <p><strong>Path coefficients:</strong><br>
-    a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, t/z = ${rM.t[1].toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
-    b₁-path (${mn} → ${yn}): b = ${b1.toFixed(3)}, SE = ${b1_se.toFixed(3)}, t/z = ${rY.t[2].toFixed(3)}, p ${fmtp(b1_p)} — <strong>${b1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-    <strong>b₃-path (${mn}×${wn} → ${yn}): b = ${b3.toFixed(3)}, SE = ${b3_se.toFixed(3)}, t/z = ${rY.t[4].toFixed(3)}, p ${fmtp(b3_p)} — <strong>${b3Sig ? 'significant' : 'non-significant'}</strong></strong><br>
-    Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${cp.toFixed(3)}, SE = ${rY.se[1].toFixed(3)}, t/z = ${rY.t[1].toFixed(3)}, p ${fmtp(cp_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
+    a-path (${xn} → ${mn}): b = ${a.toFixed(3)}, SE = ${a_se.toFixed(3)}, p ${fmtp(a_p)} — <strong>${aSig ? 'significant' : 'non-significant'}</strong><br>
+    b₁-path (${mn} → ${yn}): b = ${b1.toFixed(3)}, SE = ${b1_se.toFixed(3)}, p ${fmtp(b1_p)} — <strong>${b1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+    <strong>b₃-path (${mn}×${wn} → ${yn}): b = ${b3.toFixed(3)}, SE = ${b3_se.toFixed(3)}, p ${fmtp(b3_p)} — <strong>${b3Sig ? 'significant' : 'non-significant'}</strong></strong><br>
+    Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${cp.toFixed(3)}, SE = ${rY.se[1].toFixed(3)}, p ${fmtp(cp_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
     
     <p><strong>Index of Moderated Mediation:</strong> b = ${indexMM.toFixed(3)}${bootRes && bootRes.index_second ? `, BootSE = ${bootRes.index_second.se.toFixed(3)}, 95% BootCI [${bootRes.index_second.lo.toFixed(3)}, ${bootRes.index_second.hi.toFixed(3)}]` : ''} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
     
@@ -21863,10 +21863,10 @@ function runModMed_XMandXY(vars, covArrays, covNames, cl, nBoot, centerOption) {
     <div class="interp-text">
       <p>A moderated mediation analysis examined whether <strong>${wn}</strong> moderates both the ${xn}→${mn} path (a-path) and the direct ${xn}→${yn} path (c'-path).</p>
       <p><strong>Path coefficients:</strong><br>
-      a₁-path (${xn} → ${mn}): b = ${a1.toFixed(3)}, SE = ${a1_se.toFixed(3)}, t/z = ${rM_full.t[1].toFixed(3)}, p ${fmtp(a1_p)} — <strong>${a1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-      a₃-path (${xn}×${wn} → ${mn}): b = ${a3.toFixed(3)}, SE = ${a3_se.toFixed(3)}, t/z = ${rM_full.t[3].toFixed(3)}, p ${fmtp(a3_p)} — <strong>${a3_sig ? 'significant' : 'non-significant'}</strong><br>
-      b-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, t/z = ${b_m_t.toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
-      Interaction (${xn}×${wn} → ${yn} direct): b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, t/z = ${b_xw_t.toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${b_xw_sig ? 'significant' : 'non-significant'}</strong><br>
+      a₁-path (${xn} → ${mn}): b = ${a1.toFixed(3)}, SE = ${a1_se.toFixed(3)}, p ${fmtp(a1_p)} — <strong>${a1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+      a₃-path (${xn}×${wn} → ${mn}): b = ${a3.toFixed(3)}, SE = ${a3_se.toFixed(3)}, p ${fmtp(a3_p)} — <strong>${a3_sig ? 'significant' : 'non-significant'}</strong><br>
+      b-path (${mn} → ${yn}): b = ${b_m.toFixed(3)}, SE = ${b_m_se.toFixed(3)}, p ${fmtp(b_m_p)} — <strong>${b_m_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
+      Interaction (${xn}×${wn} → ${yn} direct): b = ${b_xw.toFixed(3)}, SE = ${b_xw_se.toFixed(3)}, p ${fmtp(b_xw_p)} — <strong>${b_xw_sig ? 'significant' : 'non-significant'}</strong><br>
       Direct effect (c', ${xn} → ${yn}|${mn},${wn}): b = ${b_x.toFixed(3)}, SE = ${b_x_se.toFixed(3)}, p ${fmtp(b_x_p)} — <strong>${directSig ? 'significant' : 'non-significant'}</strong></p>
       <p><strong>Index of Moderated Mediation:</strong> b = ${indexMM.toFixed(3)}${bootIMM ? `, BootSE = ${bootIMM.se.toFixed(3)}, 95% BootCI [${bootIMM.lo.toFixed(3)}, ${bootIMM.hi.toFixed(3)}]` : `, SE = ${indexMM_se.toFixed(3)}, p ${immPDisplay}`} — <strong>${immSigFinal ? 'significant' : 'non-significant'}</strong></p>
       <p><strong>Conditional a-path (${xn} → ${mn}) at levels of ${wn}:</strong><br>`;
@@ -22360,13 +22360,13 @@ function runModeratedModeration(vars, covArrays, covNames, cl, nBoot, centerOpti
       <p>A moderated moderation (three-way interaction) analysis examined whether the effect of <strong>${xn}</strong> on <strong>${yn}</strong> is jointly moderated by <strong>${wn}</strong> and <strong>${zn}</strong>.</p>
 
       <p><strong>Path coefficients:</strong><br>
-      <strong>Three-way interaction (${xn}×${wn}×${zn} → ${yn}):</strong> b = ${fmt3(b_xwz)}, SE = ${fmt3(se_b_xwz)}, t/z = ${fmt3(t_b_xwz)}, p ${fmtP(p_xwz)} — <strong>${getSigText(p_xwz, threeWaySig)}</strong><br>
-      ${xn}×${wn} (two-way): b = ${fmt3(b_xw)}, SE = ${fmt3(se_b_xw)}, t/z = ${fmt3(t_b_xw)}, p ${fmtP(p_xw)} — <strong>${getSigText(p_xw, xw_sig)}</strong><br>
-      ${xn}×${zn} (two-way): b = ${fmt3(b_xz)}, SE = ${fmt3(se_b_xz)}, t/z = ${fmt3(t_b_xz)}, p ${fmtP(p_xz)} — <strong>${getSigText(p_xz, xz_sig)}</strong><br>
-      ${wn}×${zn} (two-way): b = ${fmt3(b_wz)}, SE = ${fmt3(se_b_wz)}, t/z = ${fmt3(t_b_wz)}, p ${fmtP(p_wz)} — <strong>${getSigText(p_wz, wz_sig)}</strong><br>
-      ${xn} → ${yn} (main effect): b = ${fmt3(b_x)}, SE = ${fmt3(se_b_x)}, t/z = ${fmt3(t_b_x)}, p ${fmtP(p_x)} — <strong>${getSigText(p_x, x_sig)}</strong><br>
-      ${wn} → ${yn} (main effect): b = ${fmt3(b_w)}, SE = ${fmt3(se_b_w)}, t/z = ${fmt3(t_b_w)}, p ${fmtP(p_w)} — <strong>${getSigText(p_w, w_sig)}</strong><br>
-      ${zn} → ${yn} (main effect): b = ${fmt3(b_z)}, SE = ${fmt3(se_b_z)}, t/z = ${fmt3(t_b_z)}, p ${fmtP(p_z)} — <strong>${getSigText(p_z, z_sig)}</strong></p>
+      <strong>Three-way interaction (${xn}×${wn}×${zn} → ${yn}):</strong> b = ${fmt3(b_xwz)}, SE = ${fmt3(se_b_xwz)}, p ${fmtP(p_xwz)} — <strong>${getSigText(p_xwz, threeWaySig)}</strong><br>
+      ${xn}×${wn} (two-way): b = ${fmt3(b_xw)}, SE = ${fmt3(se_b_xw)}, p ${fmtP(p_xw)} — <strong>${getSigText(p_xw, xw_sig)}</strong><br>
+      ${xn}×${zn} (two-way): b = ${fmt3(b_xz)}, SE = ${fmt3(se_b_xz)}, p ${fmtP(p_xz)} — <strong>${getSigText(p_xz, xz_sig)}</strong><br>
+      ${wn}×${zn} (two-way): b = ${fmt3(b_wz)}, SE = ${fmt3(se_b_wz)}, p ${fmtP(p_wz)} — <strong>${getSigText(p_wz, wz_sig)}</strong><br>
+      ${xn} → ${yn} (main effect): b = ${fmt3(b_x)}, SE = ${fmt3(se_b_x)}, p ${fmtP(p_x)} — <strong>${getSigText(p_x, x_sig)}</strong><br>
+      ${wn} → ${yn} (main effect): b = ${fmt3(b_w)}, SE = ${fmt3(se_b_w)}, p ${fmtP(p_w)} — <strong>${getSigText(p_w, w_sig)}</strong><br>
+      ${zn} → ${yn} (main effect): b = ${fmt3(b_z)}, SE = ${fmt3(se_b_z)}, p ${fmtP(p_z)} — <strong>${getSigText(p_z, z_sig)}</strong></p>
 
       <p><strong>Overall interpretation:</strong> ${threeWaySig ? 'There is significant moderated moderation, indicating that the two-way interaction between ' + xn + ' and ' + wn + ' varies across levels of ' + zn + '.' : 'The three-way interaction is not significant, suggesting that the moderating effect of ' + wn + ' on ' + xn + '→' + yn + ' does not depend on ' + zn + '.'}</p>
     </div>
@@ -24615,7 +24615,7 @@ async function exportToPDF(htmlContent, filename) {
 <div class="main-content">
 <h1>MedModr — Analysis Results</h1>
 <div class="app-meta">
-  <strong>MedModr: Mediation & Moderation Tool</strong> (Version 2.0)<br>
+  <strong>MedModr: Mediation, Moderation & Conditional Process Tool</strong> (Version 2.0)<br>
 <div class="analysis-config"><strong>Configuration:</strong> ${analysisConfigText}</div>
 <div style="font-size: 9pt; margin-top: 5px;"><strong>Variable Assignments:</strong> ${getVariableAssignmentsText()}</div>
   <span style="font-size: 9pt;">📢 <strong>Check for newer version:</strong> <a href="https://github.com/shinyhealthtools/medmodr/releases" style="color: #000000; text-decoration: underline;">https://github.com/shinyhealthtools/medmodr/releases</a></span><br>
@@ -24925,7 +24925,7 @@ function exportToHTML(htmlContent, filename) {
 <div class="main-content">
 <h1>MedModr — Analysis Results</h1>
 <div class="app-meta">
-  <strong>MedModr: Mediation & Moderation Tool</strong> (Version 2.0)<br>
+  <strong>MedModr: Mediation, Moderation & Conditional Process Tool</strong> (Version 2.0)<br>
 <div class="analysis-config"><strong>Configuration:</strong> ${analysisConfigText}</div>
 <div style="font-size: 9pt; margin-top: 5px;"><strong>Variable Assignments:</strong> ${getVariableAssignmentsText()}</div>
   <span style="font-size: 9pt;">📢 <strong>Check for newer version:</strong> <a href="https://github.com/shinyhealthtools/medmodr/releases" style="color: #000000; text-decoration: underline;">https://github.com/shinyhealthtools/medmodr/releases</a></span><br>
