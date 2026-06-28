@@ -12832,7 +12832,7 @@ function renderReg(res, resZ, outcome, confLabel, Xmat = null, predictorNames = 
     let rows = '';
     res.names.forEach((nm, i) => {
         const stars = getSigStars(res.p[i]);  
-        const beta = (resZ && i > 0 && showStd) ? fmtv(resZ.coef[i], 4) : (i === 0 && showStd ? '—' : '');
+        const beta = (resZ && i > 0 && showStd) ? fmtv(resZ.coef[i], 3) : (i === 0 && showStd ? '—' : '');
         
         let vifCell = '';
         if (showVifColumn && vifValues && i > 0 && i - 1 < vifValues.length) {
@@ -12962,7 +12962,7 @@ function renderIndirectTable(paths, confLabel){
     let rows = '';
     paths.forEach(path => {
         const stars = getSigStars(path.p);
-        const beta = path.b_std !== undefined ? fmtv(path.b_std, 4) : '—';
+        const beta = path.b_std !== undefined ? fmtv(path.b_std, 3) : '—';
         const seVal = path.se !== undefined ? fmtv(path.se) : '—';
         const tVal = path.t !== undefined ? fmtv(path.t) : '—';
         const pVal = path.p !== undefined ? formatPValue(path.p) : '—';
@@ -15981,7 +15981,7 @@ const diagData={
       ${diagPreview(diagData)}
       <div class="res-sub-label"><i class="fas fa-1"></i> a-Path: ${xn} → ${mn}</div>${renderReg(rM, rMz, mn, confPct, buildMat([xc, ...covArrays]), [xn, ...covNames])}
       <div class="res-sub-label"><i class="fas fa-2"></i> b-Path: ${xn}, ${mn} → ${yn}</div>${renderReg(rY, rYz, yn, confPct, buildMat([xc, m, ...covArrays]), [xn, mn, ...covNames])}
-      <div class="res-sub-label"><i class="fas fa-3"></i> Total Effect: ${xn} → ${yn}</div>${renderReg(rTot, rTz, yn, confPct, buildMat([xc, ...covArrays]), [xn, ...covNames])}
+      ${!rTot.isLogistic ? `<div class="res-sub-label"><i class="fas fa-3"></i> Total Effect: ${xn} → ${yn}</div>${renderReg(rTot, rTz, yn, confPct, buildMat([xc, ...covArrays]), [xn, ...covNames])}` : ''}
 <div style="padding:18px;background:var(--surface-2);border-radius:var(--r-lg);border:1px solid var(--border);margin-top:18px">
   <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:14px"><i class="fas fa-share-alt"></i> Effects Summary</div>
   <div class="res-table-wrap"><table class="res-table">
@@ -16007,7 +16007,7 @@ const diagData={
         <td style="text-align:right">${fmtv(rTot.cilo[1], 3)}</span></td>
         <td style="text-align:right">${fmtv(rTot.cihi[1], 3)}</span></td>
         <td class="sig-star" style="text-align:center">${pStar(rTot.p[1])}</span></td>
-        <td class="col-divider td-std" style="text-align:right">${fmtv(rTz ? rTz.coef[1] : 0, 4)}</span></td>
+        <td class="col-divider td-std" style="text-align:right">${fmtv(rTz ? rTz.coef[1] : 0, 3)}</span></td>
       </tr>
       <tr>
         <td style="font-weight:600">Direct effect (${xn}→${yn}|${mn})</span></td>
@@ -16018,7 +16018,7 @@ const diagData={
         <td style="text-align:right">${fmtv(rY.cilo[1], 3)}</span></td>
         <td style="text-align:right">${fmtv(rY.cihi[1], 3)}</span></td>
         <td class="sig-star" style="text-align:center">${pStar(rY.p[1])}</span></td>
-        <td class="col-divider td-std" style="text-align:right">${fmtv(cp_s, 4)}</span></td>
+        <td class="col-divider td-std" style="text-align:right">${fmtv(cp_s, 3)}</span></td>
       </tr>
       <tr class="row-bold">
         <td style="font-weight:800">Indirect effect (${xn}→${mn}→${yn})</span></td>
@@ -16029,7 +16029,7 @@ const diagData={
         <td style="text-align:right">${bootSimple ? fmtv(bootSimple.lo, 3) : fmtv(sobelCI_lo, 3)}</span></td>
         <td style="text-align:right">${bootSimple ? fmtv(bootSimple.hi, 3) : fmtv(sobelCI_hi, 3)}</span></td>
         <td class="sig-star" style="text-align:center">${bootSimple ? (indirectSig ? '*' : '') : pStar(p_sob)}</span></td>
-        <td class="col-divider td-std" style="text-align:right">${fmtv(ind_s, 4)}</span></td>
+        <td class="col-divider td-std" style="text-align:right">${fmtv(ind_s, 3)}</span></td>
       </tr>
     </tbody>
   </table></div>
@@ -16342,7 +16342,7 @@ const diagData={
       <div class="res-sub-label"><i class="fas fa-1"></i> ${xn} → ${m1n}</div>${renderReg(rM1, rM1z, m1n, confPct, buildMat([xc, ...covArrays]), [xn, ...covNames])}
       <div class="res-sub-label"><i class="fas fa-2"></i> ${xn}, ${m1n} → ${m2n}</div>${renderReg(rM2, rM2z, m2n, confPct, buildMat([xc, m1, ...covArrays]), [xn, m1n, ...covNames])}
       <div class="res-sub-label"><i class="fas fa-3"></i> ${xn}, ${m1n}, ${m2n} → ${yn}</div>${renderReg(rY, rYz, yn, confPct, buildMat([xc, m1, m2, ...covArrays]), [xn, m1n, m2n, ...covNames])}
-      <div class="res-sub-label"><i class="fas fa-4"></i> Total Effect ${xn} → ${yn}</div>${renderReg(rTot, rTz, yn, confPct, buildMat([xc, ...covArrays]), [xn, ...covNames])}
+      ${!rTot.isLogistic ? `<div class="res-sub-label"><i class="fas fa-4"></i> Total Effect ${xn} → ${yn}</div>${renderReg(rTot, rTz, yn, confPct, buildMat([xc, ...covArrays]), [xn, ...covNames])}` : ''}
       <div style="padding:18px;background:var(--surface-2);border-radius:var(--r-lg);border:1px solid var(--border);margin-top:18px">
         <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:14px"><i class="fas fa-list"></i> Indirect Effects</div>
         <div style="font-size:.75rem;color:var(--text-4);margin-bottom:10px">${nBoot > 0 ? `Bootstrap confidence intervals are shown below for indirect effects (${nBoot.toLocaleString()} samples).` : `Sobel test results are shown below for indirect effects.`}</div>
@@ -18258,17 +18258,17 @@ function runDoubleModeration(vars, covArrays, covNames, cl, nBoot, centerOption)
         if (isWBinary) {
           wDisplay = wVal === 0 ? `0` : `1`;
         } else {
-          if (Math.abs(wVal - (mW - sW)) < 0.0001) wDisplay = `${wVal.toFixed(4)} (M-1SD)`;
-          else if (Math.abs(wVal - mW) < 0.0001) wDisplay = `${wVal.toFixed(4)} (Mean)`;
-          else wDisplay = `${wVal.toFixed(4)} (M+1SD)`;
+          if (Math.abs(wVal - (mW - sW)) < 0.0001) wDisplay = `${wVal.toFixed(3)} (M-1SD)`;
+          else if (Math.abs(wVal - mW) < 0.0001) wDisplay = `${wVal.toFixed(3)} (Mean)`;
+          else wDisplay = `${wVal.toFixed(3)} (M+1SD)`;
         }
         
         if (isZBinary) {
           zDisplay = zVal === 0 ? `0` : `1`;
         } else {
-          if (Math.abs(zVal - (mZ - sZ)) < 0.0001) zDisplay = `${zVal.toFixed(4)} (M-1SD)`;
-          else if (Math.abs(zVal - mZ) < 0.0001) zDisplay = `${zVal.toFixed(4)} (Mean)`;
-          else zDisplay = `${zVal.toFixed(4)} (M+1SD)`;
+          if (Math.abs(zVal - (mZ - sZ)) < 0.0001) zDisplay = `${zVal.toFixed(3)} (M-1SD)`;
+          else if (Math.abs(zVal - mZ) < 0.0001) zDisplay = `${zVal.toFixed(3)} (Mean)`;
+          else zDisplay = `${zVal.toFixed(3)} (M+1SD)`;
         }
         
         conditionalEffectRows.push(`
@@ -19129,12 +19129,12 @@ const hi = slope + tc * se;
       slopeRows += `<tr>
         <td style="text-align:right; font-weight: normal;">${wn}=${wDisplay}</span></td>
         <td style="text-align:right; font-weight: normal;">${zn}=${zDisplay}</span></td>
-        <td style="text-align:right">${slope.toFixed(4)}</span></td>
-        <td style="text-align:right">${se.toFixed(4)}</span></td>
-        <td style="text-align:right">${tVal.toFixed(4)}</span></td>
+        <td style="text-align:right">${slope.toFixed(3)}</span></td>
+        <td style="text-align:right">${se.toFixed(3)}</span></td>
+        <td style="text-align:right">${tVal.toFixed(3)}</span></td>
         <td style="text-align:right">${pDisplay}${stars ? `<span class="sig-star" style="color: var(--rose);">${stars}</span>` : ''}</span></td>
-        <td style="text-align:right">${lo.toFixed(4)}</span></td>
-        <td style="text-align:right">${hi.toFixed(4)}</span></td>
+        <td style="text-align:right">${lo.toFixed(3)}</span></td>
+        <td style="text-align:right">${hi.toFixed(3)}</span></td>
       </tr>`;
     }
   }
@@ -19177,12 +19177,12 @@ const indHi = ind + tc * se_ind;
       condIndRows += `<tr>
         <td style="text-align:right; font-weight: normal;">${wn}=${wDisplay}</span></td>
         <td style="text-align:right; font-weight: normal;">${zn}=${zDisplay}</span></td>
-        <td style="text-align:right">${ind.toFixed(4)}</span></td>
-        <td style="text-align:right">${se_ind.toFixed(4)}</span></td>
-        <td style="text-align:right">${indT.toFixed(4)}</span></td>
+        <td style="text-align:right">${ind.toFixed(3)}</span></td>
+        <td style="text-align:right">${se_ind.toFixed(3)}</span></td>
+        <td style="text-align:right">${indT.toFixed(3)}</span></td>
         <td style="text-align:right">${pDisplay}${stars ? `<span class="sig-star" style="color: var(--rose);">${stars}</span>` : ''}</span></td>
-        <td style="text-align:right">${indLo.toFixed(4)}</span></td>
-        <td style="text-align:right">${indHi.toFixed(4)}</span></td>
+        <td style="text-align:right">${indLo.toFixed(3)}</span></td>
+        <td style="text-align:right">${indHi.toFixed(3)}</span></td>
       </tr>`;
     }
   }
@@ -19709,9 +19709,12 @@ function runParallelMed(vars, covArrays, covNames, cl, nBoot) {
   const bPathHtml = `<div class="res-sub-label"><i class="fas fa-${bPathNumber}"></i> b-Path: ${xn}, ${mediatorNames.join(', ')} → ${yn}</div>
       ${renderReg(rY, rYz, yn, confPct, buildMat(yPredictors), yPredictorNames)}`;
   
-  const totalNumber = k + 2;
-  const totalHtml = `<div class="res-sub-label"><i class="fas fa-${totalNumber}"></i> Total Effect: ${xn} → ${yn}</div>
-      ${renderReg(rTot, rTz, yn, confPct, Xmat_tot, predNames_tot)}`;
+  let totalHtml = '';
+  if (rTot && !rTot.isLogistic) {
+    const totalNumber = k + 2;
+    totalHtml = `<div class="res-sub-label"><i class="fas fa-${totalNumber}"></i> Total Effect: ${xn} → ${yn}</div>
+        ${renderReg(rTot, rTz, yn, confPct, Xmat_tot, predNames_tot)}`;
+  }
   
   let effectsRows = '';
   
@@ -19724,7 +19727,7 @@ function runParallelMed(vars, covArrays, covNames, cl, nBoot) {
     <td style="text-align:right;">${fmtv(rTot.cilo[1], 3)}</span></td>
     <td style="text-align:right;">${fmtv(rTot.cihi[1], 3)}</span></td>
     <td class="sig-star" style="text-align:center">${pStar(cTotalP)}</span></td>
-    <td class="col-divider td-std" style="text-align:right">${fmtv(cTotalStd, 4)}</span></td>
+    <td class="col-divider td-std" style="text-align:right">${fmtv(cTotalStd, 3)}</span></td>
   </tr>`;
   
   effectsRows += `<tr class="row-bold">
@@ -19736,7 +19739,7 @@ function runParallelMed(vars, covArrays, covNames, cl, nBoot) {
     <td style="text-align:right;">${fmtv(rY.cilo[1], 3)}</span></td>
     <td style="text-align:right;">${fmtv(rY.cihi[1], 3)}</span></td>
     <td class="sig-star" style="text-align:center">${pStar(cDirectP)}</span></td>
-    <td class="col-divider td-std" style="text-align:right">${fmtv(cDirectStd, 4)}</span></td>
+    <td class="col-divider td-std" style="text-align:right">${fmtv(cDirectStd, 3)}</span></td>
   </tr>`;
   
   for (let i = 0; i < k; i++) {
@@ -19750,7 +19753,7 @@ function runParallelMed(vars, covArrays, covNames, cl, nBoot) {
       <td style="text-align:right;">${bootIndices[i] ? fmtv(bootIndices[i].lo, 3) : '—'}</span></td>
       <td style="text-align:right;">${bootIndices[i] ? fmtv(bootIndices[i].hi, 3) : '—'}</span></td>
       <td class="sig-star" style="text-align:center">${indirectSig ? '*' : ''}</span></td>
-      <td class="col-divider td-std" style="text-align:right">${fmtv(indirectStd[i], 4)}</span></td>
+      <td class="col-divider td-std" style="text-align:right">${fmtv(indirectStd[i], 3)}</span></td>
     </tr>`;
   }
   
@@ -19764,7 +19767,7 @@ function runParallelMed(vars, covArrays, covNames, cl, nBoot) {
     <td style="text-align:right;">${totalBootCI ? fmtv(totalBootCI.lo, 3) : '—'}</span></td>
     <td style="text-align:right;">${totalBootCI ? fmtv(totalBootCI.hi, 3) : '—'}</span></td>
     <td class="sig-star" style="text-align:center">${totalIndirectSig ? '*' : ''}</span></td>
-    <td class="col-divider td-std" style="text-align:right">${fmtv(totalIndirectStd, 4)}</span></td>
+    <td class="col-divider td-std" style="text-align:right">${fmtv(totalIndirectStd, 3)}</span></td>
   </tr>`;
   
   const effectsHtml = `<div style="padding:18px;background:var(--surface-2);border-radius:var(--r-lg);border:1px solid var(--border);margin-top:18px">
@@ -22206,9 +22209,9 @@ function runModeratedModeration(vars, covArrays, covNames, cl, nBoot, centerOpti
       if (isZBinary) {
         zDisplay = zVal === 0 ? `0` : `1`;
       } else {
-        if (Math.abs(zVal - (mZ - sZ)) < 0.0001) zDisplay = `${zVal.toFixed(4)} (M-1SD)`;
-        else if (Math.abs(zVal - mZ) < 0.0001) zDisplay = `${zVal.toFixed(4)} (Mean)`;
-        else zDisplay = `${zVal.toFixed(4)} (M+1SD)`;
+        if (Math.abs(zVal - (mZ - sZ)) < 0.0001) zDisplay = `${zVal.toFixed(3)} (M-1SD)`;
+        else if (Math.abs(zVal - mZ) < 0.0001) zDisplay = `${zVal.toFixed(3)} (Mean)`;
+        else zDisplay = `${zVal.toFixed(3)} (M+1SD)`;
       }
       
       conditionalInteractionRows.push(`
@@ -22283,14 +22286,14 @@ function runModeratedModeration(vars, covArrays, covNames, cl, nBoot, centerOpti
         
         let wDisplay, zDisplay;
         if (isWBinary) wDisplay = wVal === 0 ? `0` : `1`;
-        else if (Math.abs(wVal - (mW - sW)) < 0.0001) wDisplay = `${wVal.toFixed(4)} (M-1SD)`;
-        else if (Math.abs(wVal - mW) < 0.0001) wDisplay = `${wVal.toFixed(4)} (Mean)`;
-        else wDisplay = `${wVal.toFixed(4)} (M+1SD)`;
+        else if (Math.abs(wVal - (mW - sW)) < 0.0001) wDisplay = `${wVal.toFixed(3)} (M-1SD)`;
+        else if (Math.abs(wVal - mW) < 0.0001) wDisplay = `${wVal.toFixed(3)} (Mean)`;
+        else wDisplay = `${wVal.toFixed(3)} (M+1SD)`;
         
         if (isZBinary) zDisplay = zVal === 0 ? `0` : `1`;
-        else if (Math.abs(zVal - (mZ - sZ)) < 0.0001) zDisplay = `${zVal.toFixed(4)} (M-1SD)`;
-        else if (Math.abs(zVal - mZ) < 0.0001) zDisplay = `${zVal.toFixed(4)} (Mean)`;
-        else zDisplay = `${zVal.toFixed(4)} (M+1SD)`;
+        else if (Math.abs(zVal - (mZ - sZ)) < 0.0001) zDisplay = `${zVal.toFixed(3)} (M-1SD)`;
+        else if (Math.abs(zVal - mZ) < 0.0001) zDisplay = `${zVal.toFixed(3)} (Mean)`;
+        else zDisplay = `${zVal.toFixed(3)} (M+1SD)`;
         
         conditionalEffectRows.push(`
           <tr>
@@ -27293,6 +27296,299 @@ function applyZScore(varIndex, destNew, varName) {
     renderEditorTable();
     updateEditorStatsDisplay();
 }
+
+function getStatLabel(vars) {
+    if (!vars || !vars.y) return 't/z';
+    const yData = vars.y;
+    if (!yData || yData.length === 0) return 't/z';
+    
+    const uniqueVals = [...new Set(yData.filter(v => v !== null && v !== undefined && !isNaN(v)))];
+    const isBinary = uniqueVals.length === 2 && uniqueVals.every(v => v === 0 || v === 1);
+    
+    return isBinary ? 'z' : 't';
+}
+
+function getStatNotice(vars) {
+    if (!vars || !vars.y) return '';
+    const yData = vars.y;
+    if (!yData || yData.length === 0) return '';
+    
+    const uniqueVals = [...new Set(yData.filter(v => v !== null && v !== undefined && !isNaN(v)))];
+    const isBinary = uniqueVals.length === 2 && uniqueVals.every(v => v === 0 || v === 1);
+    
+    if (isBinary) {
+        return `<div style="font-size:.7rem;color:var(--text-4);margin-top:4px;font-style:italic;"><i class="fas fa-info-circle"></i> Label this column as <strong>z</strong> (logistic regression)</div>`;
+    } else {
+        return `<div style="font-size:.7rem;color:var(--text-4);margin-top:4px;font-style:italic;"><i class="fas fa-info-circle"></i> Label this column as <strong>t</strong> (OLS regression)</div>`;
+    }
+}
+
+function wrapTablesWithNotice(originalFn) {
+    return function(vars, covArrays, covNames, cl, nBoot, ...extraArgs) {
+        const result = originalFn(vars, covArrays, covNames, cl, nBoot, ...extraArgs);
+        if (vars && vars.y) {
+            const statLabel = getStatLabel(vars);
+            const notice = getStatNotice(vars);
+            return result
+                .replace(/<th[^>]*>t\/z<\/th>/g, `<th style="padding:8px 10px;border:1px solid var(--border-med);text-align:right;font-size:.7rem;font-weight:800">${statLabel}</th>`)
+                .replace(/(<div style="font-size:.7rem;color:var(--text-4);margin-top:6px">)/g, notice + '$1');
+        }
+        return result;
+    };
+}
+
+runSimpleMed = wrapTablesWithNotice(runSimpleMed);
+runParallelMed = wrapTablesWithNotice(runParallelMed);
+runSerialMed = wrapTablesWithNotice(runSerialMed);
+runModeration = wrapTablesWithNotice(runModeration);
+runModMed_FirstStage = wrapTablesWithNotice(runModMed_FirstStage);
+runModMed_SecondStage = wrapTablesWithNotice(runModMed_SecondStage);
+runModMed_BothStages = wrapTablesWithNotice(runModMed_BothStages);
+runModMed_XMandXY = wrapTablesWithNotice(runModMed_XMandXY);
+runModMed_AllThreePaths = wrapTablesWithNotice(runModMed_AllThreePaths);
+runModMed_SecondStageAndDirect = wrapTablesWithNotice(runModMed_SecondStageAndDirect);
+runDoubleModeration = wrapTablesWithNotice(runDoubleModeration);
+runModeratedModeration = wrapTablesWithNotice(runModeratedModeration);
+runModMed_TwoModerators = wrapTablesWithNotice(runModMed_TwoModerators);
+runMediationModeratedDirect = wrapTablesWithNotice(runMediationModeratedDirect);
+runModeratedSerialMediation_FirstStage = wrapTablesWithNotice(runModeratedSerialMediation_FirstStage);
+
+const stickyStyle = document.createElement('style');
+stickyStyle.textContent = `
+    .sticky-analysis-indicator {
+        position: sticky;
+        top: 72px;
+        z-index: 50;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 8px 16px;
+        margin: 0 0 16px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        backdrop-filter: blur(8px);
+        background: rgba(255,255,255,0.92);
+    }
+    
+    [data-theme="dark"] .sticky-analysis-indicator {
+        background: rgba(14, 18, 37, 0.92);
+    }
+    
+    .sticky-analysis-indicator .icon {
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .sticky-analysis-indicator .icon i {
+        color: white;
+        font-size: 13px;
+    }
+    
+    .sticky-analysis-indicator .type-name {
+        font-weight: 700;
+        font-size: 0.82rem;
+        color: var(--text-1);
+    }
+    
+    .sticky-analysis-indicator .type-name .model {
+        color: var(--brand);
+        font-weight: 600;
+        font-size: 0.65rem;
+        background: rgba(61, 90, 241, 0.10);
+        padding: 0 6px;
+        border-radius: 3px;
+        margin-left: 4px;
+    }
+    
+    .sticky-analysis-indicator .badge {
+        padding: 2px 10px;
+        border-radius: 12px;
+        font-size: 0.6rem;
+        font-weight: 700;
+        font-family: var(--mono);
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        margin-left: 6px;
+    }
+    
+    .sticky-analysis-indicator .badge-ols {
+        background: rgba(61, 90, 241, 0.12);
+        color: var(--brand);
+        border: 1px solid rgba(61, 90, 241, 0.15);
+    }
+    
+    .sticky-analysis-indicator .badge-logistic {
+        background: rgba(124, 58, 237, 0.12);
+        color: #7c3aed;
+        border: 1px solid rgba(124, 58, 237, 0.15);
+    }
+    
+    .sticky-analysis-indicator .badge-stage {
+        background: rgba(109, 40, 217, 0.10);
+        color: var(--violet);
+        border: 1px solid rgba(109, 40, 217, 0.15);
+        margin-left: 6px;
+    }
+    
+    @media (max-width: 768px) {
+        .sticky-analysis-indicator {
+            top: 56px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .sticky-analysis-indicator .icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .sticky-analysis-indicator .icon i {
+            font-size: 11px;
+        }
+        
+        .sticky-analysis-indicator .type-name {
+            font-size: 0.7rem;
+        }
+        
+        .sticky-analysis-indicator .type-name .model {
+            font-size: 0.55rem;
+        }
+        
+        .sticky-analysis-indicator .badge {
+            font-size: 0.5rem;
+            padding: 1px 8px;
+        }
+    }
+`;
+document.head.appendChild(stickyStyle);
+
+function getStickyTypeInfo(vars) {
+    const select = document.getElementById('analysisTypeSelect');
+    const analysisType = select?.value || 'simple';
+    
+    let displayName = '';
+    let modelNumber = '';
+    let icon = 'fa-flask';
+    
+    if (select) {
+        const selectedOption = select.options[select.selectedIndex];
+        if (selectedOption) {
+            let text = selectedOption.text;
+            let modelMatch = text.match(/\(Model\s*(\d+)\)/i);
+            if (modelMatch) {
+                displayName = text.replace(/\s*\(Model\s*\d+\)\s*/i, '').trim();
+                modelNumber = 'M' + modelMatch[1];
+            } else {
+                displayName = text.trim();
+            }
+        }
+    }
+    
+    const iconMap = {
+        'simple': 'fa-arrow-right',
+        'parallel': 'fa-code-branch',
+        'serial': 'fa-share-alt',
+        'moderation': 'fa-exchange-alt',
+        'double_mod': 'fa-cubes',
+        'modmod': 'fa-cubes',
+        'modmed': 'fa-layer-group'
+    };
+    icon = iconMap[analysisType] || 'fa-flask';
+    
+    let isBinary = false;
+    if (vars && vars.y) {
+        const yData = vars.y;
+        if (yData && yData.length > 0) {
+            const uniqueVals = [...new Set(yData.filter(v => v !== null && v !== undefined && !isNaN(v)))];
+            isBinary = uniqueVals.length === 2 && uniqueVals.every(v => v === 0 || v === 1);
+        }
+    }
+    
+    let stageText = '';
+    if (analysisType === 'modmed') {
+        const stageSelect = document.getElementById('modStageOption');
+        if (stageSelect) {
+            const stageOption = stageSelect.options[stageSelect.selectedIndex];
+            if (stageOption) {
+                let stageLabel = stageOption.text;
+                stageLabel = stageLabel.replace(/\(Model\s*\d+\)/i, '').trim();
+                stageText = stageLabel;
+            }
+        }
+    }
+    
+    const regressionType = isBinary ? 'Logistic' : 'OLS';
+    const badgeClass = isBinary ? 'badge-logistic' : 'badge-ols';
+    
+    return {
+        name: displayName,
+        icon: icon,
+        model: modelNumber,
+        regressionType: regressionType,
+        badgeClass: badgeClass,
+        stageText: stageText,
+        isBinary: isBinary
+    };
+}
+
+function insertStickyIndicator(vars) {
+    const info = getStickyTypeInfo(vars);
+    
+    const modelDisplay = info.model ? `<span class="model">${info.model}</span>` : '';
+    const stageDisplay = info.stageText ? `<span class="badge badge-stage">${info.stageText}</span>` : '';
+    const regressionBadge = `<span class="badge ${info.badgeClass}">${info.regressionType}</span>`;
+    
+    return `
+        <div class="sticky-analysis-indicator">
+            <div class="icon">
+                <i class="fas ${info.icon}"></i>
+            </div>
+            <div class="type-name">
+                ${info.name} ${modelDisplay}
+                ${regressionBadge}
+                ${stageDisplay}
+            </div>
+        </div>
+    `;
+}
+
+function wrapWithStickyIndicator(originalFn) {
+    return function(vars, covArrays, covNames, cl, nBoot, ...extraArgs) {
+        const result = originalFn(vars, covArrays, covNames, cl, nBoot, ...extraArgs);
+        if (vars && vars.y) {
+            const indicator = insertStickyIndicator(vars);
+            const cleaned = result.replace(/<div class="sticky-analysis-indicator">[\s\S]*?<\/div>/, '');
+            return cleaned.replace(/(<div class="panel" style="margin-bottom:18px">)/, indicator + '$1');
+        }
+        return result;
+    };
+}
+
+runSimpleMed = wrapWithStickyIndicator(runSimpleMed);
+runParallelMed = wrapWithStickyIndicator(runParallelMed);
+runSerialMed = wrapWithStickyIndicator(runSerialMed);
+runModeration = wrapWithStickyIndicator(runModeration);
+runModMed_FirstStage = wrapWithStickyIndicator(runModMed_FirstStage);
+runModMed_SecondStage = wrapWithStickyIndicator(runModMed_SecondStage);
+runModMed_BothStages = wrapWithStickyIndicator(runModMed_BothStages);
+runModMed_XMandXY = wrapWithStickyIndicator(runModMed_XMandXY);
+runModMed_AllThreePaths = wrapWithStickyIndicator(runModMed_AllThreePaths);
+runModMed_SecondStageAndDirect = wrapWithStickyIndicator(runModMed_SecondStageAndDirect);
+runDoubleModeration = wrapWithStickyIndicator(runDoubleModeration);
+runModeratedModeration = wrapWithStickyIndicator(runModeratedModeration);
+runModMed_TwoModerators = wrapWithStickyIndicator(runModMed_TwoModerators);
+runMediationModeratedDirect = wrapWithStickyIndicator(runMediationModeratedDirect);
+runModeratedSerialMediation_FirstStage = wrapWithStickyIndicator(runModeratedSerialMediation_FirstStage);
 </script>
 </body>
 </html>
