@@ -364,20 +364,6 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
     padding-top: 52px;
   }
   
-  .hamburger {
-    display: flex;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-3);
-    border-radius: var(--r-sm);
-    width: 38px;
-    height: 38px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 0.95rem;
-  }
-  
   .topbar {
     left: 0 !important;
     padding: 0 12px;
@@ -2886,6 +2872,27 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
 .var-type-select option {
   background: var(--surface);
   color: var(--text-1);
+}
+
+.hamburger {
+  display: flex !important;
+  background: transparent !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-3) !important;
+  border-radius: var(--r-sm) !important;
+  width: 38px !important;
+  height: 38px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-size: 0.95rem !important;
+  touch-action: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+.hamburger:active {
+  transform: scale(0.92);
 }
 </style>
 </head>
@@ -6063,9 +6070,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
 
 .di-var-item:hover .fa-pencil-alt {
   opacity: 1;
-}
-
-@media (max-width: 1024px), (orientation: landscape) and (max-width: 1366px) {
+}@media (max-width: 1024px), (orientation: landscape) and (max-width: 1366px) {
   .variable-chip,
   .action-btn,
   .role-clear-btn,
@@ -6095,17 +6100,6 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
     cursor: pointer !important;
     touch-action: manipulation !important;
     -webkit-tap-highlight-color: transparent !important;
-  }
-  
-  .variable-chip:active,
-  .action-btn:active,
-  .nav-item:active,
-  .atab:active,
-  .dt-btn:active,
-  .btn-primary:active,
-  .btn-outline:active {
-    transform: scale(0.97) !important;
-    transition: transform 0.05s ease !important;
   }
   
   button, .btn, [onclick] {
@@ -6629,7 +6623,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
           <div class="dev-name">Mudasir Mohammed Ibrahim</div>
         </div>
       </div>
-<p class="dev-bio">Mudasir Mohammed Ibrahim is a Ghanaian nurse, researcher, data analyst, and open-source advocate 🇬🇭. He is the creator of MedModr. His work is driven by a commitment to open science, reproducible research, and expanding equitable access to high-quality analytical tools for the global research community.</p>
+<p class="dev-bio">Mudasir Mohammed Ibrahim is a Ghanaian nurse, researcher, data analyst, and open-source advocate 🇬🇭. He is the creator of MedModr to make these advanced analytical methods accessible to researchers worldwide. His work is driven by a commitment to open science, reproducible research, and expanding equitable access to high-quality analytical tools for the global research community.</p>
       <div class="dev-connect-label"><i class="fas fa-link" style="margin-right:6px"></i> Connect with me</div>
       <div class="dev-connect-btns">
 <a class="dev-btn dev-btn-web" href="https://mudasiribrahim.github.io/gh/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Personal website</a>
@@ -22799,9 +22793,35 @@ function showSection(id){
 }
 function initNav(){document.querySelectorAll('.nav-item[data-sec]').forEach(el=>el.addEventListener('click',()=>showSection(el.dataset.sec)));}
 function initHamburger(){
-  const btn=document.getElementById('hamburgerBtn'),sb=document.getElementById('sidebar');
-  btn.addEventListener('click',()=>sb.classList.toggle('open'));
-  document.addEventListener('click',e=>{if(!sb.contains(e.target)&&!btn.contains(e.target))sb.classList.remove('open');});
+  var btn=document.getElementById('hamburgerBtn');
+  var sb=document.getElementById('sidebar');
+  var isOpen=false;
+  var startX=0,startY=0;
+  var isDragging=false;
+  
+  btn.addEventListener('touchstart',function(e){
+    var t=e.touches[0];
+    if(t){startX=t.clientX;startY=t.clientY;isDragging=false}
+  },{passive:true});
+  
+  btn.addEventListener('touchmove',function(e){
+    var t=e.touches[0];
+    if(t){var dx=Math.abs(t.clientX-startX);var dy=Math.abs(t.clientY-startY);if(dx>10||dy>10){isDragging=true}}
+  },{passive:true});
+  
+  btn.addEventListener('touchend',function(e){
+    if(!isDragging){e.preventDefault();e.stopPropagation();isOpen=!isOpen;if(isOpen){sb.classList.add('open')}else{sb.classList.remove('open')}}
+  },{passive:false});
+  
+  btn.addEventListener('click',function(e){e.stopPropagation();isOpen=!isOpen;if(isOpen){sb.classList.add('open')}else{sb.classList.remove('open')}});
+  
+  document.addEventListener('click',function(e){if(sb.classList.contains('open')&&!sb.contains(e.target)&&!btn.contains(e.target)){isOpen=false;sb.classList.remove('open')}});
+  
+  document.addEventListener('touchstart',function(e){if(sb.classList.contains('open')&&!sb.contains(e.target)&&!btn.contains(e.target)){isOpen=false;sb.classList.remove('open')}},{passive:true});
+  
+  sb.addEventListener('touchstart',function(e){e.stopPropagation()},{passive:true});
+  
+  sb.addEventListener('click',function(e){if(e.target.closest('.nav-item')){isOpen=false;sb.classList.remove('open')}});
 }
 function initTheme(){
   const saved=localStorage.getItem('medmodr-theme'),pref=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
@@ -27353,242 +27373,7 @@ runModMed_TwoModerators = wrapTablesWithNotice(runModMed_TwoModerators);
 runMediationModeratedDirect = wrapTablesWithNotice(runMediationModeratedDirect);
 runModeratedSerialMediation_FirstStage = wrapTablesWithNotice(runModeratedSerialMediation_FirstStage);
 
-const stickyStyle = document.createElement('style');
-stickyStyle.textContent = `
-    .sticky-analysis-indicator {
-        position: sticky;
-        top: 72px;
-        z-index: 50;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 8px 16px;
-        margin: 0 0 16px 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-        backdrop-filter: blur(8px);
-        background: rgba(255,255,255,0.92);
-    }
-    
-    [data-theme="dark"] .sticky-analysis-indicator {
-        background: rgba(14, 18, 37, 0.92);
-    }
-    
-    .sticky-analysis-indicator .icon {
-        width: 30px;
-        height: 30px;
-        background: linear-gradient(135deg, var(--brand), var(--brand-dark));
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-    
-    .sticky-analysis-indicator .icon i {
-        color: white;
-        font-size: 13px;
-    }
-    
-    .sticky-analysis-indicator .type-name {
-        font-weight: 700;
-        font-size: 0.82rem;
-        color: var(--text-1);
-    }
-    
-    .sticky-analysis-indicator .type-name .model {
-        color: var(--brand);
-        font-weight: 600;
-        font-size: 0.65rem;
-        background: rgba(61, 90, 241, 0.10);
-        padding: 0 6px;
-        border-radius: 3px;
-        margin-left: 4px;
-    }
-    
-    .sticky-analysis-indicator .badge {
-        padding: 2px 10px;
-        border-radius: 12px;
-        font-size: 0.6rem;
-        font-weight: 700;
-        font-family: var(--mono);
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-        margin-left: 6px;
-    }
-    
-    .sticky-analysis-indicator .badge-ols {
-        background: rgba(61, 90, 241, 0.12);
-        color: var(--brand);
-        border: 1px solid rgba(61, 90, 241, 0.15);
-    }
-    
-    .sticky-analysis-indicator .badge-logistic {
-        background: rgba(124, 58, 237, 0.12);
-        color: #7c3aed;
-        border: 1px solid rgba(124, 58, 237, 0.15);
-    }
-    
-    .sticky-analysis-indicator .badge-stage {
-        background: rgba(109, 40, 217, 0.10);
-        color: var(--violet);
-        border: 1px solid rgba(109, 40, 217, 0.15);
-        margin-left: 6px;
-    }
-    
-    @media (max-width: 768px) {
-        .sticky-analysis-indicator {
-            top: 56px;
-            padding: 6px 12px;
-            border-radius: 8px;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-        
-        .sticky-analysis-indicator .icon {
-            width: 24px;
-            height: 24px;
-        }
-        
-        .sticky-analysis-indicator .icon i {
-            font-size: 11px;
-        }
-        
-        .sticky-analysis-indicator .type-name {
-            font-size: 0.7rem;
-        }
-        
-        .sticky-analysis-indicator .type-name .model {
-            font-size: 0.55rem;
-        }
-        
-        .sticky-analysis-indicator .badge {
-            font-size: 0.5rem;
-            padding: 1px 8px;
-        }
-    }
-`;
-document.head.appendChild(stickyStyle);
-
-function getStickyTypeInfo(vars) {
-    const select = document.getElementById('analysisTypeSelect');
-    const analysisType = select?.value || 'simple';
-    
-    let displayName = '';
-    let modelNumber = '';
-    let icon = 'fa-flask';
-    
-    if (select) {
-        const selectedOption = select.options[select.selectedIndex];
-        if (selectedOption) {
-            let text = selectedOption.text;
-            let modelMatch = text.match(/\(Model\s*(\d+)\)/i);
-            if (modelMatch) {
-                displayName = text.replace(/\s*\(Model\s*\d+\)\s*/i, '').trim();
-                modelNumber = 'M' + modelMatch[1];
-            } else {
-                displayName = text.trim();
-            }
-        }
-    }
-    
-    const iconMap = {
-        'simple': 'fa-arrow-right',
-        'parallel': 'fa-code-branch',
-        'serial': 'fa-share-alt',
-        'moderation': 'fa-exchange-alt',
-        'double_mod': 'fa-cubes',
-        'modmod': 'fa-cubes',
-        'modmed': 'fa-layer-group'
-    };
-    icon = iconMap[analysisType] || 'fa-flask';
-    
-    let isBinary = false;
-    if (vars && vars.y) {
-        const yData = vars.y;
-        if (yData && yData.length > 0) {
-            const uniqueVals = [...new Set(yData.filter(v => v !== null && v !== undefined && !isNaN(v)))];
-            isBinary = uniqueVals.length === 2 && uniqueVals.every(v => v === 0 || v === 1);
-        }
-    }
-    
-    let stageText = '';
-    if (analysisType === 'modmed') {
-        const stageSelect = document.getElementById('modStageOption');
-        if (stageSelect) {
-            const stageOption = stageSelect.options[stageSelect.selectedIndex];
-            if (stageOption) {
-                let stageLabel = stageOption.text;
-                stageLabel = stageLabel.replace(/\(Model\s*\d+\)/i, '').trim();
-                stageText = stageLabel;
-            }
-        }
-    }
-    
-    const regressionType = isBinary ? 'Logistic' : 'OLS';
-    const badgeClass = isBinary ? 'badge-logistic' : 'badge-ols';
-    
-    return {
-        name: displayName,
-        icon: icon,
-        model: modelNumber,
-        regressionType: regressionType,
-        badgeClass: badgeClass,
-        stageText: stageText,
-        isBinary: isBinary
-    };
-}
-
-function insertStickyIndicator(vars) {
-    const info = getStickyTypeInfo(vars);
-    
-    const modelDisplay = info.model ? `<span class="model">${info.model}</span>` : '';
-    const stageDisplay = info.stageText ? `<span class="badge badge-stage">${info.stageText}</span>` : '';
-    const regressionBadge = `<span class="badge ${info.badgeClass}">${info.regressionType}</span>`;
-    
-    return `
-        <div class="sticky-analysis-indicator">
-            <div class="icon">
-                <i class="fas ${info.icon}"></i>
-            </div>
-            <div class="type-name">
-                ${info.name} ${modelDisplay}
-                ${regressionBadge}
-                ${stageDisplay}
-            </div>
-        </div>
-    `;
-}
-
-function wrapWithStickyIndicator(originalFn) {
-    return function(vars, covArrays, covNames, cl, nBoot, ...extraArgs) {
-        const result = originalFn(vars, covArrays, covNames, cl, nBoot, ...extraArgs);
-        if (vars && vars.y) {
-            const indicator = insertStickyIndicator(vars);
-            const cleaned = result.replace(/<div class="sticky-analysis-indicator">[\s\S]*?<\/div>/, '');
-            return cleaned.replace(/(<div class="panel" style="margin-bottom:18px">)/, indicator + '$1');
-        }
-        return result;
-    };
-}
-
-runSimpleMed = wrapWithStickyIndicator(runSimpleMed);
-runParallelMed = wrapWithStickyIndicator(runParallelMed);
-runSerialMed = wrapWithStickyIndicator(runSerialMed);
-runModeration = wrapWithStickyIndicator(runModeration);
-runModMed_FirstStage = wrapWithStickyIndicator(runModMed_FirstStage);
-runModMed_SecondStage = wrapWithStickyIndicator(runModMed_SecondStage);
-runModMed_BothStages = wrapWithStickyIndicator(runModMed_BothStages);
-runModMed_XMandXY = wrapWithStickyIndicator(runModMed_XMandXY);
-runModMed_AllThreePaths = wrapWithStickyIndicator(runModMed_AllThreePaths);
-runModMed_SecondStageAndDirect = wrapWithStickyIndicator(runModMed_SecondStageAndDirect);
-runDoubleModeration = wrapWithStickyIndicator(runDoubleModeration);
-runModeratedModeration = wrapWithStickyIndicator(runModeratedModeration);
-runModMed_TwoModerators = wrapWithStickyIndicator(runModMed_TwoModerators);
-runMediationModeratedDirect = wrapWithStickyIndicator(runMediationModeratedDirect);
-runModeratedSerialMediation_FirstStage = wrapWithStickyIndicator(runModeratedSerialMediation_FirstStage);
+(function(){var c=null,d=!1;document.addEventListener('touchstart',function(){d=!1;clearTimeout(c);c=setTimeout(function(){d=!0},200)},{passive:!0});document.addEventListener('touchend',function(){clearTimeout(c);c=setTimeout(function(){d=!1},100)},{passive:!0});document.addEventListener('touchmove',function(){d=!0;clearTimeout(c)},{passive:!0})})();
 </script>
 </body>
 </html>
