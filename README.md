@@ -42,7 +42,7 @@ Users should always download the newest version from the official releases page 
 
 | Category | Capabilities |
 |:---|:---|
-| **Analysis** | Statistical tests with PROCESS macro equivalents |
+| **Analysis** | Mediation, moderation, and conditional process analyses (PROCESS macro equivalents) |
 | **Inference** | Bootstrap confidence intervals (Percentile or Bias-Corrected) with 1000, 5000, and 10000 samples |
 | **Data Import** | CSV (fully offline) or Excel (internet required only for upload) |
 | **Output** | Path diagrams, simple slopes plots, Word/PNG export, summaries |
