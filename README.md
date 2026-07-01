@@ -8,7 +8,7 @@
 
 MedModr is a free, browser-based, open-source application for mediation, moderation, and conditional process analysis, developed by Mudasir Mohammed Ibrahim, a registered nurse and health researcher at Tamale Teaching Hospital, Ghana. The software was created to address the limited access to affordable statistical tools for advanced modeling, particularly in resource-constrained settings.
 
-While the PROCESS macro remains a widely used approach for mediation and moderation analysis, its use often depends on commercial SPSS or SAS licenses, and R-based alternatives require programming expertise. These barriers can limit access for researchers, students, clinicians, and independent scholars.
+While the PROCESS macro remains a widely used tool for mediation and moderation analysis, its use often depends on commercial SPSS or SAS licenses, and R-based alternatives typically require programming expertise. These barriers can limit access for early-career researchers, students, clinicians, and independent scholars who have limited funding or technical support.
 
 MedModr provides an accessible alternative by offering a no-cost, browser-based platform that requires no installation, licensing, or coding skills. All analyses are performed locally within the user's browser, ensuring data privacy and security.
 
@@ -63,6 +63,8 @@ Users should always download the newest version from the official releases page 
 
 ### Version 1.0
 
+9 PROCESS models
+
 - Simple Mediation (X → M → Y) — PROCESS Model 4
 - Parallel Mediation (X → M₁...Mₖ → Y) — PROCESS Model 4
 - Serial Mediation (X → M₁ → M₂ → Y) — PROCESS Model 6
@@ -79,7 +81,7 @@ Users should always download the newest version from the official releases page 
 
 ## Copyright Notice
 
-The PROCESS macro for SPSS, SAS and R, developed by Andrew F. Hayes, is a widely used tool for mediation and moderation analysis. The original PROCESS software and its documentation are proprietary to Dr. Hayes and are distributed through http://www.processmacro.org.
+The PROCESS macro for SPSS, SAS and R, developed by Andrew F. Hayes, is a widely used tool for mediation, moderation, and conditional process analysis. The original PROCESS software and its documentation are proprietary to Dr. Hayes and are distributed through http://www.processmacro.org.
 
 MedModr is an independent, open source implementation inspired by the analytical approaches described in Dr. Hayes's work. This project was developed using native JavaScript matrix algebra from scratch using publicly available statistical methods. MedModr does not use, copy, or derive from the original PROCESS source code.
 
@@ -103,7 +105,7 @@ Found a bug? Open an issue on GitHub.
 
 | Resource | URL |
 |:---|:---|
-| Live App | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
+| Use MedModr Online | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
 | Downloads (Releases) | [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases) |
 | Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 | MIT License | [View License](https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE) |
