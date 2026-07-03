@@ -6,17 +6,14 @@
 
 ## About
 
-MedModr is a free, browser-based, open-source application for mediation, moderation, and conditional process analysis, developed by Mudasir Mohammed Ibrahim, a registered nurse and health researcher at Tamale Teaching Hospital, Ghana. The software was created to address the limited access to affordable statistical tools for advanced modeling, particularly in resource-constrained settings.
-
 While the PROCESS macro remains a widely used tool for mediation and moderation analysis, its use often depends on commercial SPSS or SAS licenses, and R-based alternatives typically require programming expertise. These barriers can limit access for early-career researchers, students, clinicians, and independent scholars who have limited funding or technical support.
 
-MedModr provides an accessible alternative by offering a no-cost, browser-based platform that requires no installation, licensing, or coding skills. All analyses are performed locally within the user's browser, ensuring data privacy and security.
-
+MedModr provides an accessible alternative by offering a no-cost, browser-based platform that requires no installation, licensing, or coding skills. The software was created to address the limited access to affordable statistical tools for advanced modeling, particularly in resource-constrained settings. MedModr is a free, browser-based, open-source application for mediation, moderation, and conditional process analysis, developed by Mudasir Mohammed Ibrahim, a registered nurse and health researcher at Tamale Teaching Hospital, Ghana. 
 The application currently supports 15 widely used PROCESS models, with ongoing development aimed at expanding model coverage and enhancing functionality to meet the evolving needs of the research community.
 
 ## Offline Use
 
-MedModr prioritizes accessibility and data privacy. No libraries, packages, or software installations are required. Users simply download the `index.html` file, open it in any modern web browser, and begin analysis immediately.
+MedModr prioritizes accessibility and data privacy. No libraries, packages, or software installations are required. Users simply download the `index.html` file, open it in any modern web browser, and start analyzing your data.
 
 All statistical computations are performed locally in the browser. No internet connection is required after the initial download.
 
