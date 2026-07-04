@@ -5,7 +5,6 @@
 </p>
 
 ## About
-## About
 
 The PROCESS macro remains a widely used tool for mediation, moderation, and conditional process analysis. However, its use depends on commercial SPSS or SAS licenses, while R-based alternatives typically require programming expertise. These barriers limit access for early-career researchers, students, clinicians, and independent scholars, particularly those with limited funding or technical support.
 
