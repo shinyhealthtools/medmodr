@@ -6,49 +6,43 @@
 
 ## Mission
 
-MedModr is a free, user-friendly, open-source application for mediation, moderation, and conditional process analysis. Inspired by the **Hayes PROCESS framework**, it was created to lower the barriers created by SPSS/SAS licensing costs and the programming demands that often exclude researchers in low-resource settings. The application is designed to serve underserved individuals, including researchers with limited institutional support, independent scholars, and students in regions where expensive statistical software remains out of reach.
-
-The application is distributed as a **single self-contained HTML file**, making it easy to share, host, and run directly in any modern web browser with no installation or server requirements.
-
----
-
-## License and Freedom to Use
-
-Released under the MIT License, MedModr can be freely modified, extended, hosted, and redistributed by researchers, colleges and universities, organizations, and research centers without licensing restrictions.
-
-The open-source design invites statisticians, methodologists, and developers to:
-- Validate implemented statistical methods
-- Report bugs and inaccuracies
-- Contribute improvements that enhance the application over time
+MedModr is a free, open-source application for mediation, moderation, and conditional process analysis. Inspired by the **Hayes PROCESS framework**, it was developed to reduce the barriers created by commercial statistical software and the programming expertise often required by existing alternatives. The project aims to make advanced statistical methods more accessible to researchers, students, independent scholars, and institutions, particularly in low-resource settings.
+To maximize accessibility, MedModr is distributed as a **single self-contained HTML file** that runs directly in any modern web browser without installation, external dependencies, or server requirements.
 
 ---
 
-## How to Contribute
+## Open Source and Licensing
+MedModr is released under the MIT License, allowing researchers, universities, organizations, and developers to freely use, modify, extend, host, and redistribute the software.
+As an open-source project, MedModr welcomes contributions from statisticians, methodologists, developers, educators, and researchers to:
+- Validate statistical methods
+- Identify and report bugs
+- Improve existing features
+- Develop new analytical capabilities
+- Enhance documentation and educational resources
+---
 
-There are many ways to contribute, regardless of your background or skill set:
-
-- **Report bugs** — Open an issue with clear reproduction steps.
-- **Suggest features** — Propose new statistical tools or functionality improvements.
-- **Improve documentation** — Fix typos, clarify instructions, or expand usage examples.
-- **Write code** — Resolve open issues or implement new features.
-- **Translate** — Help localize MedModr for non-English-speaking users.
-- **Validate methods** — Review statistical implementations against established literature.
-- **Create tutorials** — Produce educational content (videos, blog posts, or articles) demonstrating MedModr on platforms such as YouTube, Medium, LinkedIn, or personal academic websites. Tutorials help make advanced statistical methods accessible to wider audiences.
-- **Contribute back** — If your institution or organization has developed custom features on top of MedModr, submit a pull request so the broader community can benefit.
+## Ways to Contribute
+Contributions of all sizes are welcome, regardless of your background or level of experience. You can help by:
+**Reporting bugs** with clear reproduction steps.
+**Suggesting new features** or statistical methods.
+**Improving documentation** by correcting errors or expanding explanations.
+**Writing code** to fix issues or implement new functionality.
+**Translating** the application or documentation into additional languages.
+**Validating statistical methods** against established literature and software.
+**Creating tutorials** (videos, blog posts, articles, or teaching materials) demonstrating MedModr on platforms such as YouTube, Medium, LinkedIn, or personal academic websites.
+**Contributing institutional improvements** by submitting pull requests for custom features developed within your organization.
 
 ---
 
 ## Reporting Bugs
-
-To report a bug such as incorrect p-values, UI failures, or calculation errors, please follow these steps:
-
-1. Search existing issues to avoid duplicates.
-2. Open a new issue with the label `bug`.
+If you discover a bug, such as incorrect statistical results, user interface issues, or unexpected application behavior, please:
+1. Search existing issues to avoid duplicate reports.
+2. Open a new issue using the **bug** label.
 3. Include the following information:
-   - Browser and version (e.g., Chrome 120, Firefox 121)
+   - Browser and version (e.g., Chrome 120 or Firefox 121)
    - Steps to reproduce the issue
-   - Expected result versus actual result (reference PROCESS Macro output where applicable)
-   - A screenshot, if available
+   - Expected result and actual result (including comparisons with PROCESS Macro when appropriate)
+   - Screenshots, sample data, or additional information, if available
 
 **Example:**
 
@@ -70,63 +64,68 @@ incorrectly or post-centering multiplication is flawed.
 ---
 
 ## Feature Requests
+Suggestions for new features are encouraged. Please open an issue using the `enhancement`  label and include:
+- A description of the proposed statistical method or functionality
+- The motivation for adding the feature
+- Relevant methodological references or supporting literature, where applicable
 
-Proposals for new features are welcome. Please open an issue with the label `enhancement` and describe:
-- The statistical method or functionality you would like to implement
-- Why it would benefit researchers, with reference to specific use cases or published research
-- Any relevant literature or methodological references
+### Priority Areas
 
-### Priority Features
-
-The following are high-impact areas where contributions are especially encouraged:
-
+The following areas are considered high-priority for future development.
 #### 1. Multilevel Mediation, Moderation, and Conditional Process Analysis
 
-Extend MedModr to support multilevel and hierarchical data structures, enabling researchers to analyze nested data (e.g., students within schools, patients within clinics) using mediation and moderation models.
+Support mediation and moderation models for hierarchical and nested data structures (e.g., students within schools or patients within hospitals).
 
 #### 2. Structural Equation Modeling (SEM)
 
-- **Covariance-Based SEM (CBSEM):** Allow users to specify latent variable models, assess model fit using indices such as CFI, TLI, RMSEA, and SRMR, and obtain factor loadings, validity, and reliability estimates.
-- **Partial Least Squares SEM (PLS-SEM):** Support composite-based estimation suitable for exploratory research and small sample sizes.
-- **Integrated User Workflow:** Allow users to enter all items in a single interface, inspect factor loadings, evaluate and refine model fit interactively, assess validity and reliability, and specify the analysis type — all within one seamless workflow.
+Develop comprehensive SEM capabilities, including:
+
+- **Covariance-Based SEM (CBSEM)** with model fit indices (CFI, TLI, RMSEA, SRMR), factor loadings, validity, and reliability assessment.
+- **Partial Least Squares SEM (PLS-SEM)** for exploratory analyses and smaller sample sizes.
+- **Integrated User Workflow** allowing users to specify measurement models, evaluate model fit, assess validity and reliability, and perform structural analyses within a single interface.
 
 #### 3. Bayesian Mediation, Moderation, and Conditional Process Analysis
 
-Implement Bayesian estimation methods for mediation and moderation models, including:
-- Prior specification options (default, weakly informative, and user-defined)
+Implement Bayesian estimation methods with support for:
+
+- Prior specification (default, weakly informative, and user-defined)
 - Posterior distributions and credible intervals
-- Bayes factors for hypothesis testing
+- Bayes factors
 - Convergence diagnostics (R-hat and effective sample size)
 
-#### 4. Enhanced UI/UX and Application Robustness
+#### 4. User Interface, Visualization, and Performance
 
-Developers are encouraged to contribute improvements that make the application more robust and intuitive, including:
+Contributions are encouraged in areas such as:
 
 - Improved error handling and user feedback
-- Performance optimizations for large datasets
-- Accessibility enhancements
-- Mobile responsiveness improvements
+- Performance optimization for large datasets
+- Accessibility improvements
+- Mobile responsiveness
 - Dark mode and theme customization
-- Keyboard shortcuts for power users
-- Localization support for additional languages
-- Path diagrams for analysis types that currently lack visual output, with coefficient and p-value labels displayed directly on path lines, and customization options consistent with existing diagrams
-- Improvements to existing path diagrams, including better layout, styling, and interactivity
-- Overall UI redesign and modernization to make the application more visually appealing, polished, and user-friendly across all sections and workflows
+- Keyboard shortcuts
+- Localization for additional languages
+- Path diagrams for currently unsupported analyses
+- Enhanced path diagrams with coefficient and p-value labels
+- Improved layout, styling, and interactivity of existing diagrams
+- Overall interface redesign to create a more polished, intuitive, and modern user experience
+
 ---
 
 ## Development Guidelines
 
-### Technology Stack
+Technology Stack
 
-- **Frontend:** Pure HTML, CSS, and JavaScript (no frameworks required)
+- **Frontend:** Pure HTML, CSS, and JavaScript
 - **Distribution:** Single self-contained HTML file
 - **Browser Support:** Modern browsers (Chrome, Firefox, Edge, and Safari)
 
-### Statistical Accuracy
+### Statistical Standards
 
-- All statistical methods must be validated against established literature
-- Reference PROCESS Macro outputs for comparison where applicable
-- Include unit tests for critical calculations
+To maintain scientific rigor:
+
+- Statistical methods should be validated against established literature.
+- Results should be compared with PROCESS Macro outputs whenever applicable.
+- Unit tests should accompany critical statistical calculations.
 
 ### Submitting Changes
 
@@ -143,19 +142,21 @@ Developers are encouraged to contribute improvements that make the application m
 ## Testing
 
 Before submitting a pull request, please ensure that:
-- All existing functionality works as expected
-- New features are properly tested
-- Edge cases are handled gracefully
-- The application continues to function as a single self-contained HTML file
+
+- Existing functionality continues to work correctly.
+- New features have been thoroughly tested.
+- Edge cases have been considered.
+- The application remains fully functional as a single self-contained HTML file.
 
 ---
 
 ## Community
-
-Join the conversation to discuss development, ask questions, and share ideas:
-- **GitHub Issues:** Report bugs and request features
-- **Pull Requests:** Contribute code and improvements
-- **Discussions:** Share ideas and get help from other contributors
+Community collaboration is central to the continued development of MedModr. You can participate by:
+- **GitHub Issues:** Report bugs and request new features.
+- **Pull Requests:** Submit code improvements and enhancements.
+- **Discussions:** Share ideas, ask questions, and collaborate with other contributors.
 
 ---
-**Community contributions are essential to its growth and sustainability, and every improvement you make helps advance open and accessible science globally.**
+
+Every contribution whether it is code, documentation, testing, or educational material helps make MedModr more accessible and strengthens the global open-science community.
+
