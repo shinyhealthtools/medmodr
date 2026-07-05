@@ -6,9 +6,9 @@
 
 ## About
 
-The PROCESS macro remains a widely used tool for mediation, moderation, and conditional process analysis. However, its use depends on commercial SPSS or SAS licenses, while R-based alternatives typically require programming expertise. These barriers limit access for early-career researchers, students, clinicians, and independent scholars, particularly those with limited funding or technical support.
+The PROCESS macro remains a widely used tool for mediation, moderation, and conditional process analysis. However, its use depends on commercial SPSS or SAS licenses, while R-based alternatives typically require programming expertise. These barriers limit access for researchers, students, clinicians, and independent scholars, particularly those with limited funding or technical support.
 
-MedModr was developed to address these challenges by providing a free, browser-based, open-source platform for mediation, moderation, and conditional process analysis that requires no installation, licensing, or coding skills. The software aims to improve access to advanced statistical modeling, particularly in resource-constrained settings.
+MedModr was developed to address these challenges by providing a free, browser-based, open-source platform for mediation, moderation, and conditional process analysis that requires no installation, licensing, or coding skills. MedModr aims to enhance the accessibility and usability of mediation, moderation, and conditional process analyses for researchers, educators, and students worldwide, with particular benefit for early-career researchers and institutions with limited access to commercial statistical software or advanced programming expertise.
 
 MedModr was developed by Mudasir Mohammed Ibrahim, a Registered Nurse and health researcher at Tamale Teaching Hospital, Ghana. The application currently supports 15 widely used PROCESS models, with ongoing development focused on expanding model coverage and enhancing functionality to meet the evolving needs of the research community.
 
