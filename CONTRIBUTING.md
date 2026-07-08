@@ -50,14 +50,14 @@ If you discover a bug, such as incorrect statistical results, user interface iss
 **Bug:** Mean centering produces incorrect interaction term coefficients.
 **Browser:** Firefox 121 on macOS
 **Steps:**
-1. Upload a dataset with variables X, M, and Y.
-2. Run a simple moderation (Hayes Model 1) analysis with mean centering enabled
+1. Upload the Psychology dataset with variables X, Y, and W.
+2. Run a "Simple Moderation (Model 1)" analysis with mean centering enabled
    ("Continuous-only centered").
 3. Compare the interaction term coefficient against manually centered results
    and/or PROCESS Macro output.
 **Expected:** The interaction coefficient should match manual mean centering
 and/or PROCESS Macro output.
-**Actual:** The interaction coefficient differs, suggesting centering is applied
+**Actual:** The interaction coefficient in MedModr differs, suggesting centering is applied
 incorrectly or post-centering multiplication is flawed.
 ```
 
