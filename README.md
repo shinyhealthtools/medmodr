@@ -154,16 +154,3 @@ Tamale Teaching Hospital, Ghana
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
   </a>
 </p>
-
-## Citation
-
-If you use MedModr in your research, publication, or teaching, please cite it as follows:
-
-```bibtex
-@software{Ibrahim_MedModr_2026,
-  author = {Ibrahim, Mudasir Mohammed},
-  title = {MedModr: Mediation, Moderation, and Conditional Process Tool},
-  year = {2026},
-  version = {2.0},
-  url = {https://shinyhealthtools.github.io/medmodr/}
-}
