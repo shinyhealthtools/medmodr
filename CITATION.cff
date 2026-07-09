@@ -1,0 +1,24 @@
+cff-version: 2.0
+message: "If you use MedModr in your research, publication, or teaching, please cite it as below."
+title: Medford - A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses
+abstract: Mediation, moderation, and conditional process analyses are widely used in health and social science research, however, existing analytical tools often present technical, financial, and accessibility barriers. This paper introduces MedModr, a free, user-friendly, browser-based, open-source application developed to support commonly used mediation, moderation, and conditional process analyses. MedModr is distributed as a single, self-contained HTML file that runs entirely within a web browser, requiring no installation of additional software or dependencies, server connection, or internet access. Using MedModr, researchers can perform simple mediation, serial mediation, parallel mediation, simple moderation, moderated moderation, double moderation, and other supported moderated mediation models. The application also generates interactive path diagrams, interactive simple slopes plots, and automated summary of results. Users can export complete analysis outputs to Word, PDF, or HTML documents with a single click. Released under the MIT License, MedModr aims to enhance the accessibility and usability of mediation, moderation, and conditional process analyses for early-career researchers, educators, and students in low-resource settings or underfunded institutions.
+authors:
+  - given-names: Mudasir Mohammed
+    family-names: Ibrahim
+    affiliation: "Department of Internal Medicine (M3), Tamale Teaching Hospital, Tamale, Ghana"
+version: "v2.0"
+date-released: "April, 2026"
+license: MIT
+repository-code: "https://github.com/shinyhealthtools/medmodr"
+url: "https://github.com/shinyhealthtools/medmodr"
+type: software
+keywords:
+  - mediation
+  - moderation
+  - conditional process
+  - open source
+  - bootstrap
+identifiers:
+  - type: url
+    value: "https://github.com/shinyhealthtools/medmodr"
+    description: Research paper repository
