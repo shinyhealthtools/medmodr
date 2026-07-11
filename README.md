@@ -8,13 +8,13 @@
 
 The PROCESS macro remains a widely used tool for mediation, moderation, and conditional process analysis. However, its use depends on commercial SPSS or SAS licenses, while R-based alternatives typically require programming expertise. These barriers limit access for researchers, students, clinicians, and independent scholars, particularly those with limited funding or technical support.
 
-MedModr was developed to address these challenges by providing a free, browser-based, open-source platform for mediation, moderation, and conditional process analysis that requires no installation, licensing, or coding skills. MedModr aims to enhance the accessibility and usability of mediation, moderation, and conditional process analyses for researchers, educators, and students worldwide, with particular benefit for early-career researchers and institutions with limited access to commercial statistical software or advanced programming expertise.
+`MedModr` was developed to address these challenges by providing a free, browser-based, open-source platform for mediation, moderation, and conditional process analysis that requires no installation, licensing, or coding skills. `MedModr` aims to enhance the accessibility and usability of mediation, moderation, and conditional process analyses for researchers, educators, and students worldwide, with particular benefit for early-career researchers and institutions with limited access to commercial statistical software or advanced programming expertise.
 
-MedModr was developed by Mudasir Mohammed Ibrahim, a Registered Nurse and health researcher at Tamale Teaching Hospital, Ghana. The application currently supports fifteen (15) widely used PROCESS models, with ongoing development focused on expanding model coverage and enhancing functionality to meet the evolving needs of the research community.
+`MedModr` was developed by Mudasir Mohammed Ibrahim, a Registered Nurse and health researcher at Tamale Teaching Hospital, Ghana. The application currently supports fifteen (15) widely used PROCESS models, with ongoing development focused on expanding model coverage and enhancing functionality to meet the evolving needs of the research community.
 
 ## Offline Use
 
-MedModr is designed with accessibility and data privacy in mind. The application requires no software installation, packages, or additional libraries. Simply download the `index.html` file, open it in any modern web browser, and begin analyzing your data.
+`MedModr` is designed with accessibility and data privacy in mind. The application requires no software installation, packages, or additional libraries. Simply download the `index.html` file, open it in any modern web browser, and begin analyzing your data.
 
 All statistical analyses are performed locally within the browser, ensuring that your data never leaves your computer. Once the application has been downloaded, no internet connection is required for statistical analysis.
 
@@ -24,7 +24,7 @@ All statistical analyses are performed locally within the browser, ensuring that
 
 ## Download the Latest Version
 
-The latest version of MedModr is available on the official GitHub releases page: [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)
+The latest version of `MedModr` is available on the official GitHub releases page: [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases)
 
 Users are encouraged to download the most recent release to access the latest features, performance improvements, bug fixes, and supported PROCESS models.
 
@@ -49,7 +49,7 @@ Users are encouraged to download the most recent release to access the latest fe
 
 ### Version 2.0
 
-Version 2.0 introduces major enhancements to MedModr, expanding its analytical capabilities, improving visualization, and providing more flexible export options.
+Version 2.0 introduces major enhancements to `MedModr`, expanding its analytical capabilities, improving visualization, and providing more flexible export options.
 
 New PROCESS models
 
@@ -76,7 +76,7 @@ Visualization and export
 
 ### Version 1.0
 
-The initial release of MedModr included support for nine widely used PROCESS models and core statistical features.
+The initial release of `MedModr` included support for nine widely used PROCESS models and core statistical features.
 
 Supported PROCESS models
 
@@ -102,13 +102,13 @@ Core features
 
 The PROCESS macro for SPSS, SAS, and R, developed by Andrew F. Hayes, is a widely used tool for mediation, moderation, and conditional process analysis. The original PROCESS software and its documentation are proprietary to Dr. Hayes and are distributed through http://www.processmacro.org.
 
-MedModr is an independent, open-source implementation inspired by the analytical approaches described in Dr. Hayes's work. It was developed from the ground up using native JavaScript matrix algebra and publicly available statistical methods. MedModr does not use, copy, or derive from the original PROCESS source code.
+`MedModr` is an independent, open-source implementation inspired by the analytical approaches described in Dr. Hayes's work. It was developed from the ground up using native JavaScript matrix algebra and publicly available statistical methods. `MedModr` does not use, copy, or derive from the original PROCESS source code.
 
-Although MedModr aims to produce results consistent with those of the PROCESS macro, it is not affiliated with, endorsed by, or associated with Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer.
+Although `MedModr` aims to produce results consistent with those of the PROCESS macro, it is not affiliated with, endorsed by, or associated with Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer.
 
 ## Contribute
 
-MedModr is an open-source project, and community contributions are welcome. Continuous testing and feedback help improve the software by identifying bugs, enhancing existing features, and suggesting new functionality.
+`MedModr` is an open-source project, and community contributions are welcome. Continuous testing and feedback help improve the software by identifying bugs, enhancing existing features, and suggesting new functionality.
 
 If you would like to contribute, please read the project guidelines before submitting changes.
 
@@ -116,17 +116,17 @@ If you would like to contribute, please read the project guidelines before submi
 
 ## Feedback
 
-If you encounter a bug or have a suggestion for improving MedModr, please open an issue on the GitHub repository.
+If you encounter a bug or have a suggestion for improving `MedModr`, please open an issue on the GitHub repository.
 
 **Report an Issue** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
 
 ## Links
 
-The resources below provide access to the MedModr application, documentation, source code, and downloads.
+The resources below provide access to the `MedModr` application, documentation, source code, and downloads.
 
 | Resource | URL |
 |:---|:---|
-| Use MedModr Online | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
+| Use `MedModr` Online | [shinyhealthtools.github.io/medmodr](https://shinyhealthtools.github.io/medmodr/) |
 | Download the Latest Release | [github.com/shinyhealthtools/medmodr/releases](https://github.com/shinyhealthtools/medmodr/releases) |
 | Documentation | [shinyopensource.github.io/medmodr-documentation](https://shinyopensource.github.io/medmodr-documentation/) |
 | GitHub Repository | [github.com/shinyhealthtools/medmodr](https://github.com/shinyhealthtools/medmodr) |
@@ -134,7 +134,7 @@ The resources below provide access to the MedModr application, documentation, so
 
 ## Original Author
 
-MedModr was developed and is maintained by:
+`MedModr` was developed and is maintained by:
 
 **Mudasir Mohammed Ibrahim**  
 Department of Internal Medicine (M3)
