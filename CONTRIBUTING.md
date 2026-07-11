@@ -6,14 +6,14 @@
 
 ## Mission
 
-MedModr is a free, open-source application for mediation, moderation, and conditional process analysis. Inspired by the **Hayes PROCESS framework**, it was developed to reduce the barriers created by commercial statistical software and the programming expertise often required by existing alternatives. The project aims to make advanced statistical methods more accessible to researchers, students, independent scholars, and institutions, particularly in low-resource settings.
-To maximize accessibility, MedModr is distributed as a **single self-contained HTML file** that runs directly in any modern web browser without installation, external dependencies, or server requirements.
+`MedModr` is a free, open-source application for mediation, moderation, and conditional process analysis. Inspired by the **Hayes PROCESS framework**, it was developed to reduce the barriers created by commercial statistical software and the programming expertise often required by existing alternatives. The project aims to make advanced statistical methods more accessible to researchers, students, independent scholars, and institutions, particularly in low-resource settings.
+To maximize accessibility, `MedModr` is distributed as a **single self-contained HTML file** that runs directly in any modern web browser without installation, external dependencies, or server requirements.
 
 ---
 
 ## Open Source and Licensing
-MedModr is released under the MIT License, allowing researchers, universities, organizations, and developers to freely use, modify, extend, host, and redistribute the software.
-As an open-source project, MedModr welcomes contributions from statisticians, methodologists, developers, educators, and researchers to:
+`MedModr` is released under the MIT License, allowing researchers, universities, organizations, and developers to freely use, modify, extend, host, and redistribute the software.
+As an open-source project, `MedModr` welcomes contributions from statisticians, methodologists, developers, educators, and researchers to:
 - Validate statistical methods
 - Identify and report bugs
 - Improve existing features
@@ -29,7 +29,7 @@ Contributions of all sizes are welcome, regardless of your background or level o
 **Writing code** to fix issues or implement new functionality.
 **Translating** the application or documentation into additional languages.
 **Validating statistical methods** against established literature and software.
-**Creating tutorials** (videos, blog posts, articles, or teaching materials) demonstrating MedModr on platforms such as YouTube, Medium, LinkedIn, or personal academic websites.
+**Creating tutorials** (videos, blog posts, articles, or teaching materials) demonstrating `MedModr` on platforms such as YouTube, Medium, LinkedIn, or personal academic websites.
 **Contributing institutional improvements** by submitting pull requests for custom features developed within your organization.
 
 ---
@@ -57,7 +57,7 @@ If you discover a bug, such as incorrect statistical results, user interface iss
    and/or PROCESS Macro output.
 **Expected:** The interaction coefficient should match manual mean centering
 and/or PROCESS Macro output.
-**Actual:** The interaction coefficient in MedModr differs, suggesting centering is applied
+**Actual:** The interaction coefficient in `MedModr` differs, suggesting centering is applied
 incorrectly or post-centering multiplication is flawed.
 ```
 
@@ -151,12 +151,12 @@ Before submitting a pull request, please ensure that:
 ---
 
 ## Community
-Community collaboration is central to the continued development of MedModr. You can participate by:
+Community collaboration is central to the continued development of `MedModr`. You can participate by:
 - **GitHub Issues:** Report bugs and request new features.
 - **Pull Requests:** Submit code improvements and enhancements.
 - **Discussions:** Share ideas, ask questions, and collaborate with other contributors.
 
 ---
 
-Every contribution whether it is code, documentation, testing, or educational material helps make MedModr more accessible and strengthens the global open-science community.
+Every contribution whether it is code, documentation, testing, or educational material helps make `MedModr` more accessible and strengthens the global open-science community.
 
