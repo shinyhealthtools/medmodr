@@ -116,9 +116,10 @@ If you would like to contribute, please read the project guidelines before submi
 
 ## Feedback
 
-If you encounter a bug or have a suggestion for improving `MedModr`, please open an issue on the GitHub repository.
+If you encounter a bug or have a suggestion for improving `MedModr`, please open an issue on the GitHub repository. When reporting a bug, please use the [bug report template](https://github.com/shinyhealthtools/medmodr/blob/main/.github/ISSUE_TEMPLATE/bug_report.md) to help me address the issue more efficiently.
 
 **Report an Issue** → [github.com/shinyhealthtools/medmodr/issues](https://github.com/shinyhealthtools/medmodr/issues)
+
 
 ## Links
 
