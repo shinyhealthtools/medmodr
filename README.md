@@ -104,7 +104,7 @@ The PROCESS macro for SPSS, SAS, and R, developed by Andrew F. Hayes, is a widel
 
 `MedModr` is an independent, open-source implementation inspired by the analytical approaches described in Dr. Hayes's work. It was developed from the ground up using native JavaScript matrix algebra and publicly available statistical methods. `MedModr` does not use, copy, or derive from the original PROCESS source code.
 
-Although `MedModr` aims to produce results consistent with those of the PROCESS macro, it is not affiliated with, endorsed by, or associated with Andrew F. Hayes. Any errors, bugs, or inaccuracies in MedModr are solely the responsibility of its developer.
+Although `MedModr` aims to produce results consistent with those of the PROCESS macro, it is not affiliated with, endorsed by, or associated with Andrew F. Hayes. Any errors, bugs, or inaccuracies in `MedModr` are solely the responsibility of its developer.
 
 ## Contribute
 
