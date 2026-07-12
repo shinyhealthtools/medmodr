@@ -2894,6 +2894,43 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
 .hamburger:active {
   transform: scale(0.92);
 }
+
+.topbar .breadcrumb .sep svg {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--text-4);
+    stroke: var(--text-4);
+    width: 14px;
+    height: 14px;
+    margin: 0 4px;
+}
+
+.topbar .tb-ghost svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.topbar .tb-ghost svg {
+    color: var(--text-3);
+    stroke: var(--text-3);
+}
+
+.topbar .tb-ghost:hover svg {
+    color: var(--brand);
+    stroke: var(--brand);
+}
+
+/* Dark mode support */
+[data-theme="dark"] .topbar .breadcrumb .sep svg {
+    color: var(--st-4);
+    stroke: var(--st-4);
+}
+
+[data-theme="dark"] .topbar .tb-ghost svg {
+    color: var(--st-3);
+    stroke: var(--st-3);
+}
 </style>
 </head>
 <body>
@@ -3176,7 +3213,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
         <i class="fas fa-calendar-alt" style="margin-right: 4px; font-size: 0.6rem;"></i> First Release: April 2026
       </div>
       <div style="font-size: 0.65rem; font-family: var(--mono); color: var(--st-4); text-align: center; margin-top: 4px;">
-        <i class="fas fa-sync-alt" style="margin-right: 4px; font-size: 0.6rem;"></i> Updated: June 2026
+        <i class="fas fa-sync-alt" style="margin-right: 4px; font-size: 0.6rem;"></i> Updated: July 2026
       </div>
     </div>
   </div>
@@ -3186,19 +3223,37 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
 <div class="main">
   <div class="topbar">
     <div class="topbar-left">
-      <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
-      <div class="breadcrumb"><span>MedModr</span><span class="sep">/</span><span class="cur" id="topbarSection">Home</span></div>
+      <button class="hamburger" id="hamburgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div class="breadcrumb">
+        <span>MedModr</span>
+        <span class="sep">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block; vertical-align: middle;">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </span>
+        <span class="cur" id="topbarSection">Home</span>
+      </div>
     </div>
-<div class="topbar-right">
-  <button class="tb-ghost"
-    onclick="window.open('https://shinyopensource.github.io/medmodr-documentation/', '_blank')">
-    <i class="fas fa-book"></i> About
-  </button>
-  <button class="tb-ghost"
-    onclick="window.open('https://youtu.be/jz06JUROrxo', '_blank')">
-    <i class="fab fa-youtube"></i> How to Run Analysis
-  </button>
-</div>
+    <div class="topbar-right">
+      <button class="tb-ghost" onclick="window.open('https://shinyopensource.github.io/medmodr-documentation/', '_blank')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        About
+      </button>
+      <button class="tb-ghost" onclick="window.open('https://youtu.be/jz06JUROrxo', '_blank')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        How to Run Analysis
+      </button>
+    </div>
   </div>
 
 <!-- OVERVIEW SECTION -->
@@ -6562,7 +6617,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
   </span>
 </div>
     
-  <span id="modStageLabel" style="display: none;" class="opt-label">Moderation Stage:</span>
+  <span id="modStageLabel" style="display: none;" class="opt-label">Moderation Stage/Path(s):</span>
 <select id="modStageOption" style="display: none;" class="opt-select">
     <option value="first">W moderates X→M (Model 7)</option>
     <option value="second">W moderates M→Y (Model 14)</option>
@@ -8508,6 +8563,9 @@ function applyImputationToData() {
     return;
   }
   
+  const imputationSeed = 12345;
+  setRandomSeed(imputationSeed);
+  
   showDataNotification(`Applying ${selectedImputationMethod} imputation...`, 'info');
   
   const imputedData = JSON.parse(JSON.stringify(currentWorkingData));
@@ -8571,7 +8629,6 @@ const medianVal = sorted.length % 2 === 0
       }
     }
     else if (selectedImputationMethod === 'hotdeck') {
-   
       const predictorIndices = [];
       for (let i = 0; i < currentWorkingColumns.length; i++) {
         if (i !== colIdx && originalDataTypes[currentWorkingColumns[i]] === 'numeric') {
@@ -8580,7 +8637,6 @@ const medianVal = sorted.length % 2 === 0
       }
       
       if (predictorIndices.length === 0) {
-       
         const meanVal = observedValues.reduce((a, b) => a + b, 0) / observedValues.length;
         for (let idx of missingIndices) {
           imputedData[idx][colIdx] = meanVal;
@@ -8689,7 +8745,7 @@ const medianVal = sorted.length % 2 === 0
             predicted += betas[k] * x_pred[k];
           }
 
-          const residualNoise = (Math.random() - 0.5) * 2 * residualStd;
+          const residualNoise = (seededRandom() - 0.5) * 2 * residualStd;
           const imputedValue = predicted + residualNoise;
           imputedData[idx][colIdx] = imputedValue;
           imputedCells.push({ row: idx, col: colIdx, method: 'regression', value: imputedValue });
@@ -8703,7 +8759,6 @@ const medianVal = sorted.length % 2 === 0
       }
     }
     else if (selectedImputationMethod === 'em') {
- 
       const nVars = currentWorkingColumns.length;
       const nObs = observedIndices.length;
       const nMiss = missingIndices.length;
@@ -8722,7 +8777,6 @@ const medianVal = sorted.length % 2 === 0
       }
       
       if (completeCases.length >= nVars + 1) {
-     
         let meanVec = Array(nVars).fill(0);
         let covMat = Array(nVars).fill().map(() => Array(nVars).fill(0));
         
@@ -8761,7 +8815,6 @@ const medianVal = sorted.length % 2 === 0
             }
             
             if (missingIdx.length === 0) {
-   
               for (let v = 0; v < nVars; v++) {
                 newMeanVec[v] += row[v];
                 for (let u = 0; u < nVars; u++) {
@@ -8770,7 +8823,6 @@ const medianVal = sorted.length % 2 === 0
               }
               weightSum++;
             } else if (observedIdx.length > 0) {
-
               const obsMean = observedIdx.map(v => meanVec[v]);
               const missMean = missingIdx.map(v => meanVec[v]);
 
@@ -8836,7 +8888,6 @@ const medianVal = sorted.length % 2 === 0
       }
     }
     else if (selectedImputationMethod === 'multiple') {
-  
       const predictorIndices = [];
       for (let i = 0; i < currentWorkingColumns.length; i++) {
         if (i !== colIdx && originalDataTypes[currentWorkingColumns[i]] === 'numeric') {
@@ -8900,7 +8951,7 @@ const medianVal = sorted.length % 2 === 0
         distances.sort((a, b) => a.distance - b.distance);
         
         const topDonors = distances.slice(0, Math.min(3, distances.length));
-        const selectedDonor = topDonors[Math.floor(Math.random() * topDonors.length)];
+        const selectedDonor = topDonors[Math.floor(seededRandom() * topDonors.length)];
         const imputedValue = selectedDonor.value;
         
         imputedData[idx][colIdx] = imputedValue;
@@ -12342,7 +12393,7 @@ function runModeratedSerialMediation_FirstStage(vars, covArrays, covNames, cl, n
         }
     }
         
-simpleIndirectHtml += `<div class="res-sub-label" style="margin-top:16px"><i class="fas fa-chart-simple"></i> Simple Indirect Effect: ${xn} → ${m2n} → ${yn}</div>
+simpleIndirectHtml += `<div class="res-sub-label" style="margin-top:16px"><i class="fas fa-chart-simple"></i> Indirect Effect: ${xn} → ${m2n} → ${yn}</div>
         <div class="res-table-wrap"><table class="res-table">
             <thead>
                 <tr><th style="text-align:right">Effect</th><th style="text-align:right">BootSE</th><th style="text-align:right">BootLLCI (${confPct})</th><th style="text-align:right">BootULCI (${confPct})</th><th style="text-align:center">Sig?</th></tr>
@@ -17278,7 +17329,7 @@ const wDesc = [
  let immRow = '';
 if (bootResults && bootResults.indexModMed) {
     const imm = bootResults.indexModMed;
-    const indexName = isBinaryW ? `${xn} → ${mn}×${wn} → ${yn} (${wn} difference)` : `${xn} → ${mn}×${wn} → ${yn}`;
+    const indexName = isBinaryW ? `${xn} → ${mn}×${wn} → ${yn}` : `${xn} → ${mn}×${wn} → ${yn}`;
     immRow = `
         <tr><td style="font-weight:600">${indexName}</span></td>
             <td style="text-align:right">${fmtv(imm.effect, 3)}</span></td>
@@ -17986,7 +18037,7 @@ const wDesc = [
             
             <div style="padding:18px;background:var(--surface-2);border-radius:var(--r-lg);border:1px solid var(--border);margin-top:18px">
                 <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:12px">
-                    <i class="fas fa-chart-line"></i> Simple Slopes: Direct Effect ${xn} → ${yn} at Levels of ${wn}
+                    <i class="fas fa-chart-line"></i> Conditional Effects: ${xn} → ${yn} at Levels of ${wn}
                 </div>
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
@@ -17999,7 +18050,7 @@ const wDesc = [
             
             <div style="padding:18px;background:var(--surface-2);border-radius:var(--r-lg);border:1px solid var(--border);margin-top:18px">
                 <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:12px">
-                    <i class="fas fa-project-diagram"></i> Conditional Indirect Effects & Index of Moderated Mediation
+                    <i class="fas fa-project-diagram"></i> Conditional Indirect Effects: ${xn} → ${mn} → ${yn}
                 </div>
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
@@ -20889,7 +20940,7 @@ const immTableRows = `
             
             <div style="padding:18px;background:var(--surface-2);border-radius:var(--r-lg);border:1px solid var(--border);margin-top:18px">
                 <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:12px">
-                    <i class="fas fa-chart-line"></i> Simple Slopes: ${mn} → ${yn} at Three Levels of ${wn}
+                    <i class="fas fa-chart-line"></i> Conditional effects: ${mn} → ${yn} at Three Levels of ${wn}
                 </div>
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
@@ -21124,7 +21175,6 @@ const plotData_b = {
     xn: mn, wn: wn, yn: yn
 };
     
-    const slopesHTML_b = buildSlopesHTML(plotData_b, mn, wn, yn);
 
     const condIndEffects = [];
     for (let i = 0; i < wCenteredLevels.length; i++) {
@@ -21171,7 +21221,7 @@ if (isWBinary) {
     immLo = immValue - tc_slope * immSE;
     immHi = immValue + tc_slope * immSE;
     immSig = immP < (1 - cl);
-    immLabel = `${xn} → ${mn}×${wn} → ${yn} (${wn}=1 vs ${wn}=0)`;
+    immLabel = `${xn} → ${mn}×${wn} → ${yn}`;
 } else {
     immValue = a3_cent * b1_cent + a1_cent * b3_cent;
     immSE = Math.sqrt((a3_cent**2 * b1_se_cent**2) + (b1_cent**2 * a3_se_cent**2) + (a1_cent**2 * b3_se_cent**2) + (b3_cent**2 * a1_se_cent**2));
@@ -21273,7 +21323,7 @@ if (isWBinary) {
     
 const immHtml = `<div class="res-table-wrap" style="margin-top:16px">
         <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:12px">
-            <i class="fas fa-chart-simple"></i> Index of Moderated Mediation (${isWBinary ? 'Difference between conditional indirect effects' : ''})
+            <i class="fas fa-chart-simple"></i> Index of Moderated Mediation (${isWBinary ? 'IMM' : ''})
         </div>
         <table class="res-table"><thead><tr><th>IMM</th><th>B</th><th>SE</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>SIG?</th></tr></thead>
         <tbody>${immTableRows}</tbody></table></div>`;
@@ -21354,10 +21404,10 @@ const immHtml = `<div class="res-table-wrap" style="margin-top:16px">
             <div class="res-table-wrap"><table class="res-table"><thead><tr><th rowspan="2">${wn} Level</th><th colspan="7" class="th-group">Unstandardized</th></tr>
             <tr><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig.</th></tr></thead>
             <tbody>${slopeRows_a}</tbody></table></div>${slopesHTML_a}
-            <div class="res-sub-label"><i class="fas fa-chart-line"></i> Simple Slopes: Effect of ${mn} on ${yn} at Levels of ${wn}</div>
+            <div class="res-sub-label"><i class="fas fa-chart-line"></i> Conditional Effects: Effect of ${mn} on ${yn} at Levels of ${wn}</div>
             <div class="res-table-wrap"><table class="res-table"><thead><tr><th rowspan="2">${wn} Level</th><th colspan="7" class="th-group">Unstandardized</th></tr>
             <tr><th>b</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig.</th></tr></thead>
-            <tbody>${slopeRows_b}</tbody></table></div>${slopesHTML_b}
+            <tbody>${slopeRows_b}</tbody></table></div>
             <div class="res-sub-label"><i class="fas fa-project-diagram"></i> Conditional Indirect Effects (${xn} → ${mn} → ${yn}) at Levels of ${wn}</div>
             <div class="res-table-wrap"><table class="res-table"><thead><tr><th rowspan="2">${wn} Level</th><th colspan="6" class="th-group">Conditional Indirect Effect</th></tr>
             <tr><th>Effect</th><th>SE</th><th>t/z</th><th>p</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th></tr></thead>
@@ -21932,13 +21982,13 @@ function runModMed_XMandXY(vars, covArrays, covNames, cl, nBoot, centerOption) {
       </table></div>
       ${aSlopesHTML}
 
-      <div class="res-sub-label"><i class="fas fa-table"></i> Table 3: Direct Effect Baseline Model (${yn} regressed on ${xn}, ${mn}, and ${wn}) — NO X×W interaction</div>
+      <div class="res-sub-label"><i class="fas fa-table"></i> Table 3: Y Model (${yn} regressed on ${xn}, ${mn}, and ${wn}) — NO X×W interaction</div>
       ${renderReg(rY_baseline, rY_baseline_z, yn, confPct, Xmat_b_baseline, predNames_b_baseline)}
 
       <div class="res-sub-label"><i class="fas fa-table"></i> Table 4: Full Y Model (${yn} with X, M, W, and X×W)</div>
       ${renderReg(rY_full, rY_full_z, yn, confPct, Xmat_y_full, predNames_y_full)}
 
-      <div class="res-sub-label"><i class="fas fa-chart-line"></i> Simple Slopes: Direct Effect ${xn} → ${yn} at Levels of ${wn}</div>
+      <div class="res-sub-label"><i class="fas fa-chart-line"></i> Conditional Effects: ${xn} → ${yn} at Levels of ${wn}</div>
       <div class="res-table-wrap"><table class="res-table">
         <thead>
           <tr>
