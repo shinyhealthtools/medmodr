@@ -3083,10 +3083,13 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
 <div id="dataEditorModal" class="data-editor-modal" style="display: none;">
   <div class="data-editor-modal-content">
     <div class="data-editor-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px 24px; background: linear-gradient(135deg, var(--brand-bg), var(--surface-2)); border-bottom: 2px solid var(--brand);">
-      <div class="data-editor-title" style="display: flex; align-items: center; gap: 10px; font-size: 1.1rem; font-weight: 800; color: var(--text-1);">
-        <i class="fas fa-edit" style="color: var(--brand);"></i> Data Editor
-        <span style="font-size: 0.7rem; font-weight: 400; color: var(--text-4); margin-left: 6px;">Click any cell to edit</span>
-      </div>
+<div class="data-editor-title" style="display: flex; align-items: center; gap: 10px; font-size: 1.1rem; font-weight: 800; color: var(--text-1);">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0;">
+    <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+  </svg>
+  Data Editor
+  <span style="font-size: 0.7rem; font-weight: 400; color: var(--text-4); margin-left: 6px;">Click any cell to edit</span>
+</div>
       <button class="data-editor-close" style="background: var(--surface-2); border: 1px solid var(--border); color: #dc2626; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; font-size: 18px; font-weight: bold; font-family: Arial, sans-serif; flex-shrink: 0;" 
               onmouseover="this.style.background='#fee2e2'; this.style.borderColor='#dc2626';" 
               onmouseout="this.style.background='var(--surface-2)'; this.style.borderColor='var(--border)';">
@@ -3097,29 +3100,60 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
     <!-- TOOLBAR -->
     <div class="data-editor-toolbar" style="padding: 12px 24px; background: var(--surface-2); border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
       <button class="data-editor-btn data-editor-btn-undo" id="editorUndoBtn" style="background: #6c757d; color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        <i class="fas fa-undo-alt"></i> Undo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+        </svg>
+        Undo
       </button>
       <button class="data-editor-btn data-editor-btn-redo" id="editorRedoBtn" style="background: #6c757d; color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        <i class="fas fa-redo-alt"></i> Redo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+        </svg>
+        Redo
       </button>
       <div style="width: 1px; height: 28px; background: var(--border);"></div>
       <button class="data-editor-btn data-editor-btn-success" id="editorAddRowBtn" style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        <i class="fas fa-plus"></i> Add Row
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        Add Row
       </button>
       <button class="data-editor-btn data-editor-btn-warning" id="editorRemoveEmptyRowsBtn" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        <i class="fas fa-trash-alt"></i> Remove Empty
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </svg>
+        Remove Empty
       </button>
       <button class="data-editor-btn data-editor-btn-info" id="editorFixEmptyCellsBtn" style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        <i class="fas fa-fill-drip"></i> Fill Empty
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <polyline points="9 12 11 14 15 10"></polyline>
+        </svg>
+        Fill Empty
       </button>
       <button class="data-editor-btn" id="editorReverseCodeBtn" style="background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        <i class="fas fa-arrows-rotate"></i> Reverse Code
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+          <path d="M21.5 2v6h-6M2.5 22v-6h6M2.5 11.5a10 10 0 0 1 18.8-4.3M22.5 12.5a10 10 0 0 1-18.8 4.2"></path>
+        </svg>
+        Reverse Code
       </button>
       <button class="data-editor-btn" id="editorRecodeBtn" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        <i class="fas fa-pen"></i> Recode
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+          <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+        </svg>
+        Recode
       </button>
       <button class="data-editor-btn" id="editorZScoreBtn" style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-        <i class="fas fa-chart-standard"></i> Z-Score
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+          <polyline points="23 6 13.5 15 8.5 10 1 17.5"></polyline>
+          <line x1="1" y1="4" x2="1" y2="20"></line>
+          <line x1="23" y1="4" x2="23" y2="20"></line>
+        </svg>
+        Z-Score
       </button>
     </div>
     
@@ -3199,12 +3233,43 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
 </div>
 <nav class="sidebar-nav">
   <span class="nav-sec-label">Navigation</span>
-  <div class="nav-item active" data-sec="home" onclick="showSection('home')"><i class="fas fa-home"></i> Overview</div>
-  <div class="nav-item" data-sec="data-import" onclick="showSection('data-import')"><i class="fas fa-upload"></i> Data Processing</div>
-  <div class="nav-item" data-sec="analysis" onclick="showSection('analysis')"><i class="fas fa-flask"></i> Statistical Analysis</div>
-  <span class="nav-sec-label">Resources</span>
-  <div class="nav-item" data-sec="developer" onclick="showSection('developer')"><i class="fas fa-user-circle"></i> Author</div>
-<div class="nav-item" data-sec="about" onclick="window.open('https://shinyopensource.github.io/medmodr-documentation/', '_blank')"><i class="fas fa-info-circle"></i> About</div>
+<div class="nav-item active" data-sec="home" onclick="showSection('home')">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+    <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+  </svg>
+  Overview
+</div>
+<div class="nav-item" data-sec="data-import" onclick="showSection('data-import')">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
+    <polyline points="17 8 12 3 7 8"></polyline>
+    <line x1="12" y1="3" x2="12" y2="15"></line>
+  </svg>
+  Data Processing
+</div>
+<div class="nav-item" data-sec="analysis" onclick="showSection('analysis')">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+  </svg>
+  Statistical Analysis
+</div>
+<span class="nav-sec-label">Resources</span>
+<div class="nav-item" data-sec="developer" onclick="showSection('developer')">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+  Author
+</div>
+<div class="nav-item" data-sec="about" onclick="window.open('https://shinyopensource.github.io/medmodr-documentation/', '_blank')">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+    <circle cx="12" cy="12" r="10"></circle>
+    <line x1="12" y1="12" x2="12" y2="16"></line>
+    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+  </svg>
+  About
+</div>
 </nav>
 <div class="sidebar-footer">
     <div class="ver-badge">v2.0 · Free Forever</div>
@@ -3263,8 +3328,21 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
         <h1 class="hero-headline">Mediation, Moderation &<br>Conditional Process Analysis<br><em>done right.</em></h1>
         <p class="hero-sub">A free, user-friendly, open-source application for mediation, moderation, and conditional process analysis. Runs entirely in your web browser with no installation required and no internet connection needed. Use it offline on any device, anywhere.</p>
         <div class="cta-row">
-            <button class="btn-primary" onclick="showSection('data-import')"><i class="fas fa-upload"></i> Get started</button>
-            <button class="btn-outline" onclick="showSection('developer')"><i class="fas fa-user-circle"></i> About the author</button>
+<button class="btn-primary" onclick="showSection('data-import')">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
+    <polyline points="17 8 12 3 7 8"></polyline>
+    <line x1="12" y1="3" x2="12" y2="15"></line>
+  </svg>
+  Get started
+</button>
+<button class="btn-outline" onclick="showSection('developer')">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+  About the author
+</button>
         </div>
     </div>
     <div class="content" style="padding-top:0">
@@ -3277,7 +3355,14 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
         
         <!-- KEY FEATURES PANEL -->
         <div class="panel">
-            <div class="panel-header"><div class="panel-title"><i class="fas fa-crown"></i> Key Features</div></div>
+            <div class="panel-header"><div class="panel-title">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+    <path d="M2 17l10 5 10-5"></path>
+    <path d="M2 12l10 5 10-5"></path>
+  </svg>
+  Key Features
+</div></div>
             <div class="panel-body">
                 <div class="feature-grid-compact">
                     
@@ -3378,7 +3463,13 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
         
         <!-- COMPLETE ANALYSIS SUITE PANEL -->
         <div class="panel" style="margin-top: 24px;">
-            <div class="panel-header"><div class="panel-title"><i class="fas fa-flask"></i> Available Analysis Types</div></div>
+            <div class="panel-header"><div class="panel-title">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+  </svg>
+  Available Analysis Types
+</div></div>
             <div class="panel-body">
                 <div class="feature-grid-compact">
                     
@@ -3493,7 +3584,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
     </div>
 <div class="site-footer">
     <p style="display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap;">
-        <span>MedModr © 2026 - Present</span>
+        <span>MedModr © <span id="currentYear"></span></span>
         <span>|</span>
         <a href="https://github.com/shinyhealthtools/medmodr/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" style="color: var(--brand); text-decoration: underline;">MIT License</a>
         <span>|</span>
@@ -6205,7 +6296,12 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
   <div class="panel-body">
     <!-- Upload Zone -->
     <div class="di-upload-zone" id="dropZone">
-      <i class="fas fa-file-alt di-upload-icon"></i>
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin: 0 auto 16px;">
+  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+  <polyline points="14 2 14 8 20 8"></polyline>
+  <line x1="12" y1="18" x2="12" y2="12"></line>
+  <polyline points="9 15 12 12 15 15"></polyline>
+</svg>
       <div class="di-upload-title">Drag & Drop or Click to Browse</div>
       <div class="di-upload-subtitle">Supports CSV and Excel files (.csv, .xlsx, .xls)</div>
       <button class="btn-outline" id="selectFileBtn" style="padding: 8px 20px; font-size: 0.8rem;">
@@ -6449,7 +6545,13 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
     <div class="content" style="padding-top:0">
       
       <div class="panel">
-        <div class="panel-header"><div class="panel-title"><i class="fas fa-tag"></i> Variable Assignment</div></div>
+        <div class="panel-header"><div class="panel-title">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+    <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"></path>
+    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+  </svg>
+  Variable Assignment
+</div></div>
         <div class="panel-body">
           
           <!-- Available Variables Pool -->
@@ -6678,7 +6780,7 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
           <div class="dev-name">Mudasir Mohammed Ibrahim</div>
         </div>
       </div>
-<p class="dev-bio">Mudasir Mohammed Ibrahim is a Ghanaian nurse, researcher, data analyst, and open-source advocate 🇬🇭. He is the creator of MedModr to make these advanced analytical methods accessible to researchers worldwide. His work is driven by a commitment to open science, reproducible research, and expanding equitable access to high-quality analytical tools for the global research community.</p>
+<p class="dev-bio">Mudasir Mohammed Ibrahim is a Ghanaian nurse, researcher, data analyst, and open-source advocate 🇬🇭. He is the creator of MedModr, a free tool designed to make commonly used mediation, moderation, and conditional process analysis methods accessible to researchers, students, educators, and practitioners worldwide. His work promotes open science, reproducible research, and equitable access to high-quality statistical tools, especially in underfunded and resource-limited settings.</p>
       <div class="dev-connect-label"><i class="fas fa-link" style="margin-right:6px"></i> Connect with me</div>
       <div class="dev-connect-btns">
 <a class="dev-btn dev-btn-web" href="https://mudasiribrahim.github.io/gh/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Personal website</a>
@@ -7627,8 +7729,12 @@ function removeUploadedFile() {
   overlay.className = 'custom-confirm-overlay';
   overlay.innerHTML = `
     <div class="custom-confirm-box">
-      <div class="custom-confirm-icon">
-        <i class="fas fa-exclamation-triangle"></i>
+      <div class="custom-confirm-icon" style="width: 48px; height: 48px; border-radius: 50%; background: var(--amber-bg); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
       </div>
       <div class="custom-confirm-title">Remove File?</div>
       <div class="custom-confirm-message">
@@ -11460,9 +11566,13 @@ function applyListwiseDeletion() {
   overlay.className = 'listwise-confirm-overlay';
   overlay.innerHTML = `
     <div class="listwise-confirm-box">
-      <div class="listwise-confirm-icon">
-        <i class="fas fa-exclamation-triangle"></i>
-      </div>
+ <div class="listwise-confirm-icon" style="width: 48px; height: 48px; border-radius: 50%; background: var(--amber-bg); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+    <line x1="12" y1="9" x2="12" y2="13"></line>
+    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+  </svg>
+</div>
       <div class="listwise-confirm-title">Confirm Listwise Deletion</div>
       <div class="listwise-confirm-message">
         This will remove <strong>${missingRows.length} row(s)</strong> with missing values.<br><br>
@@ -22481,9 +22591,12 @@ function clearAllVariableAssignments() {
   box.style.cssText = 'background:var(--surface);border-radius:20px;max-width:450px;width:90%;padding:24px;box-shadow:0 20px 40px rgba(0,0,0,0.3);border:1px solid var(--border);';
   
   box.innerHTML = `
-    <div style="width:48px;height:48px;border-radius:50%;background:var(--amber-bg);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-      <i class="fas fa-trash-alt" style="font-size:24px;color:#b45309;"></i>
-    </div>
+<div style="width:48px;height:48px;border-radius:50%;background:var(--amber-bg);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+    <polyline points="3 6 5 6 21 6"></polyline>
+    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+  </svg>
+</div>
     <div style="font-size:1.2rem;font-weight:800;color:var(--text-1);margin-bottom:8px;">Clear All Assignments?</div>
     <div style="font-size:0.9rem;color:var(--text-2);line-height:1.6;margin-bottom:24px;">
       This will remove all variables from X, M, M₂, Y, W, and Covariates boxes.<br><br>
@@ -23599,9 +23712,13 @@ function resetCategoricalEncoding() {
   overlay.className = 'custom-confirm-overlay';
   overlay.innerHTML = `
     <div class="custom-confirm-box">
-      <div class="custom-confirm-icon">
-        <i class="fas fa-exclamation-triangle"></i>
-      </div>
+<div class="custom-confirm-icon" style="width: 48px; height: 48px; border-radius: 50%; background: var(--amber-bg); display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+    <line x1="12" y1="9" x2="12" y2="13"></line>
+    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+  </svg>
+</div>
       <div class="custom-confirm-title">Reset Encoding?</div>
       <div class="custom-confirm-message">
         This will remove ${dummyColumnsToRemove.length} dummy variable(s) and restore ${categoricalColumnsToRestore.length} original categorical variable(s).<br><br>
@@ -26477,7 +26594,11 @@ function editorConfirmDialog(message, title, onConfirm, onCancel) {
   overlay.innerHTML = `
     <div class="editor-confirm-box">
       <div class="editor-confirm-icon">
-        <i class="fas fa-exclamation-triangle"></i>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+    <line x1="12" y1="9" x2="12" y2="13"></line>
+    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+</svg>
       </div>
       <div class="editor-confirm-title">${escapeXml(title)}</div>
       <div class="editor-confirm-message">${escapeXml(message)}</div>
@@ -26586,10 +26707,12 @@ function openReverseCodeDialog() {
     overlay.className = 'editor-confirm-dialog';
     overlay.innerHTML = `
         <div class="editor-confirm-box" style="width: 480px; max-width: 95%; max-height: 90vh; overflow-y: auto;">
-            <div class="editor-confirm-icon" style="background: var(--violet-bg);">
-                <i class="fas fa-arrows-rotate" style="color: var(--violet);"></i>
+            <div class="editor-confirm-icon" style="background: var(--violet-bg); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; margin-bottom: 16px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path d="M21.5 2v6h-6M2.5 22v-6h6M2.5 11.5a10 10 0 0 1 18.8-4.3M22.5 12.5a10 10 0 0 1-18.8 4.2"></path>
+                </svg>
             </div>
-            <div class="editor-confirm-title">Reverse Code Variable</div>
+            <div class="editor-confirm-title" style="font-size: 1.2rem; font-weight: 800; color: var(--text-1); margin-bottom: 8px;">Reverse Code Variable</div>
             <div class="editor-confirm-message">
                 <div style="margin-bottom: 12px;">
                     <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">Select variable to reverse code:</label>
@@ -26608,8 +26731,13 @@ function openReverseCodeDialog() {
                             <button onclick="autoFillReverseMapping()" style="padding: 8px 14px; background: var(--brand); color: white; border: none; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;">Auto-fill</button>
                         </div>
                     </div>
-                    <div style="font-size: 0.65rem; color: var(--text-4); margin-top: 6px;">
-                        <i class="fas fa-info-circle"></i> Works with both numbers and text. Format: original=recode (separate with commas).
+                    <div style="font-size: 0.65rem; color: var(--text-4); margin-top: 6px; display: flex; align-items: center; gap: 6px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="12" x2="12" y2="16"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        Works with both numbers and text. Format: original=recode (separate with commas).
                     </div>
                 </div>
                 <div>
@@ -26623,13 +26751,19 @@ function openReverseCodeDialog() {
                         </label>
                     </div>
                 </div>
-                <div style="margin-top: 12px; padding: 8px; background: var(--surface-3); border-radius: 6px; font-size: 0.7rem; color: var(--text-4);">
-                    <i class="fas fa-lightbulb"></i> <strong>Tip:</strong> For text values like "Male" and "Female", use: Male=Female,Female=Male
+                <div style="margin-top: 12px; padding: 8px; background: var(--surface-3); border-radius: 6px; font-size: 0.7rem; color: var(--text-4); display: flex; align-items: flex-start; gap: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0; margin-top: 1px;">
+                        <path d="M9 18h6"></path>
+                        <path d="M10 21h4"></path>
+                        <path d="M12 3v8"></path>
+                        <path d="M8 11l4-4 4 4"></path>
+                    </svg>
+                    <span><strong>Tip:</strong> For text values like "Male" and "Female", use: Male=Female,Female=Male</span>
                 </div>
             </div>
-            <div class="editor-confirm-buttons">
-                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="reverseCancelBtn">Cancel</button>
-                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="reverseConfirmBtn" style="background: var(--violet);">Apply Reverse Code</button>
+            <div class="editor-confirm-buttons" style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px;">
+                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="reverseCancelBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border-med); background: var(--surface-2); color: var(--text-2); font-family: var(--font);">Cancel</button>
+                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="reverseConfirmBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: none; background: var(--violet); color: white; font-family: var(--font);">Apply Reverse Code</button>
             </div>
         </div>
     `;
@@ -26846,10 +26980,12 @@ function openRecodeDialog() {
     overlay.className = 'editor-confirm-dialog';
     overlay.innerHTML = `
         <div class="editor-confirm-box" style="width: 480px; max-width: 95%; max-height: 90vh; overflow-y: auto;">
-            <div class="editor-confirm-icon" style="background: var(--amber-bg);">
-                <i class="fas fa-pen" style="color: var(--amber);"></i>
+            <div class="editor-confirm-icon" style="background: var(--amber-bg); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; margin-bottom: 16px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                </svg>
             </div>
-            <div class="editor-confirm-title">Recode Variable</div>
+            <div class="editor-confirm-title" style="font-size: 1.2rem; font-weight: 800; color: var(--text-1); margin-bottom: 8px;">Recode Variable</div>
             <div class="editor-confirm-message">
                 <div style="margin-bottom: 12px;">
                     <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">Select variable to recode:</label>
@@ -26860,8 +26996,13 @@ function openRecodeDialog() {
                 <div style="margin-bottom: 12px;">
                     <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">Recode mapping (original=recode):</label>
                     <input type="text" id="recodeMapping" placeholder="1=0,2=0,3=1,4=1,5=1 or Male=1,Female=0" style="width: 100%; padding: 10px 12px; border: 1.5px solid var(--border-med); border-radius: 8px; background: var(--surface); color: var(--text-1); font-family: var(--mono); font-size: 0.8rem;">
-                    <div style="font-size: 0.65rem; color: var(--text-4); margin-top: 6px;">
-                        <i class="fas fa-info-circle"></i> Works with both numbers and text. Separate with commas. Values not listed will become NA.
+                    <div style="font-size: 0.65rem; color: var(--text-4); margin-top: 6px; display: flex; align-items: center; gap: 6px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="12" x2="12" y2="16"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        Works with both numbers and text. Separate with commas. Values not listed will become NA.
                     </div>
                 </div>
                 <div>
@@ -26875,13 +27016,19 @@ function openRecodeDialog() {
                         </label>
                     </div>
                 </div>
-                <div style="margin-top: 12px; padding: 8px; background: var(--surface-3); border-radius: 6px; font-size: 0.7rem; color: var(--text-4);">
-                    <i class="fas fa-lightbulb"></i> <strong>Examples:</strong> "Male=1,Female=0" or "1=0,2=0,3=1,4=1,5=1"
+                <div style="margin-top: 12px; padding: 8px; background: var(--surface-3); border-radius: 6px; font-size: 0.7rem; color: var(--text-4); display: flex; align-items: flex-start; gap: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0; margin-top: 1px;">
+                        <path d="M9 18h6"></path>
+                        <path d="M10 21h4"></path>
+                        <path d="M12 3v8"></path>
+                        <path d="M8 11l4-4 4 4"></path>
+                    </svg>
+                    <span><strong>Examples:</strong> "Male=1,Female=0" or "1=0,2=0,3=1,4=1,5=1"</span>
                 </div>
             </div>
-            <div class="editor-confirm-buttons">
-                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="recodeCancelBtn">Cancel</button>
-                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="recodeConfirmBtn" style="background: var(--amber);">Apply Recode</button>
+            <div class="editor-confirm-buttons" style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px;">
+                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="recodeCancelBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border-med); background: var(--surface-2); color: var(--text-2); font-family: var(--font);">Cancel</button>
+                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="recodeConfirmBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: none; background: var(--amber); color: white; font-family: var(--font);">Apply Recode</button>
             </div>
         </div>
     `;
@@ -27221,10 +27368,14 @@ function openZScoreDialog() {
     overlay.className = 'editor-confirm-dialog';
     overlay.innerHTML = `
         <div class="editor-confirm-box" style="width: 480px; max-width: 95%; max-height: 90vh; overflow-y: auto;">
-<div class="editor-confirm-icon" style="background: var(--brand-bg);">
-    <i class="fas fa-chart-bar" style="color: var(--brand); font-size: 20px;"></i>
-</div>
-            <div class="editor-confirm-title">Z-Score Standardization</div>
+            <div class="editor-confirm-icon" style="background: var(--brand-bg); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; margin-bottom: 16px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <polyline points="23 6 13.5 15 8.5 10 1 17.5"></polyline>
+                    <line x1="1" y1="4" x2="1" y2="20"></line>
+                    <line x1="23" y1="4" x2="23" y2="20"></line>
+                </svg>
+            </div>
+            <div class="editor-confirm-title" style="font-size: 1.2rem; font-weight: 800; color: var(--text-1); margin-bottom: 8px;">Z-Score Standardization</div>
             <div class="editor-confirm-message">
                 <div style="margin-bottom: 12px;">
                     <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">Select variable to standardize:</label>
@@ -27233,8 +27384,12 @@ function openZScoreDialog() {
                     </select>
                 </div>
                 <div style="margin-bottom: 12px; padding: 10px 14px; background: var(--surface-2); border-radius: 8px;">
-                    <div style="font-size: 0.7rem; color: var(--text-4); margin-bottom: 6px;">
-                        <i class="fas fa-calculator"></i> <strong>Z-Score Formula:</strong> z = (x - μ) / σ
+                    <div style="font-size: 0.7rem; color: var(--text-4); margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <strong>Z-Score Formula:</strong> z = (x - μ) / σ
                     </div>
                     <div id="zscorePreview" style="font-size: 0.7rem; color: var(--text-3);">
                         <div>Mean: <span id="zscoreMean" style="font-family: var(--mono);">—</span></div>
@@ -27253,13 +27408,19 @@ function openZScoreDialog() {
                         </label>
                     </div>
                 </div>
-                <div style="margin-top: 12px; padding: 8px; background: var(--surface-3); border-radius: 6px; font-size: 0.7rem; color: var(--text-4);">
-                    <i class="fas fa-lightbulb"></i> <strong>Tip:</strong> Z-scores transform your variable to have mean = 0 and standard deviation = 1. Useful for comparing variables on the same scale.
+                <div style="margin-top: 12px; padding: 8px; background: var(--surface-3); border-radius: 6px; font-size: 0.7rem; color: var(--text-4); display: flex; align-items: flex-start; gap: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0; margin-top: 1px;">
+                        <path d="M9 18h6"></path>
+                        <path d="M10 21h4"></path>
+                        <path d="M12 3v8"></path>
+                        <path d="M8 11l4-4 4 4"></path>
+                    </svg>
+                    <span><strong>Tip:</strong> Z-scores transform your variable to have mean = 0 and standard deviation = 1. Useful for comparing variables on the same scale.</span>
                 </div>
             </div>
-            <div class="editor-confirm-buttons">
-                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="zscoreCancelBtn">Cancel</button>
-                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="zscoreConfirmBtn" style="background: var(--brand);">Apply Z-Score</button>
+            <div class="editor-confirm-buttons" style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px;">
+                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="zscoreCancelBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border-med); background: var(--surface-2); color: var(--text-2); font-family: var(--font);">Cancel</button>
+                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="zscoreConfirmBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: none; background: var(--brand); color: white; font-family: var(--font);">Apply Z-Score</button>
             </div>
         </div>
     `;
@@ -27424,6 +27585,13 @@ runMediationModeratedDirect = wrapTablesWithNotice(runMediationModeratedDirect);
 runModeratedSerialMediation_FirstStage = wrapTablesWithNotice(runModeratedSerialMediation_FirstStage);
 
 (function(){var c=null,d=!1;document.addEventListener('touchstart',function(){d=!1;clearTimeout(c);c=setTimeout(function(){d=!0},200)},{passive:!0});document.addEventListener('touchend',function(){clearTimeout(c);c=setTimeout(function(){d=!1},100)},{passive:!0});document.addEventListener('touchmove',function(){d=!0;clearTimeout(c)},{passive:!0})})();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+});
 </script>
 </body>
 </html>
