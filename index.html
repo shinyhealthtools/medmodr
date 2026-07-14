@@ -16575,7 +16575,7 @@ function bootCI_modmed_allThreePaths_bc(xRaw, mRaw, yRaw, wRaw, nB, cl, covs = [
     let validBootstraps = 0;
     
     for (let b = 0; b < nB; b++) {
-        const idx = Array.from({ length: n }, () => Math.floor(Math.random() * n));
+        const idx = Array.from({ length: n }, () => getRandomInt(n));
         const bx = idx.map(i => xRaw[i]);
         const bm = idx.map(i => mRaw[i]);
         const by = idx.map(i => yRaw[i]);
@@ -16692,6 +16692,7 @@ function bootCI_modmed_allThreePaths_bc(xRaw, mRaw, yRaw, wRaw, nB, cl, covs = [
         method: 'bias-corrected'
     };
 }
+
 function invNormApprox(p) {
     if (p <= 0) return -10;
     if (p >= 1) return 10;
@@ -16802,7 +16803,7 @@ function bootCI_modmed_allThreePaths_bc(xRaw, mRaw, yRaw, wRaw, nB, cl, covs = [
     let validBootstraps = 0;
     
     for (let b = 0; b < nB; b++) {
-        const idx = Array.from({ length: n }, () => Math.floor(Math.random() * n));
+        const idx = Array.from({ length: n }, () => getRandomInt(n));
         const bx = idx.map(i => xRaw[i]);
         const bm = idx.map(i => mRaw[i]);
         const by = idx.map(i => yRaw[i]);
@@ -16917,44 +16918,6 @@ function bootCI_modmed_allThreePaths_bc(xRaw, mRaw, yRaw, wRaw, nB, cl, covs = [
     };
 }
 
-function invNormApprox(p) {
-    if (p <= 0) return -10;
-    if (p >= 1) return 10;
-    
-    const a = [-39.69683028665376, 220.9460984245205, -275.9285104469687, 
-               138.3577518672690, -30.66479806614716, 2.506628277459239];
-    const b = [-54.47609879822406, 161.5858368580409, -155.6989798598866, 
-               66.80131188771972, -13.28068155288572, 1];
-    
-    if (p < 0.5) return -invNormApprox(1 - p);
-    
-    let q = p - 0.5;
-    let r = q * q;
-    let u = ((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5];
-    let v = ((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + b[5];
-    
-    return u * q / v;
-}
-
-function normalCDF(z) {
-    return (1 + erf(z / Math.sqrt(2))) / 2;
-}
-
-function erf(x) {
-    const a1 = 0.254829592;
-    const a2 = -0.284496736;
-    const a3 = 1.421413741;
-    const a4 = -1.453152027;
-    const a5 = 1.061405429;
-    const p = 0.3275911;
-    
-    const sign = x < 0 ? -1 : 1;
-    x = Math.abs(x);
-    const t = 1 / (1 + p * x);
-    const y = 1 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
-    return sign * y;
-}
-
 function runModMed_AllThreePaths(vars, covArrays, covNames, cl, nBoot, centerOption) {
     const xRaw = vars.x, mRaw = vars.m, yRaw = vars.y, wRaw = vars.w;
     const xn = vars.xname, mn = vars.mname, yn = vars.yname, wn = vars.wname;
@@ -17027,59 +16990,59 @@ function runModMed_AllThreePaths(vars, covArrays, covNames, cl, nBoot, centerOpt
         bootResults = bootCI_modmed_allThreePaths_bc(xRaw, mRaw, yRaw, wRaw, nBoot, cl, covArrays, centerOption);
     }
     
-    const condDirectEffects = wLevels.map((w, i) => {
-        const effect = c1 + c3 * w;
-        const level = i === 0 ? 'low' : (i === 1 ? (wLevels.length === 2 ? 'mid' : 'mid') : 'high');
-        const bootCI = bootResults?.direct?.[level];
-        
-        let se, lo, hi;
-        
-        if (bootCI && bootCI.se !== undefined && bootCI.lo !== undefined) {
-            se = bootCI.se;
-            lo = bootCI.lo;
-            hi = bootCI.hi;
-        } else {
-            se = Math.sqrt(c1_se**2 + w**2 * c3_se**2);
-            const tc = tQuantile(rY.df, 1 - cl);
-            lo = effect - tc * se;
-            hi = effect + tc * se;
-        }
-        
-        const t = se > 0 ? effect / se : 0;
-        const p = tcdf2(Math.abs(t), rY.df);
-        const sig = p < (1 - cl);
-        
-        return { w, label: wLabels[i], effect, se, t, p, lo, hi, sig };
-    });
+const condDirectEffects = wLevels.map((w, i) => {
+    const effect = c1 + c3 * w;
+    const level = i === 0 ? 'low' : (i === 1 ? (wLevels.length === 2 ? 'mid' : 'mid') : 'high');
+    const bootCI = bootResults?.direct?.[level];
     
-    const condIndEffects = wLevels.map((w, i) => {
-        const a_w = a1 + a3 * w;
-        const b_w = b1 + b2 * w;
-        const effect = a_w * b_w;
-        const level = i === 0 ? 'low' : (i === 1 ? (wLevels.length === 2 ? 'mid' : 'mid') : 'high');
-        const bootCI = bootResults?.indirect?.[level];
-        
-        let se, lo, hi;
-        
-        if (bootCI && bootCI.se !== undefined && bootCI.lo !== undefined) {
-            se = bootCI.se;
-            lo = bootCI.lo;
-            hi = bootCI.hi;
-        } else {
-            const var_a = a1_se**2 + w**2 * a3_se**2;
-            const var_b = b1_se**2 + w**2 * b2_se**2;
-            se = Math.sqrt(b_w**2 * var_a + a_w**2 * var_b);
-            const tc = tQuantile(Math.min(rM.df, rY.df), 1 - cl);
-            lo = effect - tc * se;
-            hi = effect + tc * se;
-        }
-        
-        const t = se > 0 ? effect / se : 0;
-        const p = tcdf2(Math.abs(t), Math.min(rM.df, rY.df));
-        const sig = (lo > 0 && hi > 0) || (lo < 0 && hi < 0);
-        
-        return { w, label: wLabels[i], effect, se, t, p, lo, hi, sig };
-    });
+    let lo, hi, t, p;
+    
+    const modelSE = Math.sqrt(c1_se**2 + w**2 * c3_se**2);
+    t = modelSE > 0 ? effect / modelSE : 0;
+    p = tcdf2(Math.abs(t), rY.df);
+    
+    if (bootCI && bootCI.lo !== undefined && bootCI.hi !== undefined) {
+        lo = bootCI.lo;
+        hi = bootCI.hi;
+    } else {
+        const tc = tQuantile(rY.df, 1 - cl);
+        lo = effect - tc * modelSE;
+        hi = effect + tc * modelSE;
+    }
+    
+    const sig = bootCI ? (lo > 0 || hi < 0) : (p < (1 - cl));
+    
+    return { w, label: wLabels[i], effect, se: modelSE, t, p, lo, hi, sig };
+});
+    
+const condIndEffects = wLevels.map((w, i) => {
+    const a_w = a1 + a3 * w;
+    const b_w = b1 + b2 * w;
+    const effect = a_w * b_w;
+    const level = i === 0 ? 'low' : (i === 1 ? (wLevels.length === 2 ? 'mid' : 'mid') : 'high');
+    const bootCI = bootResults?.indirect?.[level];
+    
+    let lo, hi, t, p;
+    
+    const var_a = a1_se**2 + w**2 * a3_se**2;
+    const var_b = b1_se**2 + w**2 * b2_se**2;
+    const modelSE = Math.sqrt(b_w**2 * var_a + a_w**2 * var_b);
+    t = modelSE > 0 ? effect / modelSE : 0;
+    p = tcdf2(Math.abs(t), Math.min(rM.df, rY.df));
+    
+    if (bootCI && bootCI.lo !== undefined && bootCI.hi !== undefined) {
+        lo = bootCI.lo;
+        hi = bootCI.hi;
+    } else {
+        const tc = tQuantile(Math.min(rM.df, rY.df), 1 - cl);
+        lo = effect - tc * modelSE;
+        hi = effect + tc * modelSE;
+    }
+    
+    const sig = bootCI ? (lo > 0 || hi < 0) : (p < (1 - cl));
+    
+    return { w, label: wLabels[i], effect, se: modelSE, t, p, lo, hi, sig };
+});
 
     const xCentered_slope_a = xRaw.map(v => v - meanX);
     const wCentered_slope_a = wRaw.map(v => v - meanW);
@@ -17401,23 +17364,33 @@ const wDesc = [
             <tbody>${descRows}</tbody>
         </table></div></div></div>`;
     
-    const condDirectRows = condDirectEffects.map(e => `
-        <tr><td style="font-weight:600">${e.label}</span></td>
-            <td style="text-align:right">${fmtv(e.effect, 3)}</span></td>
-            <td style="text-align:right">${fmtv(e.se, 3)}</span></td>
-            <td style="text-align:right">${fmtv(e.lo, 3)}</span></td>
-            <td style="text-align:right">${fmtv(e.hi, 3)}</span></td>
-            <td style="text-align:center">${e.sig ? '<span style="color:var(--rose);font-weight:800">***</span>' : ''}</span></td>
-        </tr>`).join('');
+const condDirectRows = condDirectEffects.map(e => {
+    const stars = pStar(e.p);
+    let pDisplay = e.p < 0.001 ? '<.001' : e.p.toFixed(3);
+    return `<tr>
+        <td style="font-weight:600">${e.label}</span></td>
+        <td style="text-align:right">${fmtv(e.effect, 3)}</span></td>
+        <td style="text-align:right">${fmtv(e.se, 3)}</span></td>
+        <td style="text-align:right">${fmtv(e.t, 3)}</span></td>
+        <td style="text-align:right">${pDisplay}${stars ? `<span class="sig-star" style="color: var(--rose);">${stars}</span>` : ''}</span></td>
+        <td style="text-align:right">${fmtv(e.lo, 3)}</span></td>
+        <td style="text-align:right">${fmtv(e.hi, 3)}</span></td>
+    </tr>`;
+}).join('');
     
-    const condIndRows = condIndEffects.map(e => `
-        <tr><td style="font-weight:600">${e.label}</span></td>
-            <td style="text-align:right">${fmtv(e.effect, 3)}</span></td>
-            <td style="text-align:right">${fmtv(e.se, 3)}</span></td>
-            <td style="text-align:right">${fmtv(e.lo, 3)}</span></td>
-            <td style="text-align:right">${fmtv(e.hi, 3)}</span></td>
-            <td style="text-align:center">${e.sig ? '<span style="color:var(--rose);font-weight:800">***</span>' : ''}</span></td>
-        </tr>`).join('');
+const condIndRows = condIndEffects.map(e => {
+    const stars = pStar(e.p);
+    let pDisplay = e.p < 0.001 ? '<.001' : e.p.toFixed(3);
+    return `<tr>
+        <td style="font-weight:600">${e.label}</span></td>
+        <td style="text-align:right">${fmtv(e.effect, 3)}</span></td>
+        <td style="text-align:right">${fmtv(e.se, 3)}</span></td>
+        <td style="text-align:right">${fmtv(e.t, 3)}</span></td>
+        <td style="text-align:right">${pDisplay}${stars ? `<span class="sig-star" style="color: var(--rose);">${stars}</span>` : ''}</span></td>
+        <td style="text-align:right">${fmtv(e.lo, 3)}</span></td>
+        <td style="text-align:right">${fmtv(e.hi, 3)}</span></td>
+    </tr>`;
+}).join('');
     
     const directEffectRow = `
         <tr><td style="font-weight:600">Direct effect (c', ${xn} → ${yn}|M,W)</span></td>
@@ -17590,10 +17563,19 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
                 <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:12px">
                     <i class="fas fa-chart-line"></i> Conditional Direct Effects: ${xn} → ${yn} at Levels of ${wn}
                 </div>
-                <div class="res-table-wrap"><table class="res-table">
-                    <thead><tr><th>${wn} Level</th><th>b</th><th>SE</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig.</th></tr></thead>
-                    <tbody>${condDirectRows}</tbody>
-                </table></div>
+<div class="res-table-wrap"><table class="res-table">
+    <thead>
+        <tr>
+            <th rowspan="2">${wn} Level</th>
+            <th colspan="6" class="th-group">Conditional Direct Effect</th>
+        </tr>
+        <tr>
+            <th>b</th><th>SE</th><th>t/z</th><th>p</th>
+            <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
+        </tr>
+    </thead>
+    <tbody>${condDirectRows}</tbody>
+</table></div>
                                 <div class="res-sub-label" style="margin-top:20px"><i class="fas fa-chart-line"></i> Simple Slopes: Direct Effect of ${xn} on ${yn} at Levels of ${wn}</div>
                 <div class="res-table-wrap"><table class="res-table">
                     <thead>
@@ -17612,10 +17594,19 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
                 <div style="font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--brand);margin-bottom:12px">
                     <i class="fas fa-project-diagram"></i> Conditional Indirect Effects: ${xn} → ${mn} → ${yn} at Levels of ${wn}
                 </div>
-                <div class="res-table-wrap"><table class="res-table">
-                    <thead><tr><th>${wn} Level</th><th>Effect</th><th>SE</th><th>LLCI (${confPct})</th><th>ULCI (${confPct})</th><th>Sig.</th><tr></thead>
-                    <tbody>${condIndRows}</tbody>
-                </table></div>
+<div class="res-table-wrap"><table class="res-table">
+    <thead>
+        <tr>
+            <th rowspan="2">${wn} Level</th>
+            <th colspan="6" class="th-group">Conditional Indirect Effect</th>
+        </tr>
+        <tr>
+            <th>Effect</th><th>SE</th><th>t/z</th><th>p</th>
+            <th>LLCI (${confPct})</th><th>ULCI (${confPct})</th>
+        </tr>
+    </thead>
+    <tbody>${condIndRows}</tbody>
+</table></div>
             </div>
             
             ${immTable}
