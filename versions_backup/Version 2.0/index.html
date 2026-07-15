@@ -12570,7 +12570,7 @@ let effectsRows = `
         </table></div>
     </div>`;
 
-    let summaryHtml = `<div class="interp-box" style="margin-top:16px">
+let summaryHtml = `<div class="interp-box" style="margin-top:16px">
         <div class="interp-title"><i class="fas fa-lightbulb"></i> Summary</div>
         <div class="interp-text">
             <p>A moderated serial mediation analysis examined whether <strong>${wn}</strong> moderates the indirect effect of <strong>${xn}</strong> on <strong>${yn}</strong> through <strong>${m1n}</strong> and <strong>${m2n}</strong>.</p>
@@ -12584,11 +12584,31 @@ let effectsRows = `
             b₂-path (${m2n} → ${yn}): b = ${fmt3(b2)}, SE = ${fmt3(rY.se[3])}, p ${fmtp(rY.p[3] || 1)} — <strong>${b2_sig ? 'significant' : 'non-significant'}</strong><br>
             Direct effect (c', ${xn} → ${yn}|M₁,M₂): b = ${fmt3(directEffect)}, SE = ${fmt3(directEffect_se)}, p ${fmtp(directEffect_p)} — <strong>${direct_sig ? 'significant' : 'non-significant'}</strong></p>
             
-            <p><strong>Index of Moderated Mediation (IMM):</strong><br>
-            For ${xn} → ${m1n} → ${yn}: b = ${fmt3(index_xm1y)}${(nBoot > 0 && bootResults?.xm1y?.index) ? `, 95% CI [${fmt3(bootResults.xm1y.index.lo)}, ${fmt3(bootResults.xm1y.index.hi)}]` : ''} — <strong>${imm_xm1y_sig ? 'significant' : 'non-significant'}</strong><br>`;
+            <p><strong>Conditional indirect effects (${xn} → ${m1n} → ${yn}) at levels of ${wn}:</strong><br>
+            ${conditional_xm1y.map(e => {
+                const boot = e.boot;
+                const seDisplay = (nBoot > 0 && boot) ? `BootSE = ${fmt3(boot.se)}` : `SE = ${fmt3(e.se)}`;
+                const ciDisplay = (nBoot > 0 && boot) ? `${confPct} BootCI [${fmt3(boot.lo)}, ${fmt3(boot.hi)}]` : `${confPct} CI [${fmt3(e.lo)}, ${fmt3(e.hi)}]`;
+                return `At ${wn} = ${e.label}: b = ${fmt3(e.effect)}, ${seDisplay}, ${ciDisplay} — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`;
+            }).join('')}</p>`;
     
     if (hasM2) {
-        summaryHtml += `<strong>For ${xn} → ${m1n} → ${m2n} → ${yn}: b = ${fmt3(index_serial)}${(nBoot > 0 && bootResults?.serial?.index) ? `, 95% CI [${fmt3(bootResults.serial.index.lo)}, ${fmt3(bootResults.serial.index.hi)}]` : ''} — <strong>${imm_serial_sig ? 'significant' : 'non-significant'}</strong></strong><br>`;
+        summaryHtml += `
+            <p><strong>Conditional indirect effects (${xn} → ${m1n} → ${m2n} → ${yn}) at levels of ${wn}:</strong><br>
+            ${conditional_serial.map(e => {
+                const boot = e.boot;
+                const seDisplay = (nBoot > 0 && boot) ? `BootSE = ${fmt3(boot.se)}` : `SE = ${fmt3(e.se)}`;
+                const ciDisplay = (nBoot > 0 && boot) ? `${confPct} BootCI [${fmt3(boot.lo)}, ${fmt3(boot.hi)}]` : `${confPct} CI [${fmt3(e.lo)}, ${fmt3(e.hi)}]`;
+                return `At ${wn} = ${e.label}: b = ${fmt3(e.effect)}, ${seDisplay}, ${ciDisplay} — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`;
+            }).join('')}</p>`;
+    }
+    
+    summaryHtml += `
+            <p><strong>Index of Moderated Mediation (IMM):</strong><br>
+            For ${xn} → ${m1n} → ${yn}: b = ${fmt3(index_xm1y)}${(nBoot > 0 && bootResults?.xm1y?.index) ? `, BootSE = ${fmt3(bootResults.xm1y.index.se)}, 95% BootCI [${fmt3(bootResults.xm1y.index.lo)}, ${fmt3(bootResults.xm1y.index.hi)}]` : ''} — <strong>${imm_xm1y_sig ? 'significant' : 'non-significant'}</strong><br>`;
+    
+    if (hasM2) {
+        summaryHtml += `For ${xn} → ${m1n} → ${m2n} → ${yn}: b = ${fmt3(index_serial)}${(nBoot > 0 && bootResults?.serial?.index) ? `, BootSE = ${fmt3(bootResults.serial.index.se)}, 95% BootCI [${fmt3(bootResults.serial.index.lo)}, ${fmt3(bootResults.serial.index.hi)}]` : ''} — <strong>${imm_serial_sig ? 'significant' : 'non-significant'}</strong><br>`;
     }
     
     summaryHtml += `</p><p><strong>Overall interpretation:</strong> Moderated serial mediation `;
@@ -16995,24 +17015,26 @@ const condDirectEffects = wLevels.map((w, i) => {
     const level = i === 0 ? 'low' : (i === 1 ? (wLevels.length === 2 ? 'mid' : 'mid') : 'high');
     const bootCI = bootResults?.direct?.[level];
     
-    let lo, hi, t, p;
-    
+    let lo, hi, t, p, sig;
     const modelSE = Math.sqrt(c1_se**2 + w**2 * c3_se**2);
     t = modelSE > 0 ? effect / modelSE : 0;
-    p = tcdf2(Math.abs(t), rY.df);
     
     if (bootCI && bootCI.lo !== undefined && bootCI.hi !== undefined) {
         lo = bootCI.lo;
         hi = bootCI.hi;
+        sig = lo > 0 || hi < 0;
+        const bootSE = bootCI.se || modelSE;
+        t = bootSE > 0 ? effect / bootSE : t;
+        p = 2 * (1 - normalCDF(Math.abs(t)));
     } else {
         const tc = tQuantile(rY.df, 1 - cl);
         lo = effect - tc * modelSE;
         hi = effect + tc * modelSE;
+        p = tcdf2(Math.abs(t), rY.df);
+        sig = p < (1 - cl);
     }
     
-    const sig = bootCI ? (lo > 0 || hi < 0) : (p < (1 - cl));
-    
-    return { w, label: wLabels[i], effect, se: modelSE, t, p, lo, hi, sig };
+    return { w, label: wLabels[i], effect, se: bootCI?.se || modelSE, t, p, lo, hi, sig };
 });
     
 const condIndEffects = wLevels.map((w, i) => {
@@ -17022,26 +17044,28 @@ const condIndEffects = wLevels.map((w, i) => {
     const level = i === 0 ? 'low' : (i === 1 ? (wLevels.length === 2 ? 'mid' : 'mid') : 'high');
     const bootCI = bootResults?.indirect?.[level];
     
-    let lo, hi, t, p;
-    
+    let lo, hi, t, p, sig;
     const var_a = a1_se**2 + w**2 * a3_se**2;
     const var_b = b1_se**2 + w**2 * b2_se**2;
     const modelSE = Math.sqrt(b_w**2 * var_a + a_w**2 * var_b);
     t = modelSE > 0 ? effect / modelSE : 0;
-    p = tcdf2(Math.abs(t), Math.min(rM.df, rY.df));
     
     if (bootCI && bootCI.lo !== undefined && bootCI.hi !== undefined) {
         lo = bootCI.lo;
         hi = bootCI.hi;
+        sig = lo > 0 || hi < 0;
+        const bootSE = bootCI.se || modelSE;
+        t = bootSE > 0 ? effect / bootSE : t;
+        p = 2 * (1 - normalCDF(Math.abs(t)));
     } else {
         const tc = tQuantile(Math.min(rM.df, rY.df), 1 - cl);
         lo = effect - tc * modelSE;
         hi = effect + tc * modelSE;
+        p = tcdf2(Math.abs(t), Math.min(rM.df, rY.df));
+        sig = p < (1 - cl);
     }
     
-    const sig = bootCI ? (lo > 0 || hi < 0) : (p < (1 - cl));
-    
-    return { w, label: wLabels[i], effect, se: modelSE, t, p, lo, hi, sig };
+    return { w, label: wLabels[i], effect, se: bootCI?.se || modelSE, t, p, lo, hi, sig };
 });
 
     const xCentered_slope_a = xRaw.map(v => v - meanX);
@@ -17515,8 +17539,8 @@ const effectsSummaryTable = `<div style="padding:18px;background:var(--surface-2
             c'-path (${xn} → ${yn}|M,W): b = ${fmtv(c1, 3)}, SE = ${fmtv(c1_se, 3)}, p ${fmtp(c1_p)} — <strong>${c1_p < (1 - cl) ? 'significant' : 'non-significant'}</strong><br>
             c'₃-path (${xn}×${wn} → ${yn}): b = ${fmtv(c3, 3)}, SE = ${fmtv(c3_se, 3)}, p ${fmtp(c3_p)} — <strong>${c3Sig ? 'significant' : 'non-significant'}</strong><br>
             
-            <p><strong>Conditional direct effects of ${xn} on ${yn} at levels of ${wn}:</strong><br>
-            ${condDirectEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, SE = ${fmtv(e.se, 3)}, p ${fmtp(e.p)} — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
+<p><strong>Conditional direct effects of ${xn} on ${yn} at levels of ${wn}:</strong><br>
+${condDirectEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, SE = ${fmtv(e.se, 3)}, ${confPct} CI [${fmtv(e.lo, 3)}, ${fmtv(e.hi, 3)}] — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
             
             <p><strong>Conditional indirect effects (${xn} → ${mn} → ${yn}) at levels of ${wn}:</strong><br>
             ${condIndEffects.map(e => `At ${wn} = ${e.label} (${fmtv(e.w, 3)}): b = ${fmtv(e.effect, 3)}, BootSE = ${fmtv(e.se, 3)}, ${confPct} BootCI [${fmtv(e.lo, 3)}, ${fmtv(e.hi, 3)}] — <strong>${e.sig ? 'significant' : 'non-significant'}</strong><br>`).join('')}</p>
