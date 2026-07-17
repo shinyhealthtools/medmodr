@@ -1,12 +1,14 @@
 cff-version: 1.2.0
 message: "If you use MedModr in your research, publication, or teaching, please cite it as below."
 authors:
-- family-names: "Mudasir Mohammed"
-  given-names: "Ibrahim"
+- family-names: "Ibrahim"
+  given-names: "Mudasir Mohammed"
   orcid: "https://orcid.org/0000-0002-9049-8222"
 title: "MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses"
-abstract: Mediation, moderation, and conditional process analyses are widely used in health and social science research, however, existing analytical tools often present technical, financial, and accessibility barriers. This paper introduces MedModr, a free, user-friendly, browser-based, open-source application developed to support commonly used mediation, moderation, and conditional process analyses. MedModr is distributed as a single, self-contained HTML file that runs entirely within a web browser, requiring no installation of additional software or dependencies, server connection, or internet access. Using MedModr, researchers can perform simple mediation, serial mediation, parallel mediation, simple moderation, moderated moderation, double moderation, and other supported moderated mediation models. The application also generates interactive path diagrams, interactive simple slopes plots, and automated summary of results. Users can export complete analysis outputs to Word, PDF, or HTML documents with a single click. Released under the MIT License, MedModr aims to enhance the accessibility and usability of mediation, moderation, and conditional process analyses for early-career researchers, educators, and students in low-resource settings or underfunded institutions.
+abstract: Mediation, moderation, and conditional process analyses are widely used in health and social science research, however, existing analytical tools often present technical, financial, and accessibility barriers. This paper presents MedModr, a free, user-friendly, browser-based, open-source application developed to support commonly used mediation, moderation, and conditional process analyses. Using MedModr, researchers can perform simple mediation, serial mediation, parallel mediation, simple moderation, moderated moderation, double moderation, and other supported moderated mediation models. Users can export complete analysis outputs to a Word document with a single click.
 version: 2.0
 doi: 10.5281/xxxxxxxx
 date-released: April, 2026
-url: "https://github.com/shinyhealthtools/medmodr"
+url: https://github.com/shinyhealthtools/medmodr
+
+
