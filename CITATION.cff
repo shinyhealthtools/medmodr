@@ -7,6 +7,7 @@ authors:
 title: "MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses"
 abstract: Mediation, moderation, and conditional process analyses are widely used in health and social science research, however, existing analytical tools often present technical, financial, and accessibility barriers. This paper presents MedModr, a free, user-friendly, browser-based, open-source application developed to support commonly used mediation, moderation, and conditional process analyses. Using MedModr, researchers can perform simple mediation, serial mediation, parallel mediation, simple moderation, moderated moderation, double moderation, and other supported moderated mediation models. Users can export complete analysis outputs to a Word document with a single click.
 version: 2.0
+journal: SoftwareX
 doi: 10.5281/xxxxxxxx
 date-released: April, 2026
 url: https://github.com/shinyhealthtools/medmodr
