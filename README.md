@@ -135,11 +135,11 @@ The resources below provide access to the `MedModr` application, documentation, 
 
 ## Original Author
 
-`MedModr` was developed and is maintained by:
+`MedModr` was independently conceptualized, developed, and is maintained without external funding by:
 
 **Mudasir Mohammed Ibrahim**  
 Department of Internal Medicine (M3),
-Tamale Teaching Hospital, Ghana
+Tamale Teaching Hospital, Tamale, Northern Region, Ghana
 
 <p align="center">
   <a href="https://mudasiribrahim.github.io/gh/" target="_blank">
