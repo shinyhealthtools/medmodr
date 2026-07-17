@@ -138,7 +138,7 @@ The resources below provide access to the `MedModr` application, documentation, 
 `MedModr` was developed and is maintained by:
 
 **Mudasir Mohammed Ibrahim**  
-Department of Internal Medicine (M3)
+Department of Internal Medicine (M3),
 Tamale Teaching Hospital, Ghana
 
 <p align="center">
