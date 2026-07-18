@@ -12,7 +12,7 @@
 
 ## About
 
-The PROCESS macro remains a widely used tool for mediation, moderation, and conditional process analysis. However, its use depends on commercial SPSS or SAS licenses, while R/Python-based alternatives typically require programming expertise. These barriers limit access for researchers, students, clinicians, and independent scholars, particularly those with limited funding or technical support.
+The PROCESS macro remains a widely used tool for mediation, moderation, and conditional process analysis. However, its use depends on commercial SPSS or SAS licenses, while R/ Python-based alternatives typically require programming expertise. These barriers limit access for researchers, students, clinicians, and independent scholars, particularly those with limited funding or technical support.
 
 `MedModr` was therefore independently conceptualized and developed by Mudasir Mohammed Ibrahim, a Registered Nurse and health researcher at Tamale Teaching Hospital, Ghana. It was developed to address these challenges by providing a free, browser-based, open-source platform for mediation, moderation, and conditional process analysis that requires no installation, licensing, or coding skills. `MedModr` aims to enhance the accessibility and usability of mediation, moderation, and conditional process analyses for researchers, educators, and students worldwide, with particular benefits for early-career researchers and institutions with limited access to commercial statistical software or advanced programming expertise.
 
