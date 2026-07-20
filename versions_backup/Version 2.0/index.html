@@ -3097,65 +3097,89 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
       </button>
     </div>
     
-    <!-- TOOLBAR -->
-    <div class="data-editor-toolbar" style="padding: 12px 24px; background: var(--surface-2); border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
-      <button class="data-editor-btn data-editor-btn-undo" id="editorUndoBtn" style="background: #6c757d; color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+ <!-- TOOLBAR -->
+<div class="data-editor-toolbar" style="padding: 12px 24px; background: var(--surface-2); border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+    <button class="data-editor-btn data-editor-btn-undo" id="editorUndoBtn" style="background: #6c757d; color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
-          <polyline points="1 4 1 10 7 10"></polyline>
-          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
         </svg>
         Undo
-      </button>
-      <button class="data-editor-btn data-editor-btn-redo" id="editorRedoBtn" style="background: #6c757d; color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+    </button>
+    <button class="data-editor-btn data-editor-btn-redo" id="editorRedoBtn" style="background: #6c757d; color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
-          <polyline points="23 4 23 10 17 10"></polyline>
-          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
         </svg>
         Redo
-      </button>
-      <div style="width: 1px; height: 28px; background: var(--border);"></div>
-      <button class="data-editor-btn data-editor-btn-success" id="editorAddRowBtn" style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+    </button>
+    <div style="width: 1px; height: 28px; background: var(--border);"></div>
+    <button class="data-editor-btn data-editor-btn-success" id="editorAddRowBtn" style="background: linear-gradient(135deg, #059669, #047857); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
-          <line x1="12" y1="5" x2="12" y2="19"></line>
-          <line x1="5" y1="12" x2="19" y2="12"></line>
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
         </svg>
         Add Row
-      </button>
-      <button class="data-editor-btn data-editor-btn-warning" id="editorRemoveEmptyRowsBtn" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+    </button>
+    <button class="data-editor-btn data-editor-btn-warning" id="editorRemoveEmptyRowsBtn" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
-          <polyline points="3 6 5 6 21 6"></polyline>
-          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
         </svg>
         Remove Empty
-      </button>
-      <button class="data-editor-btn data-editor-btn-info" id="editorFixEmptyCellsBtn" style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+    </button>
+    <button class="data-editor-btn data-editor-btn-info" id="editorFixEmptyCellsBtn" style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          <polyline points="9 12 11 14 15 10"></polyline>
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <polyline points="9 12 11 14 15 10"></polyline>
         </svg>
         Fill Empty
-      </button>
-      <button class="data-editor-btn" id="editorReverseCodeBtn" style="background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+    </button>
+    <button class="data-editor-btn" id="editorReverseCodeBtn" style="background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
-          <path d="M21.5 2v6h-6M2.5 22v-6h6M2.5 11.5a10 10 0 0 1 18.8-4.3M22.5 12.5a10 10 0 0 1-18.8 4.2"></path>
+            <path d="M21.5 2v6h-6M2.5 22v-6h6M2.5 11.5a10 10 0 0 1 18.8-4.3M22.5 12.5a10 10 0 0 1-18.8 4.2"></path>
         </svg>
         Reverse Code
-      </button>
-      <button class="data-editor-btn" id="editorRecodeBtn" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+    </button>
+    <button class="data-editor-btn" id="editorRecodeBtn" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
-          <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+            <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
         </svg>
         Recode
-      </button>
-      <button class="data-editor-btn" id="editorZScoreBtn" style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+    </button>
+    <button class="data-editor-btn" id="editorZScoreBtn" style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
-          <polyline points="23 6 13.5 15 8.5 10 1 17.5"></polyline>
-          <line x1="1" y1="4" x2="1" y2="20"></line>
-          <line x1="23" y1="4" x2="23" y2="20"></line>
+            <polyline points="23 6 13.5 15 8.5 10 1 17.5"></polyline>
+            <line x1="1" y1="4" x2="1" y2="20"></line>
+            <line x1="23" y1="4" x2="23" y2="20"></line>
         </svg>
         Z-Score
-      </button>
-    </div>
+    </button>
+    <div style="width: 1px; height: 28px; background: var(--border);"></div>
+    <button class="data-editor-btn" id="editorCompositeBtn" style="background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;" title="Create composite variable by summing or averaging selected columns">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        Composite Var
+    </button>
+    <button class="data-editor-btn" id="editorRowSearchBtn" style="background: linear-gradient(135deg, #0891b2, #0e7490); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;" title="Search and go to a specific row number">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        Row Search
+    </button>
+    <button class="data-editor-btn" id="editorSliceRowsBtn" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: 6px 14px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;" title="Keep only rows within a range (slice the data)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="9" y1="12" x2="15" y2="12"></line>
+            <line x1="12" y1="9" x2="12" y2="15"></line>
+        </svg>
+        Slice Rows
+    </button>
+</div>
     
     <!-- BODY -->
     <div class="data-editor-body">
@@ -3163,14 +3187,20 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
       <div class="data-editor-table-wrapper" id="dataEditorTableWrapper"></div>
     </div>
     
-    <!-- FOOTER -->
-    <div class="data-editor-footer">
-      <div class="data-editor-stats" id="editorStats">Rows: 0 | Columns: 0</div>
-      <div class="data-editor-actions">
-        <button class="data-editor-btn data-editor-btn-secondary" id="editorCancelBtn">Cancel</button>
-        <button class="data-editor-btn data-editor-btn-primary" id="editorSaveBtn">Save Changes</button>
-      </div>
-    </div>
+<!-- FOOTER -->
+<div class="data-editor-footer">
+  <div class="data-editor-stats" id="editorStats">Rows: 0 | Columns: 0</div>
+  <div class="data-editor-actions" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+    <button class="data-editor-btn data-editor-btn-secondary" id="editorSelectVarsBtn" style="background: linear-gradient(135deg, #7c3aed, #6d28d9); color: white; padding: 8px 16px; border-radius: 40px; font-size: 0.8rem; font-weight: 700; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0;">
+        <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"></path>
+      </svg>
+      Select Columns
+    </button>
+    <button class="data-editor-btn data-editor-btn-secondary" id="editorCancelBtn" style="padding: 8px 20px; border-radius: 40px; font-size: 0.8rem; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border-med); background: var(--surface-2); color: var(--text-2); font-family: var(--font);">Cancel</button>
+    <button class="data-editor-btn data-editor-btn-primary" id="editorSaveBtn" style="padding: 8px 24px; border-radius: 40px; font-size: 0.8rem; font-weight: 700; cursor: pointer; border: none; background: linear-gradient(135deg, var(--brand), var(--brand-dark)); color: white; font-family: var(--font);">Save Changes</button>
+  </div>
+</div>
   </div>
 </div>
 
@@ -26029,6 +26059,7 @@ let editorCols = [];
 let editorEditingCellRef = null;
 let editorUndoStack = [];
 let editorRedoStack = [];
+let editorDecimalPlaces = 3;  
 
 function editorShowNotification(message, type) {
   const notificationContainer = document.getElementById('editorNotificationContainer');
@@ -26141,28 +26172,146 @@ const wrapper = document.getElementById('dataEditorTableWrapper');
 if (!wrapper) return;
 wrapper.style.overflow = 'auto';
 wrapper.style.position = 'relative';
-  let html = '<table class="data-editor-table"><thead><tr>';
-  html += '<th style="width: 50px; text-align: center;">#</th>';
+
+  const maxRows = editorData.length;
+  const rowNumWidth = Math.max(50, Math.min(90, String(maxRows).length * 9 + 20));
+
+  let html = `<style>
+    .data-editor-table {
+      table-layout: auto;
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .data-editor-table th,
+    .data-editor-table td {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: middle;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 80px;
+      max-width: 250px;
+      height: 40px;
+      font-size: 0.8rem;
+    }
+    .data-editor-table th:first-child,
+    .data-editor-table td:first-child {
+      min-width: ${rowNumWidth}px;
+      max-width: ${rowNumWidth}px;
+      width: ${rowNumWidth}px;
+      text-align: center;
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--text-2);
+      background: var(--surface-2) !important;
+    }
+    .data-editor-table th:last-child,
+    .data-editor-table td:last-child {
+      min-width: 80px;
+      max-width: 90px;
+      width: 80px;
+      text-align: center;
+    }
+    .data-editor-table td.editing {
+      padding: 0;
+    }
+    .data-editor-table td.editing input {
+      width: 100%;
+      height: 100%;
+      padding: 8px 12px;
+      border: 2px solid var(--brand);
+      outline: none;
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      background: var(--surface);
+      color: var(--text-1);
+      box-sizing: border-box;
+      min-height: 40px;
+    }
+    .data-editor-table td.null-cell {
+      background: var(--rose-bg);
+      color: var(--rose);
+      font-style: italic;
+    }
+    .data-editor-table th .col-actions {
+      display: flex;
+      gap: 4px;
+      margin-top: 4px;
+      justify-content: flex-start;
+    }
+    .data-editor-table th .col-actions button {
+      padding: 2px 8px;
+      font-size: 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-med);
+      cursor: pointer;
+      background: var(--surface-2);
+      font-family: var(--font);
+      font-weight: 600;
+    }
+    .rename-col-btn { color: var(--brand); }
+    .rename-col-btn:hover { background: var(--brand); color: white; }
+    .delete-col-btn { color: #dc2626; }
+    .delete-col-btn:hover { background: #dc2626; color: white; }
+    .delete-row-btn {
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: all 0.2s;
+    }
+    .delete-row-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+    }
+    .data-editor-table tr:hover td {
+      background: var(--brand-bg);
+    }
+    .data-editor-table tr:hover td:first-child {
+      background: var(--brand-bg) !important;
+    }
+  </style>`;
+
+  html += '<table class="data-editor-table"><thead><tr>';
+  html += `<th style="text-align: center;">#</th>`;
   for (let i = 0; i < editorCols.length; i++) {
     html += `<th>${escapeXml(editorCols[i])}<div class="col-actions"><button class="rename-col-btn" data-col="${i}">Rename</button><button class="delete-col-btn" data-col="${i}">Delete</button></div></th>`;
   }
-  html += '<th style="width: 70px; text-align: center;">Actions</th>';
+  html += '<th style="text-align: center; min-width: 70px;">Actions</th>';
   html += '</tr></thead><tbody>';
+
   for (let r = 0; r < editorData.length; r++) {
     html += `<tr data-row="${r}">`;
-    html += `<td style="text-align: center; font-weight: 600;">${r + 1}</td>`;
+    html += `<td style="text-align: center; font-weight: 700; font-family: var(--mono);">${r + 1}</td>`;
     for (let c = 0; c < editorCols.length; c++) {
       const val = editorData[r][c];
       const isEmpty = (val === null || val === undefined || val === '');
-      const displayVal = isEmpty ? '⟨empty⟩' : (typeof val === 'number' ? val : escapeXml(String(val)));
+      let displayVal = '⟨empty⟩';
+      if (!isEmpty) {
+        if (typeof val === 'number') {
+          displayVal = parseFloat(val.toFixed(editorDecimalPlaces)).toString();
+        } else {
+          displayVal = escapeXml(String(val));
+        }
+      }
       html += `<td class="editable-cell ${isEmpty ? 'null-cell' : ''}" data-row="${r}" data-col="${c}"><span class="cell-display">${displayVal}</span></td>`;
     }
-    html += `<td style="text-align: center;"><button class="delete-row-btn" data-row="${r}"><i class="fas fa-trash-alt"></i> Delete</button></td>`;
+    html += `<td style="text-align: center;"><button class="delete-row-btn" data-row="${r}">✕ Delete</button></td>`;
     html += '</tr>';
   }
+
   html += '</tbody></table>';
-  wrapper.innerHTML = html;
   
+  wrapper.innerHTML = html;
+
   document.querySelectorAll('.editable-cell').forEach(cell => {
     cell.addEventListener('click', (e) => {
       if (e.target === cell || e.target.classList.contains('cell-display')) {
@@ -26172,68 +26321,132 @@ wrapper.style.position = 'relative';
       }
     });
   });
-  
-document.querySelectorAll('.delete-row-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    const row = parseInt(btn.dataset.row);
-    editorConfirmDialog(
-      `Delete row ${row + 1}? This action can be undone.`,
-      'Delete Row',
-      function() {
-        editorSaveStateToUndo();
-        editorData.splice(row, 1);
-        renderEditorTable();
-        updateEditorStatsDisplay();
-        editorShowNotification(`Row ${row + 1} deleted. Click Undo to restore.`, 'warning');
-      },
-      function() {
-        editorShowNotification('Delete cancelled', 'info');
-      }
-    );
+
+  document.querySelectorAll('.delete-row-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const row = parseInt(btn.dataset.row);
+      editorConfirmDialog(
+        `Delete row ${row + 1}? This action can be undone.`,
+        'Delete Row',
+        function() {
+          editorSaveStateToUndo();
+          editorData.splice(row, 1);
+          renderEditorTable();
+          updateEditorStatsDisplay();
+          editorShowNotification(`Row ${row + 1} deleted. Click Undo to restore.`, 'warning');
+        },
+        function() {
+          editorShowNotification('Delete cancelled', 'info');
+        }
+      );
+    });
   });
-});
+
+  document.querySelectorAll('.rename-col-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const col = parseInt(btn.dataset.col);
+      const oldName = editorCols[col];
+      editorRenameDialog(
+        oldName,
+        function(newName) {
+          editorSaveStateToUndo();
+          editorCols[col] = newName;
+          renderEditorTable();
+          editorShowNotification(`Column renamed from "${oldName}" to "${newName}"`, 'success');
+        },
+        function() {
+          editorShowNotification('Rename cancelled', 'info');
+        }
+      );
+    });
+  });
+
+  document.querySelectorAll('.delete-col-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const col = parseInt(btn.dataset.col);
+      const colName = editorCols[col];
+      editorConfirmDialog(
+        `Delete column "${colName}"? This action can be undone.`,
+        'Delete Column',
+        function() {
+          editorSaveStateToUndo();
+          editorCols.splice(col, 1);
+          for (let row of editorData) row.splice(col, 1);
+          renderEditorTable();
+          updateEditorStatsDisplay();
+          editorShowNotification(`Column "${colName}" deleted. Click Undo to restore.`, 'warning');
+        },
+        function() {
+          editorShowNotification('Delete cancelled', 'info');
+        }
+      );
+    });
+  });
   
-document.querySelectorAll('.rename-col-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    const col = parseInt(btn.dataset.col);
-    const oldName = editorCols[col];
+   updateEditorStatsDisplay();
+}
+
+function updateEditorFooterWithDecimal() {
+  const footer = document.querySelector('.data-editor-footer');
+  if (!footer) return;
+  
+  const statsDiv = document.getElementById('editorStats');
+  if (!statsDiv) return;
+  
+  let missingCount = 0;
+  for (let i = 0; i < editorData.length; i++) {
+    for (let j = 0; j < editorCols.length; j++) {
+      const val = editorData[i][j];
+      if (val === null || val === undefined || val === '') {
+        missingCount++;
+      }
+      if (typeof val === 'string') {
+        const lowerVal = val.toLowerCase();
+        if (lowerVal === 'na' || lowerVal === 'n/a' || lowerVal === 'nan' || 
+            lowerVal === 'nil' || lowerVal === 'null' || lowerVal === 'missing' ||
+            lowerVal === 'none' || lowerVal === 'unknown' || lowerVal === 'blank') {
+          missingCount++;
+        }
+      }
+    }
+  }
+  
+  const totalCells = editorData.length * editorCols.length;
+  const missingPercent = totalCells > 0 ? ((missingCount / totalCells) * 100).toFixed(1) : '0.0';
+  
+  statsDiv.innerHTML = `
+    <span style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+      <span>Rows: ${editorData.length} | Columns: ${editorCols.length} | Missing: ${missingCount} (${missingPercent}%)</span>
+      <span style="width: 1px; height: 24px; background: var(--border);"></span>
+      <span style="display: flex; align-items: center; gap: 6px;">
+        <span style="font-weight: 600; font-size: 0.7rem; color: var(--text-3);">Decimal:</span>
+        <input type="number" id="footerDecimalInput" value="${editorDecimalPlaces}" min="0" max="10" step="1" style="width: 45px; padding: 2px 4px; border: 1.5px solid var(--border-med); border-radius: 4px; background: var(--surface); color: var(--text-1); font-family: var(--mono); font-size: 0.7rem; text-align: center;">
+        <button id="footerDecimalApplyBtn" style="padding: 2px 10px; border-radius: 4px; border: none; background: var(--brand); color: white; cursor: pointer; font-size: 0.65rem; font-weight: 600; font-family: var(--font); transition: all 0.2s;">Apply</button>
+      </span>
+    </span>
+  `;
+  
+  const decimalInput = document.getElementById('footerDecimalInput');
+  const applyBtn = document.getElementById('footerDecimalApplyBtn');
+  
+  if (applyBtn && decimalInput) {
+    applyBtn.addEventListener('click', function() {
+      const newDecimal = parseInt(decimalInput.value);
+      if (isNaN(newDecimal) || newDecimal < 0 || newDecimal > 10) {
+        editorShowNotification('Please enter a value between 0 and 10', 'warning');
+        return;
+      }
+      editorDecimalPlaces = newDecimal;
+      renderEditorTable();
+      editorShowNotification(`Decimal places set to ${newDecimal} for all numeric cells`, 'success');
+    });
     
-    editorRenameDialog(
-      oldName,
-      function(newName) {
-        editorSaveStateToUndo();
-        editorCols[col] = newName;
-        renderEditorTable();
-        editorShowNotification(`Column renamed from "${oldName}" to "${newName}"`, 'success');
-      },
-      function() {
-        editorShowNotification('Rename cancelled', 'info');
+    decimalInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        applyBtn.click();
       }
-    );
-  });
-});
-  
-document.querySelectorAll('.delete-col-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    const col = parseInt(btn.dataset.col);
-    const colName = editorCols[col];
-    editorConfirmDialog(
-      `Delete column "${colName}"? This action can be undone.`,
-      'Delete Column',
-      function() {
-        editorSaveStateToUndo();
-        editorCols.splice(col, 1);
-        for (let row of editorData) row.splice(col, 1);
-        renderEditorTable();
-        updateEditorStatsDisplay();
-        editorShowNotification(`Column "${colName}" deleted. Click Undo to restore.`, 'warning');
-      },
-      function() {
-        editorShowNotification('Delete cancelled', 'info');
-      }
-    );
-  });
-});
+    });
+  }
 }
 
 function startEditorCellEdit(row, col) {
@@ -26380,9 +26593,52 @@ function updateEditorStatsDisplay() {
     }
   }
   
-  const missingPercent = ((missingCount / (editorData.length * editorCols.length)) * 100).toFixed(1);
+  const totalCells = editorData.length * editorCols.length;
+  const missingPercent = totalCells > 0 ? ((missingCount / totalCells) * 100).toFixed(1) : '0.0';
   
-  statsDiv.innerHTML = `Rows: ${editorData.length} | Columns: ${editorCols.length} | Missing: ${missingCount} (${missingPercent}%)`;
+  statsDiv.innerHTML = `
+    <span style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: var(--text-3); font-family: var(--mono);">
+      <span>Rows: ${editorData.length} | Columns: ${editorCols.length} | Missing: ${missingCount} (${missingPercent}%)</span>
+      <span style="width: 1px; height: 24px; background: var(--border);"></span>
+      <span style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--text-3); font-family: var(--mono);">
+        <span style="font-weight: 600; font-size: 0.8rem; font-family: var(--mono);">Decimal:</span>
+        <input type="number" id="footerDecimalInput" value="${editorDecimalPlaces}" min="0" max="10" step="1" style="width: 50px; padding: 4px 6px; border: 1.5px solid var(--border-med); border-radius: 4px; background: var(--surface); color: var(--text-1); font-family: var(--mono); font-size: 0.8rem; text-align: center; height: 28px;">
+        <button id="footerDecimalApplyBtn" style="padding: 4px 14px; border-radius: 4px; border: none; background: var(--brand); color: white; cursor: pointer; font-size: 0.8rem; font-weight: 600; font-family: var(--mono); height: 28px; display: flex; align-items: center; transition: all 0.2s;">Apply</button>
+      </span>
+    </span>
+  `;
+  
+  const decimalInput = document.getElementById('footerDecimalInput');
+  const applyBtn = document.getElementById('footerDecimalApplyBtn');
+  
+  if (applyBtn && decimalInput) {
+    const newApplyBtn = applyBtn.cloneNode(true);
+    applyBtn.parentNode.replaceChild(newApplyBtn, applyBtn);
+    const newDecimalInput = decimalInput.cloneNode(true);
+    decimalInput.parentNode.replaceChild(newDecimalInput, decimalInput);
+    
+    const finalApplyBtn = document.getElementById('footerDecimalApplyBtn');
+    const finalDecimalInput = document.getElementById('footerDecimalInput');
+    
+    if (finalApplyBtn && finalDecimalInput) {
+      finalApplyBtn.addEventListener('click', function() {
+        const newDecimal = parseInt(finalDecimalInput.value);
+        if (isNaN(newDecimal) || newDecimal < 0 || newDecimal > 10) {
+          editorShowNotification('Please enter a value between 0 and 10', 'warning');
+          return;
+        }
+        editorDecimalPlaces = newDecimal;
+        renderEditorTable();
+        editorShowNotification(`Decimal places set to ${newDecimal} for all numeric cells`, 'success');
+      });
+      
+      finalDecimalInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          finalApplyBtn.click();
+        }
+      });
+    }
+  }
 }
 
 function saveEditorChanges() {
@@ -26471,6 +26727,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('editorReverseCodeBtn')?.addEventListener('click', openReverseCodeDialog);
     document.getElementById('editorRecodeBtn')?.addEventListener('click', openRecodeDialog);
     document.getElementById('editorZScoreBtn')?.addEventListener('click', openZScoreDialog);
+document.getElementById('editorCompositeBtn')?.addEventListener('click', openCompositeVarDialog);
+document.getElementById('editorRowSearchBtn')?.addEventListener('click', openRowSearchDialog);
+document.getElementById('editorSliceRowsBtn')?.addEventListener('click', openSliceRowsDialog);
+document.getElementById('editorSelectVarsBtn')?.addEventListener('click', openSelectColumnsDialog);
     document.getElementById('editorFixEmptyCellsBtn')?.addEventListener('click', editorFixEmptyCells);
 document.getElementById('editorCancelBtn')?.addEventListener('click', function() {
   var hasChanges = editorUndoStack.length > 0;
@@ -27607,6 +27867,519 @@ document.addEventListener('DOMContentLoaded', function() {
         yearSpan.textContent = new Date().getFullYear();
     }
 });
+
+function openCompositeVarDialog() {
+    if (!editorCols || editorCols.length === 0) {
+        editorShowNotification('No columns available to create composite', 'warning');
+        return;
+    }
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'editor-confirm-dialog';
+    overlay.innerHTML = `
+        <div class="editor-confirm-box" style="width: 520px; max-width: 95%; max-height: 90vh; overflow-y: auto;">
+            <div class="editor-confirm-icon" style="background: var(--violet-bg); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; margin-bottom: 16px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+            </div>
+            <div class="editor-confirm-title" style="font-size: 1.2rem; font-weight: 800; color: var(--text-1); margin-bottom: 8px;">Create Composite Variable</div>
+            <div class="editor-confirm-message">
+                <div style="margin-bottom: 12px;">
+                    <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">New variable name:</label>
+                    <input type="text" id="compositeNewName" placeholder="e.g., AHS_total, composite_score" style="width: 100%; padding: 10px 12px; border: 1.5px solid var(--border-med); border-radius: 8px; background: var(--surface); color: var(--text-1); font-family: var(--font); font-size: 0.85rem;">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">Select columns to include (click to toggle):</label>
+                    <div id="compositeVarList" style="display: flex; flex-wrap: wrap; gap: 6px; padding: 10px; background: var(--surface-2); border-radius: 8px; max-height: 150px; overflow-y: auto; border: 1px solid var(--border);">
+                        ${editorCols.map((col, i) => `
+                            <div class="composite-col-item" data-col="${i}" style="padding: 4px 12px; border-radius: 16px; background: var(--surface); border: 1.5px solid var(--border-med); cursor: pointer; font-size: 0.75rem; font-weight: 500; transition: all 0.2s;" onclick="toggleCompositeCol(${i})">
+                                ${escapeXml(col)}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div style="font-size: 0.65rem; color: var(--text-4); margin-top: 6px;">Click any column to select/deselect it for the composite.</div>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">Composite method:</label>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                        <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; cursor: pointer;">
+                            <input type="radio" name="compositeMethod" value="sum" checked> Sum (Total Score)
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; cursor: pointer;">
+                            <input type="radio" name="compositeMethod" value="mean"> Mean (Average)
+                        </label>
+                    </div>
+                </div>
+                <div style="padding: 10px; background: var(--surface-3); border-radius: 6px; font-size: 0.7rem; color: var(--text-4); display: flex; align-items: flex-start; gap: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0; margin-top: 1px;">
+                        <path d="M9 18h6"></path>
+                        <path d="M10 21h4"></path>
+                        <path d="M12 3v8"></path>
+                        <path d="M8 11l4-4 4 4"></path>
+                    </svg>
+                    <span><strong>Tip:</strong> Select all items (e.g., AHS1, AHS2, AHS3) to create a total score or average. Missing values in any selected column will result in NA for that row.</span>
+                </div>
+                <div id="compositePreview" style="margin-top: 10px; padding: 8px; background: var(--surface-2); border-radius: 6px; font-size: 0.7rem; color: var(--text-3); display: none;">
+                    <span id="compositePreviewText">Selected: 0 columns</span>
+                </div>
+            </div>
+            <div class="editor-confirm-buttons" style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px;">
+                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="compositeCancelBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border-med); background: var(--surface-2); color: var(--text-2); font-family: var(--font);">Cancel</button>
+                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="compositeConfirmBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: none; background: var(--violet); color: white; font-family: var(--font);">Create Composite</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    window._compositeSelectedCols = [];
+    
+    const cancelBtn = document.getElementById('compositeCancelBtn');
+    const confirmBtn = document.getElementById('compositeConfirmBtn');
+    const closeDialog = () => overlay.remove();
+    
+    cancelBtn.onclick = closeDialog;
+    
+    confirmBtn.onclick = function() {
+        const newName = document.getElementById('compositeNewName').value.trim();
+        const selectedCols = window._compositeSelectedCols || [];
+        const method = document.querySelector('input[name="compositeMethod"]:checked')?.value || 'sum';
+        
+        if (!newName) {
+            editorShowNotification('Please enter a name for the new variable', 'warning');
+            return;
+        }
+        if (selectedCols.length < 2) {
+            editorShowNotification('Please select at least 2 columns for the composite', 'warning');
+            return;
+        }
+        if (editorCols.includes(newName)) {
+            editorShowNotification(`Column "${newName}" already exists. Choose a different name.`, 'error');
+            return;
+        }
+        
+        applyCompositeVar(selectedCols, newName, method);
+        closeDialog();
+    };
+    
+    overlay.onclick = (e) => { if (e.target === overlay) closeDialog(); };
+    
+    updateCompositePreview();
+}
+
+function toggleCompositeCol(colIndex) {
+    const item = document.querySelector(`.composite-col-item[data-col="${colIndex}"]`);
+    if (!item) return;
+    
+    const idx = window._compositeSelectedCols.indexOf(colIndex);
+    if (idx === -1) {
+        window._compositeSelectedCols.push(colIndex);
+        item.style.background = 'var(--violet)';
+        item.style.color = 'white';
+        item.style.borderColor = 'var(--violet)';
+    } else {
+        window._compositeSelectedCols.splice(idx, 1);
+        item.style.background = 'var(--surface)';
+        item.style.color = 'var(--text-1)';
+        item.style.borderColor = 'var(--border-med)';
+    }
+    updateCompositePreview();
+}
+
+function updateCompositePreview() {
+    const preview = document.getElementById('compositePreview');
+    const text = document.getElementById('compositePreviewText');
+    if (!preview || !text) return;
+    
+    const selected = window._compositeSelectedCols || [];
+    if (selected.length > 0) {
+        preview.style.display = 'block';
+        const names = selected.map(i => editorCols[i]).join(', ');
+        text.textContent = `Selected: ${selected.length} columns → ${names}`;
+    } else {
+        preview.style.display = 'none';
+    }
+}
+
+function applyCompositeVar(colIndices, newName, method) {
+    editorSaveStateToUndo();
+    
+    const newCol = new Array(editorData.length).fill(null);
+    let rowsComputed = 0;
+    
+    for (let i = 0; i < editorData.length; i++) {
+        const values = colIndices.map(idx => editorData[i][idx]);
+        const validValues = values.filter(v => v !== null && v !== undefined && v !== '' && typeof v === 'number');
+        
+        if (validValues.length === values.length && validValues.length > 0) {
+            if (method === 'sum') {
+                newCol[i] = validValues.reduce((a, b) => a + b, 0);
+            } else {
+                newCol[i] = validValues.reduce((a, b) => a + b, 0) / validValues.length;
+            }
+            rowsComputed++;
+        } else {
+            newCol[i] = null;
+        }
+    }
+    
+    editorCols.push(newName);
+    for (let i = 0; i < editorData.length; i++) {
+        editorData[i].push(newCol[i]);
+    }
+    
+    renderEditorTable();
+    updateEditorStatsDisplay();
+    
+    const methodLabel = method === 'sum' ? 'total score (sum)' : 'average (mean)';
+    editorShowNotification(`Created "${newName}" (${methodLabel}) from ${colIndices.length} columns → ${rowsComputed} rows computed`, 'success');
+}
+
+function openRowSearchDialog() {
+    if (!editorData || editorData.length === 0) {
+        editorShowNotification('No data rows to search', 'warning');
+        return;
+    }
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'editor-confirm-dialog';
+    overlay.innerHTML = `
+        <div class="editor-confirm-box" style="width: 400px;">
+            <div class="editor-confirm-icon" style="background: var(--brand-bg); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; margin-bottom: 16px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <div class="editor-confirm-title" style="font-size: 1.2rem; font-weight: 800; color: var(--text-1); margin-bottom: 8px;">Go to Row</div>
+            <div class="editor-confirm-message">
+                <div style="margin-bottom: 12px;">
+                    <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">Enter row number (1 - ${editorData.length}):</label>
+                    <input type="number" id="rowSearchInput" min="1" max="${editorData.length}" placeholder="e.g., 500" style="width: 100%; padding: 10px 12px; border: 1.5px solid var(--border-med); border-radius: 8px; background: var(--surface); color: var(--text-1); font-family: var(--font); font-size: 0.85rem;">
+                </div>
+                <div style="padding: 8px; background: var(--surface-2); border-radius: 6px; font-size: 0.7rem; color: var(--text-4);">
+                    Total rows: <strong>${editorData.length}</strong>
+                </div>
+            </div>
+            <div class="editor-confirm-buttons" style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px;">
+                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="rowSearchCancelBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border-med); background: var(--surface-2); color: var(--text-2); font-family: var(--font);">Cancel</button>
+                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="rowSearchConfirmBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: none; background: var(--brand); color: white; font-family: var(--font);">Go to Row</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    const input = document.getElementById('rowSearchInput');
+    const cancelBtn = document.getElementById('rowSearchCancelBtn');
+    const confirmBtn = document.getElementById('rowSearchConfirmBtn');
+    const closeDialog = () => overlay.remove();
+    
+    input.focus();
+    input.select();
+    
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') goToRow();
+    });
+    
+    const goToRow = () => {
+        const rowNum = parseInt(input.value);
+        if (isNaN(rowNum) || rowNum < 1 || rowNum > editorData.length) {
+            editorShowNotification(`Please enter a number between 1 and ${editorData.length}`, 'warning');
+            return;
+        }
+        
+        const rows = document.querySelectorAll('.data-editor-table tbody tr');
+        if (rows && rows[rowNum - 1]) {
+            rows[rowNum - 1].scrollIntoView({ block: 'center', behavior: 'smooth' });
+            rows[rowNum - 1].style.background = 'var(--brand-bg)';
+            setTimeout(() => {
+                rows[rowNum - 1].style.background = '';
+            }, 2000);
+            editorShowNotification(`Scrolled to row ${rowNum}`, 'success');
+            closeDialog();
+        } else {
+            editorShowNotification(`Row ${rowNum} not found in table view`, 'warning');
+        }
+    };
+    
+    cancelBtn.onclick = closeDialog;
+    confirmBtn.onclick = goToRow;
+    
+    overlay.onclick = (e) => { if (e.target === overlay) closeDialog(); };
+}
+
+
+function openSliceRowsDialog() {
+    if (!editorData || editorData.length === 0) {
+        editorShowNotification('No data rows to slice', 'warning');
+        return;
+    }
+    
+    const overlay = document.createElement('div');
+    overlay.className = 'editor-confirm-dialog';
+    overlay.innerHTML = `
+        <div class="editor-confirm-box" style="width: 450px;">
+            <div class="editor-confirm-icon" style="background: var(--amber-bg); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; margin-bottom: 16px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="9" y1="12" x2="15" y2="12"></line>
+                    <line x1="12" y1="9" x2="12" y2="15"></line>
+                </svg>
+            </div>
+            <div class="editor-confirm-title" style="font-size: 1.2rem; font-weight: 800; color: var(--text-1); margin-bottom: 8px;">Slice Rows (Keep Range)</div>
+            <div class="editor-confirm-message">
+                <div style="margin-bottom: 8px;">
+                    <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">Keep rows from:</label>
+                    <input type="number" id="sliceFromInput" min="1" max="${editorData.length}" placeholder="Start row (1 - ${editorData.length})" style="width: 100%; padding: 10px 12px; border: 1.5px solid var(--border-med); border-radius: 8px; background: var(--surface); color: var(--text-1); font-family: var(--font); font-size: 0.85rem;">
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label style="display: block; font-size: 0.75rem; color: var(--text-3); margin-bottom: 4px;">To:</label>
+                    <input type="number" id="sliceToInput" min="1" max="${editorData.length}" placeholder="End row (1 - ${editorData.length})" style="width: 100%; padding: 10px 12px; border: 1.5px solid var(--border-med); border-radius: 8px; background: var(--surface); color: var(--text-1); font-family: var(--font); font-size: 0.85rem;">
+                </div>
+                <div style="padding: 8px; background: var(--surface-2); border-radius: 6px; font-size: 0.7rem; color: var(--text-4);">
+                    Current rows: <strong>${editorData.length}</strong> | This will keep only the specified range and remove all other rows.
+                </div>
+                <div style="margin-top: 10px; padding: 8px; background: var(--rose-bg); border-radius: 6px; font-size: 0.7rem; color: var(--rose); display: flex; align-items: flex-start; gap: 8px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0; margin-top: 1px;">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span><strong>Warning:</strong> This will delete all rows outside the specified range. This action can be undone using the Undo button.</span>
+                </div>
+            </div>
+            <div class="editor-confirm-buttons" style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px;">
+                <button class="editor-confirm-btn editor-confirm-btn-cancel" id="sliceCancelBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border-med); background: var(--surface-2); color: var(--text-2); font-family: var(--font);">Cancel</button>
+                <button class="editor-confirm-btn editor-confirm-btn-confirm" id="sliceConfirmBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: none; background: var(--amber); color: white; font-family: var(--font);">Apply Slice</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    const fromInput = document.getElementById('sliceFromInput');
+    const toInput = document.getElementById('sliceToInput');
+    const cancelBtn = document.getElementById('sliceCancelBtn');
+    const confirmBtn = document.getElementById('sliceConfirmBtn');
+    const closeDialog = () => overlay.remove();
+    
+    fromInput.focus();
+    
+    const applySlice = () => {
+        const fromVal = parseInt(fromInput.value);
+        const toVal = parseInt(toInput.value);
+        
+        if (isNaN(fromVal) || isNaN(toVal) || fromVal < 1 || toVal > editorData.length || fromVal > toVal) {
+            editorShowNotification(`Please enter a valid range (1 - ${editorData.length})`, 'warning');
+            return;
+        }
+        
+        const fromIdx = fromVal - 1;
+        const toIdx = toVal - 1;
+        const numRows = toIdx - fromIdx + 1;
+        
+        editorSaveStateToUndo();
+        
+        const slicedData = [];
+        for (let i = fromIdx; i <= toIdx; i++) {
+            slicedData.push(editorData[i]);
+        }
+        editorData = slicedData;
+        
+        renderEditorTable();
+        updateEditorStatsDisplay();
+        editorShowNotification(`Sliced to rows ${fromVal} to ${toVal} → ${numRows} rows remaining`, 'success');
+        closeDialog();
+    };
+    
+    cancelBtn.onclick = closeDialog;
+    confirmBtn.onclick = applySlice;
+    
+    fromInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') toInput.focus();
+    });
+    toInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') applySlice();
+    });
+    
+    overlay.onclick = (e) => { if (e.target === overlay) closeDialog(); };
+}
+
+let selectedColumnsForAnalysis = [];
+
+function openSelectColumnsDialog() {
+  if (!editorCols || editorCols.length === 0) {
+    editorShowNotification('No columns available to select', 'warning');
+    return;
+  }
+  
+  if (selectedColumnsForAnalysis.length === 0) {
+    selectedColumnsForAnalysis = [...editorCols];
+  }
+  
+  const overlay = document.createElement('div');
+  overlay.className = 'editor-confirm-dialog';
+  overlay.innerHTML = `
+    <div class="editor-confirm-box" style="width: 520px; max-width: 95%; max-height: 90vh; overflow-y: auto;">
+      <div class="editor-confirm-icon" style="background: var(--violet-bg); display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; margin-bottom: 16px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+          <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"></path>
+        </svg>
+      </div>
+      <div class="editor-confirm-title" style="font-size: 1.2rem; font-weight: 800; color: var(--text-1); margin-bottom: 8px;">Select Columns for Analysis</div>
+      <div class="editor-confirm-message">
+        <div style="margin-bottom: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-size: 0.75rem; color: var(--text-3);">Choose which columns to keep for analysis. Unselected columns will be removed.</span>
+            <div style="display: flex; gap: 8px;">
+              <button id="selectAllColumnsBtn" style="padding: 4px 12px; border-radius: 4px; border: 1px solid var(--brand); background: var(--brand); color: white; cursor: pointer; font-size: 0.7rem; font-weight: 600; font-family: var(--font);">Select All</button>
+              <button id="deselectAllColumnsBtn" style="padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border-med); background: var(--surface-2); color: var(--text-2); cursor: pointer; font-size: 0.7rem; font-weight: 600; font-family: var(--font);">Deselect All</button>
+            </div>
+          </div>
+          <div id="columnSelectionList" style="display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; background: var(--surface-2); border-radius: 8px; max-height: 250px; overflow-y: auto; border: 1px solid var(--border);">
+            ${editorCols.map((col, i) => {
+              const isSelected = selectedColumnsForAnalysis.includes(col);
+              return `
+                <div class="column-select-item" data-col="${i}" style="padding: 6px 14px; border-radius: 20px; background: ${isSelected ? 'var(--violet)' : 'var(--surface)'}; border: 1.5px solid ${isSelected ? 'var(--violet)' : 'var(--border-med)'}; cursor: pointer; font-size: 0.75rem; font-weight: ${isSelected ? '700' : '500'}; color: ${isSelected ? 'white' : 'var(--text-2)'}; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;" onclick="toggleColumnSelection(${i})">
+                  ${isSelected ? '✓' : '○'} ${escapeXml(col)}
+                </div>
+              `;
+            }).join('')}
+          </div>
+          <div style="font-size: 0.65rem; color: var(--text-4); margin-top: 8px; display: flex; justify-content: space-between;">
+            <span id="selectedColumnsCount">Selected: ${selectedColumnsForAnalysis.length} of ${editorCols.length} columns</span>
+            <span>Click any column to toggle selection</span>
+          </div>
+        </div>
+        <div style="padding: 10px; background: var(--surface-3); border-radius: 6px; font-size: 0.7rem; color: var(--text-4); display: flex; align-items: flex-start; gap: 8px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; flex-shrink: 0; margin-top: 1px;">
+            <path d="M9 18h6"></path>
+            <path d="M10 21h4"></path>
+            <path d="M12 3v8"></path>
+            <path d="M8 11l4-4 4 4"></path>
+          </svg>
+          <span><strong>Tip:</strong> Only selected columns will be kept. This helps reduce unnecessary variables before analysis.</span>
+        </div>
+      </div>
+      <div class="editor-confirm-buttons" style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px;">
+        <button class="editor-confirm-btn editor-confirm-btn-cancel" id="selectColumnsCancelBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border-med); background: var(--surface-2); color: var(--text-2); font-family: var(--font);">Cancel</button>
+        <button class="editor-confirm-btn editor-confirm-btn-confirm" id="selectColumnsConfirmBtn" style="padding: 10px 24px; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; border: none; background: var(--violet); color: white; font-family: var(--font);">Apply Selection</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(overlay);
+  
+  const cancelBtn = document.getElementById('selectColumnsCancelBtn');
+  const confirmBtn = document.getElementById('selectColumnsConfirmBtn');
+  const closeDialog = () => overlay.remove();
+  
+  const selectAllBtn = document.getElementById('selectAllColumnsBtn');
+  if (selectAllBtn) {
+    selectAllBtn.addEventListener('click', function() {
+      selectedColumnsForAnalysis = [...editorCols];
+      renderColumnSelectionUI();
+    });
+  }
+  
+  const deselectAllBtn = document.getElementById('deselectAllColumnsBtn');
+  if (deselectAllBtn) {
+    deselectAllBtn.addEventListener('click', function() {
+      selectedColumnsForAnalysis = [];
+      renderColumnSelectionUI();
+    });
+  }
+  
+  cancelBtn.onclick = closeDialog;
+  
+  confirmBtn.onclick = function() {
+    if (selectedColumnsForAnalysis.length === 0) {
+      editorShowNotification('Please select at least one column to proceed', 'warning');
+      return;
+    }
+    applyColumnSelection();
+    closeDialog();
+  };
+  
+  overlay.onclick = (e) => { if (e.target === overlay) closeDialog(); };
+}
+
+function toggleColumnSelection(colIndex) {
+  const colName = editorCols[colIndex];
+  const idx = selectedColumnsForAnalysis.indexOf(colName);
+  if (idx === -1) {
+    selectedColumnsForAnalysis.push(colName);
+  } else {
+    selectedColumnsForAnalysis.splice(idx, 1);
+  }
+  renderColumnSelectionUI();
+}
+
+function renderColumnSelectionUI() {
+  const container = document.getElementById('columnSelectionList');
+  if (!container) return;
+  
+  container.innerHTML = editorCols.map((col, i) => {
+    const isSelected = selectedColumnsForAnalysis.includes(col);
+    return `
+      <div class="column-select-item" data-col="${i}" style="padding: 6px 14px; border-radius: 20px; background: ${isSelected ? 'var(--violet)' : 'var(--surface)'}; border: 1.5px solid ${isSelected ? 'var(--violet)' : 'var(--border-med)'}; cursor: pointer; font-size: 0.75rem; font-weight: ${isSelected ? '700' : '500'}; color: ${isSelected ? 'white' : 'var(--text-2)'}; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;" onclick="toggleColumnSelection(${i})">
+        ${isSelected ? '✓' : '○'} ${escapeXml(col)}
+      </div>
+    `;
+  }).join('');
+  
+  const countEl = document.getElementById('selectedColumnsCount');
+  if (countEl) {
+    countEl.textContent = `Selected: ${selectedColumnsForAnalysis.length} of ${editorCols.length} columns`;
+  }
+}
+
+function applyColumnSelection() {
+  if (selectedColumnsForAnalysis.length === editorCols.length) {
+    editorShowNotification('All columns already selected. No changes made.', 'info');
+    return;
+  }
+  
+  if (selectedColumnsForAnalysis.length === 0) {
+    editorShowNotification('Cannot remove all columns. Please select at least one.', 'warning');
+    return;
+  }
+  
+  editorSaveStateToUndo();
+  
+  const keepIndices = [];
+  const keepColumns = [];
+  for (let i = 0; i < editorCols.length; i++) {
+    if (selectedColumnsForAnalysis.includes(editorCols[i])) {
+      keepIndices.push(i);
+      keepColumns.push(editorCols[i]);
+    }
+  }
+  
+  const newData = [];
+  for (let r = 0; r < editorData.length; r++) {
+    const newRow = [];
+    for (let c of keepIndices) {
+      newRow.push(editorData[r][c]);
+    }
+    newData.push(newRow);
+  }
+  
+  editorData = newData;
+  editorCols = keepColumns;
+  
+  selectedColumnsForAnalysis = [...editorCols];
+  
+  renderEditorTable();
+  updateEditorStatsDisplay();
+  
+  const removedCount = editorCols.length - keepColumns.length;
+  editorShowNotification(`Applied column selection: ${keepColumns.length} columns kept, ${removedCount} removed.`, 'success');
+}
 </script>
 </body>
 </html>
