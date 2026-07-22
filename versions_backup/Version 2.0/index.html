@@ -2931,6 +2931,42 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
     color: var(--st-3);
     stroke: var(--st-3);
 }
+
+#citationModal {
+    transition: opacity 0.25s ease;
+}
+
+#citationModal > div {
+    animation: dialogSlideIn 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+@keyframes dialogSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+[data-theme="dark"] #citationModal > div {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+#citationModal .citation-entry {
+    transition: border-color 0.2s ease;
+}
+
+#citationModal .citation-entry:hover {
+    border-color: var(--brand);
+}
+
+.site-footer .citation-btn:hover {
+    text-decoration: underline !important;
+}
 </style>
 </head>
 <body>
@@ -3077,6 +3113,75 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
       <button class="btn-primary" onclick="applyCategoricalEncoding()"><i class="fas fa-check"></i> Apply Encoding</button>
     </div>
   </div>
+</div>
+
+<!-- CITATION DIALOG -->
+<div id="citationModal" style="display: none; position: fixed; inset: 0; z-index: 10002; background: rgba(8, 9, 15, 0.88); backdrop-filter: blur(10px); align-items: center; justify-content: center;">
+    <div style="background: var(--surface); border-radius: 24px; max-width: 720px; width: 95%; max-height: 90vh; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid var(--border); display: flex; flex-direction: column;">
+        
+        <div style="padding: 18px 24px; background: linear-gradient(135deg, var(--brand-bg), var(--surface-2)); border-bottom: 2px solid var(--brand); display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="font-size: 1rem; font-weight: 800; color: var(--brand); margin: 0; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-quote-right"></i> Cite This Application
+            </h3>
+            <button onclick="closeCitationDialog()" 
+                    class="citation-close-btn"
+                    style="background: var(--surface-2); border: 1px solid var(--border); color: #dc2626; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1rem; transition: all 0.2s ease; font-family: Arial, sans-serif; font-weight: bold;"
+                    onmouseover="this.style.background='#fee2e2'; this.style.borderColor='#dc2626'; this.style.transform='scale(1.05)';"
+                    onmouseout="this.style.background='var(--surface-2)'; this.style.borderColor='var(--border)'; this.style.transform='scale(1)';"
+                    onmousedown="this.style.transform='scale(0.92)';"
+                    onmouseup="this.style.transform='scale(1.05)';">✕</button>
+        </div>
+        
+        <div style="padding: 24px; overflow-y: auto; flex: 1;">
+            <p style="font-size: 0.85rem; color: var(--text-2); margin-bottom: 20px; line-height: 1.6;">Click the copy button next to any citation style to copy it to your clipboard.</p>
+            
+            <div style="background: var(--surface-2); border-radius: 12px; padding: 14px 18px; margin-bottom: 12px; border: 1px solid var(--border);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 700; font-size: 0.85rem; color: var(--brand);">APA (7th Edition)</span>
+                    <button onclick="copyCitationText('apa')" style="padding: 4px 16px; background: var(--brand); color: white; border: none; border-radius: 20px; font-size: 0.75rem; font-weight: 600; cursor: pointer; font-family: var(--font); transition: all 0.2s;">Copy</button>
+                </div>
+                <div id="apaCitation" style="font-size: 0.8rem; color: var(--text-1); font-family: var(--mono); line-height: 1.6; word-break: break-word;">Ibrahim, M. M. (2026). MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses. SoftwareX, 35, 102895. https://doi.org/10.1016/j.softx.2026.102895</div>
+            </div>
+            
+            <div style="background: var(--surface-2); border-radius: 12px; padding: 14px 18px; margin-bottom: 12px; border: 1px solid var(--border);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 700; font-size: 0.85rem; color: var(--brand);">Harvard</span>
+                    <button onclick="copyCitationText('harvard')" style="padding: 4px 16px; background: var(--brand); color: white; border: none; border-radius: 20px; font-size: 0.75rem; font-weight: 600; cursor: pointer; font-family: var(--font); transition: all 0.2s;">Copy</button>
+                </div>
+                <div id="harvardCitation" style="font-size: 0.8rem; color: var(--text-1); font-family: var(--mono); line-height: 1.6; word-break: break-word;">Ibrahim, M.M. (2026) MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses. SoftwareX, 35, 102895. Available at: https://doi.org/10.1016/j.softx.2026.102895 (Accessed: 2026).</div>
+            </div>
+            
+            <div style="background: var(--surface-2); border-radius: 12px; padding: 14px 18px; margin-bottom: 12px; border: 1px solid var(--border);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 700; font-size: 0.85rem; color: var(--brand);">Vancouver</span>
+                    <button onclick="copyCitationText('vancouver')" style="padding: 4px 16px; background: var(--brand); color: white; border: none; border-radius: 20px; font-size: 0.75rem; font-weight: 600; cursor: pointer; font-family: var(--font); transition: all 0.2s;">Copy</button>
+                </div>
+                <div id="vancouverCitation" style="font-size: 0.8rem; color: var(--text-1); font-family: var(--mono); line-height: 1.6; word-break: break-word;">Ibrahim MM. MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses. SoftwareX. 2026;35:102895. doi: 10.1016/j.softx.2026.102895.</div>
+            </div>
+            
+            <div style="background: var(--surface-2); border-radius: 12px; padding: 14px 18px; margin-bottom: 12px; border: 1px solid var(--border);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 700; font-size: 0.85rem; color: var(--brand);">IEEE</span>
+                    <button onclick="copyCitationText('ieee')" style="padding: 4px 16px; background: var(--brand); color: white; border: none; border-radius: 20px; font-size: 0.75rem; font-weight: 600; cursor: pointer; font-family: var(--font); transition: all 0.2s;">Copy</button>
+                </div>
+                <div id="ieeeCitation" style="font-size: 0.8rem; color: var(--text-1); font-family: var(--mono); line-height: 1.6; word-break: break-word;">M. M. Ibrahim, "MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses," SoftwareX, vol. 35, p. 102895, 2026. doi: 10.1016/j.softx.2026.102895.</div>
+            </div>
+            
+            <div style="margin-top: 16px; padding: 10px 14px; background: var(--amber-bg); border-radius: 8px; border: 1px solid var(--amber-border); font-size: 0.75rem; color: var(--text-2); display: flex; align-items: flex-start; gap: 8px;">
+                <span style="font-size: 1rem;">📢</span>
+                <span><strong>Always check with your publisher for preferred citation style.</strong></span>
+            </div>
+        </div>
+        
+        <div style="padding: 14px 24px; background: var(--surface-2); border-top: 1px solid var(--border); display: flex; justify-content: flex-end;">
+            <button onclick="closeCitationDialog()" 
+                    style="padding: 8px 24px; background: var(--brand); color: white; border: none; border-radius: 40px; font-size: 0.85rem; font-weight: 700; cursor: pointer; font-family: var(--font); transition: all 0.2s;"
+                    onmouseover="this.style.background='var(--brand-dark)'; this.style.transform='translateY(-2px)';"
+                    onmouseout="this.style.background='var(--brand)'; this.style.transform='translateY(0)';"
+                    onmousedown="this.style.transform='scale(0.95)';"
+                    onmouseup="this.style.transform='translateY(-2px)';">Close</button>
+        </div>
+    </div>
 </div>
 
 <!-- DATA EDITOR MODAL -->
@@ -3624,6 +3729,8 @@ body{font-family:var(--font);font-size:1rem;background:var(--bg);color:var(--tex
             </svg>
             <span class="github-tooltip">Official GitHub Repository</span>
         </a>
+        <span>|</span>
+        <button onclick="openCitationDialog()" style="background: none; border: none; color: var(--brand); text-decoration: underline; cursor: pointer; font-family: var(--font); font-size: 0.84rem; padding: 0;">Cite This App</button>
     </p>
 </div>
 </div>
@@ -11537,8 +11644,11 @@ window.exportToWordDocument = function(htmlContent, filename) {
 ${cleanHtml}
 
 <div class="footer">
-  Ibrahim, M. M. (${yr}). <em>MedModr: Mediation and moderation analysis tool</em> (Version 2.0) [Software].<br>
-  Available from https://shinyhealthtools.github.io/medmodr/
+  <em>MedModr: Mediation and moderation analysis tool</em> (Version 2.0).<br>
+  Use MedModr online: <a href="https://shinyhealthtools.github.io/medmodr/" style="color: #000000; text-decoration: underline;">https://shinyhealthtools.github.io/medmodr/</a><br><br>
+  <strong>Please cite:</strong><br>
+  Ibrahim, M. M. (2026). MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses. <em>SoftwareX</em>, 35, 102895.<br>
+  DOI: <a href="https://doi.org/10.1016/j.softx.2026.102895" target="_blank" style="color: #000000; text-decoration: underline;">https://doi.org/10.1016/j.softx.2026.102895</a>
 </div>
 </div>
 </body>
@@ -23087,7 +23197,11 @@ window.exportWord=function(){
 </div>
 ${body}
 <div class="footer">
-  Ibrahim, M. M. (${yr}). <em>MedModr: Mediation and moderation analysis tool</em> (Version 2.0) [Software]. Available from https://shinyhealthtools.github.io/medmodr/
+  <em>MedModr: Mediation and moderation analysis tool</em> (Version 2.0).<br>
+  Use MedModr online: <a href="https://shinyhealthtools.github.io/medmodr/" style="color: #000000; text-decoration: underline;">https://shinyhealthtools.github.io/medmodr/</a><br><br>
+  <strong>Please cite:</strong><br>
+  Ibrahim, M. M. (2026). MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses. <em>SoftwareX</em>, 35, 102895.<br>
+  DOI: <a href="https://doi.org/10.1016/j.softx.2026.102895" target="_blank" style="color: #000000; text-decoration: underline;">https://doi.org/10.1016/j.softx.2026.102895</a>
 </div>
 </body>
 </html>`;
@@ -24857,8 +24971,11 @@ async function exportToPDF(htmlContent, filename) {
 ${cleanHtml}
 
 <div class="footer">
-  Ibrahim, M. M. (${yr}). <em>MedModr: Mediation and moderation analysis tool</em> (Version 2.0) [Software].<br>
-  Available from https://shinyhealthtools.github.io/medmodr/
+  <em>MedModr: Mediation and moderation analysis tool</em> (Version 2.0).<br>
+  Use MedModr online: <a href="https://shinyhealthtools.github.io/medmodr/" style="color: #000000; text-decoration: underline;">https://shinyhealthtools.github.io/medmodr/</a><br><br>
+  <strong>Please cite:</strong><br>
+  Ibrahim, M. M. (2026). MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses. <em>SoftwareX</em>, 35, 102895.<br>
+  DOI: <a href="https://doi.org/10.1016/j.softx.2026.102895" target="_blank" style="color: #000000; text-decoration: underline;">https://doi.org/10.1016/j.softx.2026.102895</a>
 </div>
 </div>
 </body>
@@ -25167,8 +25284,11 @@ function exportToHTML(htmlContent, filename) {
 ${cleanHtml}
 
 <div class="footer">
-  Ibrahim, M. M. (${yr}). <em>MedModr: Mediation and moderation analysis tool</em> (Version 2.0) [Software].<br>
-  Available from https://shinyhealthtools.github.io/medmodr/
+  <em>MedModr: Mediation and moderation analysis tool</em> (Version 2.0).<br>
+  Use MedModr online: <a href="https://shinyhealthtools.github.io/medmodr/" style="color: #000000; text-decoration: underline;">https://shinyhealthtools.github.io/medmodr/</a><br><br>
+  <strong>Please cite:</strong><br>
+  Ibrahim, M. M. (2026). MedModr: A free, user-friendly, browser-based open-source application for mediation, moderation, and conditional process analyses. <em>SoftwareX</em>, 35, 102895.<br>
+  DOI: <a href="https://doi.org/10.1016/j.softx.2026.102895" target="_blank" style="color: #000000; text-decoration: underline;">https://doi.org/10.1016/j.softx.2026.102895</a>
 </div>
 </div>
 </body>
@@ -28380,6 +28500,84 @@ function applyColumnSelection() {
   const removedCount = editorCols.length - keepColumns.length;
   editorShowNotification(`Applied column selection: ${keepColumns.length} columns kept, ${removedCount} removed.`, 'success');
 }
+
+
+function openCitationDialog() {
+    document.getElementById('citationModal').style.display = 'flex';
+}
+
+function closeCitationDialog() {
+    document.getElementById('citationModal').style.display = 'none';
+}
+
+function copyCitationText(style) {
+    var citations = {
+        apa: document.getElementById('apaCitation'),
+        harvard: document.getElementById('harvardCitation'),
+        vancouver: document.getElementById('vancouverCitation'),
+        ieee: document.getElementById('ieeeCitation')
+    };
+    
+    var el = citations[style];
+    if (!el) {
+        showToast('Citation not found', 'error', 2000);
+        return;
+    }
+    
+    var text = el.textContent.trim();
+    if (!text) {
+        showToast('Citation text is empty', 'error', 2000);
+        return;
+    }
+    
+    var btn = document.querySelector('button[onclick*="' + style + '"]');
+    var originalText = btn ? btn.textContent : 'Copy';
+    
+    function copySuccess() {
+        if (btn) {
+            btn.textContent = '✓ Copied!';
+            btn.style.background = '#10b981';
+            setTimeout(function() {
+                btn.textContent = originalText;
+                btn.style.background = 'var(--brand)';
+            }, 2000);
+        }
+        showToast(style.toUpperCase() + ' citation copied to clipboard!', 'success', 2000);
+    }
+    
+    function copyFallback() {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        textarea.style.left = '-9999px';
+        textarea.style.top = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            copySuccess();
+        } catch (e) {
+            showToast('Unable to copy. Please copy manually.', 'error', 3000);
+        }
+        document.body.removeChild(textarea);
+    }
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(copySuccess).catch(copyFallback);
+    } else {
+        copyFallback();
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        var modal = document.getElementById('citationModal');
+        if (modal && modal.style.display === 'flex') {
+            closeCitationDialog();
+        }
+    }
+});
 </script>
 </body>
 </html>
