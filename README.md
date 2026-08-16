@@ -63,7 +63,7 @@ New PROCESS models
 - Double Moderation (Model 2)
 - Mediation with Moderated Direct Effect (Model 5)
 - X→M and X→Y Moderated Mediation (Model 8)
-- Two Moderators at Separate Stages (Model 9)
+- Two Moderators at X→M Stage (Model 9)
 - M→Y and X→Y Moderated Mediation (Model 15)
 - X→M, M→Y, and X→Y Moderated Mediation (Model 59)
 
