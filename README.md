@@ -54,58 +54,59 @@
 
   ## Version History
 
-  ### Version 3.0 — Beta Release
+  ### Version 3.0 beta 
 
-  **MedModr v3.0** is a **Beta release** featuring **45 PROCESS models spanning Models 1–83**. Statistical procedures, bootstrap estimation, conditional effects, visualizations, and reporting functionality are undergoing active validation.
+Version 3 is a beta release featuring 45 PROCESS models spanning Models 1–83. Statistical procedures, bootstrap estimation, conditional effects, visualizations, and reporting functionality are undergoing active validation.
 
-  **Available Analysis Types (45 Models)**
+  Available Analysis Types (45 Models)
 
-  - **Model 4** — Simple mediation
-  - **Model 4** — Parallel multiple mediation
-  - **Model 6** — Serial mediation
-  - **Model 80** — Multiple mediation with parallel and serial pathways
-  - **Model 1** — Simple moderation
-  - **Model 2** — Two-moderator moderation
-  - **Model 3** — Three-way interaction/moderated moderation
-  - **Model 5** — Moderated direct effect
-  - **Model 7** — W moderates X→M
-  - **Model 8** — W moderates X→M and X→Y
-  - **Model 9** — W and Z moderate X→M
-  - **Model 10** — W and Z moderate X→M and X→Y
-  - **Model 11** — W and Z jointly moderate X→M
-  - **Model 12** — W and Z jointly moderate X→M and X→Y
-  - **Model 13** — W and Z jointly moderate X→M; W moderates X→Y
-  - **Model 14** — W moderates M→Y
-  - **Model 15** — W moderates M→Y and X→Y
-  - **Model 16** — W and Z moderate M→Y
-  - **Model 17** — W and Z moderate M→Y and X→Y
-  - **Model 18** — W and Z jointly moderate M→Y
-  - **Model 19** — W and Z jointly moderate M→Y and X→Y
-  - **Model 20** — W and Z jointly moderate M→Y; W moderates X→Y
-  - **Model 21** — W moderates X→M; Z moderates M→Y
-  - **Model 22** — W moderates X→M and X→Y; Z moderates M→Y
-  - **Model 28** — W moderates X→M; Z moderates M→Y and X→Y
-  - **Model 29** — W and Z moderate X→M and X→Y
-  - **Model 58** — W moderates X→M and M→Y
-  - **Model 59** — W moderates X→M, M→Y, and X→Y
-  - **Model 60** — W moderates X→M and M→Y; Z moderates X→M
-  - **Model 61** — W moderates X→M, M→Y, and X→Y; Z moderates X→M
-  - **Model 62** — W moderates X→M and M→Y; Z moderates X→M and X→Y
-  - **Model 63** — W moderates X→M, M→Y, and X→Y; Z moderates X→M and X→Y
-  - **Model 64** — W moderates X→M and M→Y; Z moderates M→Y
-  - **Model 65** — W moderates X→M, M→Y, and X→Y; Z moderates M→Y
-  - **Model 66** — W moderates X→M and M→Y; Z moderates M→Y and X→Y
-  - **Model 67** — W moderates X→M, M→Y, and X→Y; Z moderates M→Y and X→Y
-  - **Model 68** — W and Z jointly moderate X→M; W moderates M→Y
-  - **Model 69** — W and Z jointly moderate X→M and X→Y; W moderates M→Y
-  - **Model 70** — W moderates X→M; W and Z jointly moderate M→Y
-  - **Model 71** — W moderates X→M; W and Z jointly moderate M→Y and X→Y
-  - **Model 72** — W and Z jointly moderate X→M and M→Y
-  - **Model 73** — W and Z jointly moderate X→M, M→Y, and X→Y
-  - **Model 75** — W and Z moderate X→M and M→Y
-  - **Model 76** — W and Z moderate X→M, M→Y, and X→Y
-  - **Model 80** — Multiple mediation with parallel and serial pathways
-  - **Model 83** — W moderates X→M₁ in serial mediation
+  - Model 4 — Simple mediation
+  - Model 4 — Parallel multiple mediation
+  - Model 6 — Serial mediation
+  - Model 80 — Multiple mediation with parallel and serial pathways
+  - Model 1 — Simple moderation
+  - Model 2 — Two-moderator moderation
+  - Model 3 — Three-way interaction/moderated moderation
+  - Model 5 — Moderated direct effect
+  - Model 7 — W moderates X→M
+  - Model 8 — W moderates X→M and X→Y
+  - Model 9 — W and Z moderate X→M
+  - Model 10 — W and Z moderate X→M and X→Y
+  - Model 11 — W and Z jointly moderate X→M
+  - Model 12 — W and Z jointly moderate X→M and X→Y
+  - Model 13 — W and Z jointly moderate X→M; W moderates X→Y
+  - Model 14 — W moderates M→Y
+  - Model 15 — W moderates M→Y and X→Y
+  - Model 16 — W and Z moderate M→Y
+  - Model 17 — W and Z moderate M→Y and X→Y
+  - Model 18 — W and Z jointly moderate M→Y
+  - Model 19 — W and Z jointly moderate M→Y and X→Y
+  - Model 20 — W and Z jointly moderate M→Y; W moderates X→Y
+  - Model 21 — W moderates X→M; Z moderates M→Y
+  - Model 22 — W moderates X→M and X→Y; Z moderates M→Y
+  - Model 28 — W moderates X→M; Z moderates M→Y and X→Y
+  - Model 29 — W and Z moderate X→M and X→Y
+  - Model 58 — W moderates X→M and M→Y
+  - Model 59 — W moderates X→M, M→Y, and X→Y
+  - Model 60 — W moderates X→M and M→Y; Z moderates X→M
+  - Model 61 — W moderates X→M, M→Y, and X→Y; Z moderates X→M
+  - Model 62 — W moderates X→M and M→Y; Z moderates X→M and X→Y
+  - Model 63 — W moderates X→M, M→Y, and X→Y; Z moderates X→M and X→Y
+  - Model 64 — W moderates X→M and M→Y; Z moderates M→Y
+  - Model 65 — W moderates X→M, M→Y, and X→Y; Z moderates M→Y
+  - Model 66 — W moderates X→M and M→Y; Z moderates M→Y and X→Y
+  - Model 67 — W moderates X→M, M→Y, and X→Y; Z moderates M→Y and X→Y
+  - Model 68 — W and Z jointly moderate X→M; W moderates M→Y
+  - Model 69 — W and Z jointly moderate X→M and X→Y; W moderates M→Y
+  - Model 70 — W moderates X→M; W and Z jointly moderate M→Y
+  - Model 71 — W moderates X→M; W and Z jointly moderate M→Y and X→Y
+  - Model 72 — W and Z jointly moderate X→M and M→Y
+  - Model 73 — W and Z jointly moderate X→M, M→Y, and X→Y
+  - Model 75 — W and Z moderate X→M and M→Y
+  - Model 76 — W and Z moderate X→M, M→Y, and X→Y
+  - Model 80 — Multiple mediation with parallel and serial pathways
+  - Model 83 — W moderates X→M₁ in serial mediation
+
 
   ### Version 2.0
 
