@@ -53,11 +53,8 @@
   | **Output** | Path diagrams, simple slopes plots, analysis summaries, and export to Word, PDF, HTML, CSV or PNG |
 
   ## Version History
-  [svg](https://github.com/shinyhealthtools/medmodr/blob/main/README.md#version-history)
 
   ### Version 3.0 — Beta Release
-
-  [svg](https://github.com/shinyhealthtools/medmodr/blob/main/README.md#version-30)
 
   **MedModr v3.0** is a **Beta release** featuring **45 PROCESS models spanning Models 1–83**. Statistical procedures, bootstrap estimation, conditional effects, visualizations, and reporting functionality are undergoing active validation.
 
@@ -112,8 +109,6 @@
 
   ### Version 2.0
 
-  [svg](https://github.com/shinyhealthtools/medmodr/blob/main/README.md#version-20)
-
   Version 2.0 introduces major enhancements to `MedModr`, expanding its analytical capabilities, improving visualization, and providing more flexible export options.
 
   New PROCESS models
@@ -140,8 +135,6 @@
   - Professional export menu supporting Word, PDF, HTML, and CSV formats
 
   ### Version 1.0
-
-  [svg](https://github.com/shinyhealthtools/medmodr/blob/main/README.md#version-10)
 
   The initial release of `MedModr` included support for nine widely used PROCESS models and core statistical features.
 
