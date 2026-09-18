@@ -56,11 +56,11 @@
 
   ### Version 3.0 beta 
 
-Version 3 is a beta release featuring 45 PROCESS models spanning Models 1–83. Statistical procedures, bootstrap estimation, conditional effects, visualizations, and reporting functionality are undergoing active validation.
+Version 3 is a beta release featuring 48 PROCESS models spanning Models 1–83. Statistical procedures, bootstrap estimation, conditional effects, visualizations, and reporting functionality are undergoing active validation.
 
  - The variable box labels have been revised to X, M, M2, Y, W/Z, and Cov, and the corresponding “Assign to …” labels have also been revised for consistency.
 
-Available Analysis Types (45 Models)
+Available Analysis Types (48 Models)
 
   - Model 4 — Simple mediation
   - Model 4 — Parallel multiple mediation
@@ -107,8 +107,9 @@ Available Analysis Types (45 Models)
   - Model 75 — W and Z moderate X→M and M→Y
   - Model 76 — W and Z moderate X→M, M→Y, and X→Y
   - Model 80 — Multiple mediation with parallel and serial pathways
+  - Model 81 —  M₁, M₂, ... & Mₖ mediate X→Y parallel & serial 
+  - Model 82 —  M₁, M₂, M₃, M₄ serial-parallel mediation 
   - Model 83 — W moderates X→M₁ in serial mediation
-
 
   ### Version 2.0
 
