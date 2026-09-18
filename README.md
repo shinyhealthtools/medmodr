@@ -56,7 +56,7 @@
 
   ### Version 3.0 beta 
 
-Version 3 is a beta release featuring 48 PROCESS models spanning Models 1–83. Statistical procedures, bootstrap estimation, conditional effects, visualizations, and reporting functionality are undergoing active validation.
+Version 3.0 beta is a Beta release featuring an expanded library of 48 PROCESS models spanning Models 1–83.
 
  - The variable box labels have been revised to X, M, M2, Y, W/Z, and Cov, and the corresponding “Assign to …” labels have also been revised for consistency.
 
