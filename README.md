@@ -59,6 +59,7 @@
 Version 3.0 beta is a Beta release featuring an expanded library of 48 PROCESS models spanning Models 1–83.
 
  - The variable box labels have been revised to X, M, M2, Y, W/Z, and Cov, and the corresponding “Assign to …” labels have also been revised for consistency.
+ - MedModr now allows users to probe moderators using Mean ± 1 SD (default: −1 SD, mean, and +1 SD) or Percentile (16th, 50th, and 84th) values.
 
 Available Analysis Types 
 
