@@ -120,14 +120,13 @@ Version 3.0 is a Beta release featuring an expanded library of PROCESS models sp
 
 Available Analysis Types
 
-- Model 4 — Simple mediation
-- Model 4 — Parallel multiple mediation
-- Model 6 — Serial mediation
-- Model 80 — Multiple mediation with parallel and serial pathways
 - Model 1 — Simple moderation
 - Model 2 — Two-moderator moderation
 - Model 3 — Three-way interaction/moderated moderation
+- Model 4 — Simple mediation
+- Model 4 — Parallel multiple mediation
 - Model 5 — Moderated direct effect
+- Model 6 — Serial mediation
 - Model 7 — W moderates X→M
 - Model 8 — W moderates X→M and X→Y
 - Model 9 — W and Z moderate X→M
@@ -167,7 +166,16 @@ Available Analysis Types
 - Model 80 — Multiple mediation with parallel and serial pathways
 - Model 81 — M₁, M₂, ... & Mₖ mediate X→Y in parallel and serial
 - Model 82 — M₁, M₂, M₃, M₄ serial-parallel mediation
-- Models 83–92 — Moderated serial mediation (moderators on one or more paths of the serial chain, with 2–3 mediators)
+- Model 83 — W moderates X→M₁ in serial mediation
+- Model 84 — W moderates the first stage (X→M₁) and the second stage (M₁→M₂) in serial mediation
+- Model 85 — W moderates the first stage, second stage, and direct path in serial mediation
+- Model 86 — W moderates X→M₁ and X→Y in serial mediation
+- Model 87 — W moderates M₂→Y in serial mediation
+- Model 88 — W moderates M₁→Y and M₂→Y in serial mediation
+- Model 89 — W moderates M₁→Y, M₂→Y, and X→Y in serial mediation
+- Model 90 — W moderates M₂→Y and X→Y in serial mediation
+- Model 91 — W moderates M₁→M₂ in serial mediation
+- Model 92 — W moderates all paths in serial mediation (X→M₁, M₁→M₂, M₂→Y, and X→Y)
 
 ### Version 2.0
 
