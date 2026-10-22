@@ -78,7 +78,7 @@ Click the **Diagnostics** button next to any regression table to open a full dia
 
 ### Fit Model (Custom Regression)
 
-Build any OLS or logistic regression by combining predictors and adding your own interaction terms. Queue several models and run them together to get full tables and diagnostics for each. To view the queued models, double-click the **Add Model** button.
+Build any OLS or logistic regression by combining predictors, add your own interaction terms, queue multiple models, and run them all at once with full tables and diagnostics. When you include interaction terms, you also get conditional-effect tables to interpret how the effect changes across moderator values.
 
 ### Standard Errors: OLS and Robust (HC0–HC4)
 
@@ -105,9 +105,9 @@ While you hold the key, a **Copy Table** overlay appears on every output table. 
 
 ## Version History
 
-### Version 3.0 (Beta)
+### Version 3.0
 
-Version 3.0 is a Beta release featuring an expanded library of PROCESS models spanning Models 1–92.
+Version 3.0 features an expanded library of PROCESS models spanning Models 1–92.
 
 - The variable box labels have been revised to X, M, M2, Y, W/Z, and Cov, and the corresponding "Assign to …" labels have also been revised for consistency.
 - MedModr now allows users to probe moderators using Mean ± 1 SD (default: −1 SD, mean, and +1 SD) or Percentile (16th, 50th, and 84th) values.
