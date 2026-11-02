@@ -70,7 +70,16 @@ Users are encouraged to download the most recent release to access the latest fe
 | Model 82 | 4 mediators |
 | Models 83–92 | 2–3 mediators |
 
-## New Tools
+## Update: Bug Fixes
+Corrected bootstrap standard errors and confidence intervals across all mediation, moderation, and moderated mediation models.
+
+## New Features
+
+## Mersenne Twister Resampling
+Bootstrap resampling now uses the Mersenne Twister (MT19937) random number generator instead of Mulberry. Results are reproducible with the fixed seed, but bootstrap confidence intervals will differ slightly from those produced by earlier versions.
+
+## Percentile Moderator Values Are Now the Default
+Moderator values now default to the 16th, 50th and 84th percentiles. Mean ± 1 SD remains available from the Moderator Values menu. Binary moderators are always evaluated at 0 and 1.
 
 ### Regression Diagnostics
 
